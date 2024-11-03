@@ -97,10 +97,6 @@ header nav ul li a,
     transition: color 0.3s ease;
 }
 
-header nav .dropdown-content li a {
-    color: #333; /* Desired color */
-}
-
 header nav ul li a:hover,
 .header-right ul li a:hover {
     color: var(--secondary-color);
@@ -112,57 +108,75 @@ header nav ul li a:hover,
     position: relative;
 }
 
+/* First-level dropdown */
 .dropdown-content {
-    display: none;
+    display: none; /* Hidden by default */
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #ffffff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 1;
     border-radius: 8px;
-    overflow: hidden;
     padding: 0;
     margin: 0;
-    white-space: nowrap; /* Prevent text wrapping */
-    min-width: 150px; /* Minimum width for consistent look */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s;
-    color: #333;
-    transform: scaleY(0); /* Start collapsed */
-    transform-origin: top;
+    min-width: 200px;
+    white-space: nowrap;
+    z-index: 10;
 }
 
-.dropdown-content li {
+/* Second-level (nested) dropdown */
+.dropdown-sub-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position it to the right of the parent */
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* List styling */
+.dropdown-content li,
+.dropdown-sub-content li {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 
-
-/* Dropdown item styling with increased font size */
-.dropdown-content li a {
-    text-decoration: none;
+/* Link styling */
+.dropdown-content a,
+.dropdown-sub-content a {
     color: #333;
-    padding: 0.75rem 1.25rem;
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
     transition: background-color 0.2s ease;
-    font-size: 1.1rem; /* Increased font size for dropdown items */
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
 }
 
-.dropdown-content li a:hover {
+.dropdown-content li a:last-child,
+.dropdown-sub-content li a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover,
+.dropdown-sub-content a:hover {
     background-color: #f1f1f1;
     color: var(--primary-color);
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
+/* Show the first-level dropdown on hover */
+.dropdown:hover > .dropdown-content {
     display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: scaleY(1); /* Expand smoothly */
-    transition: transform 0.2s ease-out;
+}
+
+/* Show the second-level dropdown on hover of the first-level item */
+.dropdown-content li.dropdown:hover > .dropdown-sub-content {
+    display: block;
 }
 
 /* Search Bar styling with rounded corners and icon */
