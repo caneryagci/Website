@@ -31,98 +31,97 @@
             <a href="index.html#home" aria-label="Navigate to home">
                 <img src="images/logo.png" alt="E-Power Genius Logo" class="logo" loading="lazy">
             </a>
-    
             <!-- Main Navigation Links -->
-            <ul>
-                <li><a href="index.html#home" aria-label="Navigate to home section">Home</a></li>
-                <li class="dropdown">
-                    <a href="services.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services</a>
-                    <ul class="dropdown-content" aria-label="Services Dropdown">
-                        <li><a href="services.html#load-flow-analysis-h3" aria-label="Navigate to Load Flow Analysis section">Load Flow Analysis</a></li>
-                        <li><a href="services.html#short-circuit-analysis-h3" aria-label="Navigate to Short Circuit Analysis section">Short Circuit Analysis</a></li>
-                        <li><a href="services.html#power-quality-h3" aria-label="Navigate to Power Quality and Reactive Power Analysis section">Power Quality & Reactive Power Analysis</a></li>
-                        <li><a href="services.html#harmonic-analysis-h3" aria-label="Navigate to Harmonic Analysis section">Harmonic Analysis</a></li>
-                        <li><a href="services.html#transformer-energisation-h3" aria-label="Navigate to Transformer Energisation Study section">Transformer Energisation Study</a></li>
-                        <li><a href="services.html#insulation-coordination-h3" aria-label="Navigate to Insulation Coordination Study section">Insulation Coordination Study</a></li>
-                        <li><a href="services.html#under-frequency-h3" aria-label="Navigate to Under-frequency and Load Shedding Study section">Under-frequency & Load Shedding Study</a></li>
+            <ul role="menu">
+                <li><a href="index.html#home" aria-label="Navigate to home section" role="menuitem">Home</a></li>
 
+                <!-- Dropdown for Services -->
+                <li class="dropdown">
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services ▼</button>
+                    <ul class="dropdown-content" role="menu" aria-label="Services Dropdown">
+                        
                         <!-- Nested Dropdown for Power System Studies -->
                         <li class="dropdown">
-                            <a href="services.html#power-system-studies-h3" aria-label="Navigate to Power System Studies section">Power System Studies</a>
-                            <ul class="dropdown-sub-content">
-                                <li><a href="services.html#time-domain-simulation-h3" aria-label="Navigate to Time-domain Simulation section">Time-domain Simulation (RMS, EMT)</a></li>
+                            <button aria-haspopup="true" aria-expanded="false">Power System Studies</button>
+                            <ul class="dropdown-content" role="menu" aria-label="Power System Studies Dropdown">
+                                <li><a href="services.html#load-flow-analysis-h3" role="menuitem">Load Flow Analysis</a></li>
+                                <li><a href="services.html#short-circuit-analysis-h3" role="menuitem">Short Circuit Analysis</a></li>
+                                <li><a href="services.html#power-quality-h3" aria-label="Navigate to Power Quality and Reactive Power Analysis section">Power Quality & Reactive Power Analysis</a></li>
+                                <li><a href="services.html#harmonic-analysis-h3" aria-label="Navigate to Harmonic Analysis section">Harmonic Analysis</a></li>
+                                <li><a href="services.html#transformer-energisation-h3" aria-label="Navigate to Transformer Energisation Study section">Transformer Energisation Study</a></li>
+                                <li><a href="services.html#insulation-coordination-h3" aria-label="Navigate to Insulation Coordination Study section">Insulation Coordination Study</a></li>
+                                <li><a href="services.html#under-frequency-h3" aria-label="Navigate to Under-frequency and Load Shedding Study section">Under-frequency & Load Shedding Study</a></li>
                                 <li><a href="services.html#static-dynamic-security-h3" aria-label="Navigate to Static & Dynamic Security Assessment section">Static & Dynamic Security Assessment</a></li>
                                 <li><a href="services.html#congestion-management-h3" aria-label="Navigate to Congestion Management section">Congestion Management</a></li>
                                 <li><a href="services.html#long-term-investment-h3" aria-label="Navigate to Long Term Investment section">Long Term Investment</a></li>
                                 <li><a href="services.html#stochastic-energy-optimization-h3" aria-label="Navigate to Stochastic Energy Optimization section">Stochastic Energy Optimization</a></li>
                                 <li><a href="services.html#motor-starting-calculations-h3" aria-label="Navigate to Motor Starting Calculations section">Motor Starting Calculations</a></li>
                                 <li><a href="services.html#digital-twin-h3" aria-label="Navigate to Digital Twin section">Digital Twin</a></li>
+                                <li><a href="services.html#grid-code-compliance-h3" aria-label="Navigate to Grid Code Compliance section">Grid Code Compliance</a></li>
                             </ul>
                         </li>
 
                         <!-- Nested Dropdown for Artificial Intelligence Solutions -->
                         <li class="dropdown">
-                            <a href="services.html#artificial-intelligence-solutions-h3" aria-label="Navigate to Artificial Intelligence Solutions section">Artificial Intelligence Solutions</a>
-                            <ul class="dropdown-sub-content">
-                                <li><a href="services.html#time-domain-forecasting-h3" aria-label="Navigate to Time Domain Forecasting section">Time Domain Forecasting - Neural ODE Modeling</a></li>
-                                <li><a href="services.html#anomaly-detection-h3" aria-label="Navigate to Anomaly Detection section">Anomaly Detection - Classification</a></li>
+                            <button aria-haspopup="true" aria-expanded="false">Artificial Intelligence Solutions</button>
+                            <ul class="dropdown-content" role="menu" aria-label="AI Solutions Dropdown">
+                                <li><a href="services.html#time-domain-forecasting-h3" role="menuitem">Time Domain Forecasting - Neural ODE Modeling</a></li>
+                                <li><a href="services.html#anomaly-detection-h3" role="menuitem">Anomaly Detection - Classification</a></li>
                                 <li><a href="services.html#reinforcement-learning-h3" aria-label="Navigate to Reinforcement Learning section">Reinforcement Learning for Energy Systems</a></li>
                                 <li><a href="services.html#data-analysis-h3" aria-label="Navigate to Data Analysis section">Data Analysis & Feature Engineering</a></li>
                             </ul>
                         </li>
 
-                        <!-- Nested Dropdown for Energy Hub Solutions -->
+                        <!-- Nested Dropdown for Energy Hub Solution Solutions -->
                         <li class="dropdown">
-                            <a href="services.html#energy-hub-solutions-h3" aria-label="Navigate to Energy Hub Solutions section">Energy Hub Solutions</a>
-                            <ul class="dropdown-sub-content">
+                            <button aria-haspopup="true" aria-expanded="false">Energy Hub Solutions</button>
+                            <ul class="dropdown-content" role="menu" aria-label="Energy Hub Solutions Dropdown">
                                 <li><a href="services.html#distributed-energy-h3" aria-label="Navigate to Distributed Energy Resources section">Distributed Energy Resources</a></li>
                                 <li><a href="services.html#ev-charging-h3" aria-label="Navigate to EV Charging Optimization section">EV Charging Optimization</a></li>
                                 <li><a href="services.html#flexibility-management-h3" aria-label="Navigate to Flexibility Management section">Flexibility Management</a></li>
                                 <li><a href="services.html#green-hydrogen-h3" aria-label="Navigate to Green Hydrogen Solutions section">Green Hydrogen Solutions</a></li>
-                                <li><a href="services.html#intelligent-battery-h3" aria-label="Navigate to Intelligent Battery and Renewable Systems section">Intelligent Battery and Renewable Systems</a></li>
+                                <li><a href="services.html#intelligent-battery-h3" aria-label="Navigate to Intelligent Battery and Renewable Systems section">Intelligent Battery and Renewable Energy Systems</a></li>
                                 <li><a href="services.html#industrial-load-planning-h3" aria-label="Navigate to Industrial Load Planning section">Industrial Load Planning, Modeling & Optimization</a></li>
                             </ul>
                         </li>
 
-                        <!-- Nested Dropdown for Residential Applications -->
+                        <!-- Nested Dropdown for Residential Applications-->
                         <li class="dropdown">
-                            <a href="services.html#residential-applications-h3" aria-label="Navigate to Residential Applications section">Residential Applications</a>
-                            <ul class="dropdown-sub-content">
+                            <button aria-haspopup="true" aria-expanded="false">Residential Applications</button>
+                            <ul class="dropdown-content" role="menu" aria-label="Residential Applications Dropdown">
                                 <li><a href="services.html#residential-energy-systems-h3" aria-label="Navigate to Residential Energy Systems section">Residential Energy Systems (Solar PV, EV Charging, Energy Storage)</a></li>
                                 <li><a href="services.html#residential-heat-pump-h3" aria-label="Navigate to Intelligent Residential Heat Pump Solutions section">Intelligent Residential Heat Pump Solutions</a></li>
                             </ul>
                         </li>
 
-                        <!-- Single Item without Nested Dropdown -->
-                        <li><a href="services.html#grid-code-compliance-h3" aria-label="Navigate to Grid Code Compliance section">Grid Code Compliance</a></li>
+                        <!-- Other service sections like Energy Hub Solutions, Residential Applications, etc. -->
+                        
                     </ul>
                 </li>
-                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section">Recent Projects</a></li>
-                <li><a href="index.html#learn" aria-label="Navigate to learn section">Learn</a></li>
+
+                <!-- Other Main Navigation Links -->
+                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem">Recent Projects</a></li>
+                <li><a href="index.html#learn" aria-label="Navigate to learn section" role="menuitem">Learn</a></li>
             </ul>
-    
-            <!-- Right-Aligned Links and Search Bar -->
+
+            <!-- Right-Aligned Links for About Us and Contact Us -->
             <div class="header-right">
-                <ul>
+                <ul role="menu">
                     <li class="dropdown">
-                        <a href="about.html" aria-label="Navigate to About Us page">About Us</a>
-                        <ul class="dropdown-content" aria-label="About Us Dropdown">
-                            <li><a href="about.html#mission" aria-label="Navigate to mission section">Mission</a></li>
-                            <li><a href="about.html#vision" aria-label="Navigate to vision section">Vision</a></li>
-                            <li><a href="about.html#core-values" aria-label="Navigate to core values section">Core Values</a></li>
-                            <li><a href="about.html#our-team" aria-label="Navigate to our team section">Our Team</a></li>
+                        <button aria-haspopup="true" aria-expanded="false">About Us ▼</button>
+                        <ul class="dropdown-content" role="menu" aria-label="About Us Dropdown">
+                            <li><a href="about.html#mission" role="menuitem">Mission</a></li>
+                            <li><a href="about.html#vision" role="menuitem">Vision</a></li>
+                            <li><a href="about.html#core-values" role="menuitem">Core Values</a></li>
+                            <li><a href="about.html#our-team" role="menuitem">Our Team</a></li>
                         </ul>
                     </li>
-                    <li><a href="index.html#contact" aria-label="Navigate to contact section">Contact Us</a></li>
+                    <li><a href="index.html#contact" aria-label="Navigate to contact section" role="menuitem">Contact Us</a></li>
                 </ul>
-    
-                <!-- Search Bar -->
-                <div class="search-bar">
-                    <input type="text" placeholder="Search..." aria-label="Search through site content">
-                </div>
             </div>
         </nav>
     </header>
+    
 
     <section id="home" class="hero">
         <canvas id="hero-canvas" class="hero-canvas"></canvas>

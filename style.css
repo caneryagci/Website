@@ -83,147 +83,175 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 20px;
     position: relative;
 }
 
-/* Header link styling with increased font size */
+/* Header link and button styling with increased font size */
 header nav ul li a,
-.header-right ul li a {
+.header-right ul li a,
+header nav ul li button,
+.header-right ul li button {
     color: var(--highlight-color);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.2rem; /* Increased font size */
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover,
-.header-right ul li a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
+
+/* Add arrow to indicate dropdown in the header */
+header nav ul li.dropdown > a::after {
+    content: '▼'; /* Downward arrow icon */
+    font-size: 0.6rem; /* Adjust size as needed */
+    margin-left: 8px; /* Space between text and arrow */
+    color: var(--highlight-color); /* Matches link color */
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
-/* Dropdown styling */
+
+
+/* General dropdown structure */
 .dropdown {
     position: relative;
 }
 
-/* First-level dropdown */
+/* First-level dropdown (hidden by default) */
 .dropdown-content {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden initially */
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #ffffff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
     padding: 0;
     margin: 0;
-    min-width: 200px;
+    min-width: 220px;
     white-space: nowrap;
     z-index: 10;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Second-level (nested) dropdown */
-.dropdown-sub-content {
-    display: none; /* Hidden by default */
-    position: absolute;
+/* Open state for dropdown content */
+.dropdown-content.open {
+    display: block; /* Shows the dropdown */
+    opacity: 1;
+    transform: translateY(0); /* Moves into view */
+}
+
+/* Nested dropdown styling */
+.dropdown-content .dropdown {
+    position: relative;
+}
+
+.dropdown-content .dropdown-content {
     top: 0;
-    left: 100%; /* Position it to the right of the parent */
-    background-color: #ffffff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 0;
-    margin: 0;
-    min-width: 200px;
-    white-space: nowrap;
-    z-index: 10;
+    left: 100%;
+    transform: translateX(10px);
+    display: none; /* Hide nested dropdown by default */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* List styling */
-.dropdown-content li,
-.dropdown-sub-content li {
-    list-style-type: none;
+/* Open state for nested dropdowns */
+.dropdown-content .dropdown-content.open {
+    display: block;
+    opacity: 1;
+    transform: translateX(0); /* Moves into view */
 }
 
 /* Link styling */
 .dropdown-content a,
-.dropdown-sub-content a {
+.dropdown-content button {
     color: #333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    transition: background-color 0.2s ease;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #eee;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid #eaeaea;
 }
 
-.dropdown-content li a:last-child,
-.dropdown-sub-content li a:last-child {
+.dropdown-content a:last-child,
+.dropdown-content button:last-child {
     border-bottom: none;
 }
 
-.dropdown-content a:hover,
-.dropdown-sub-content a:hover {
-    background-color: #f1f1f1;
-    color: var(--primary-color);
+/* Arrow indicator for nested dropdowns */
+.dropdown-content .dropdown > button::after {
+    content: '›';
+    font-size: 1.2rem;
+    color: #333;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* Show the first-level dropdown on hover */
-.dropdown:hover > .dropdown-content {
-    display: block;
+/* Accessibility: Focus styles */
+a:focus,
+button:focus {
+    outline: 2px solid var(--highlight-color);
+    background-color: #f4f4f4;
 }
 
-/* Show the second-level dropdown on hover of the first-level item */
-.dropdown-content li.dropdown:hover > .dropdown-sub-content {
-    display: block;
-}
+/* Adjustments for mobile compatibility */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
 
-/* Search Bar styling with rounded corners and icon */
-.search-bar {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 20px; /* Rounded corners */
-    padding: 0.5rem 1rem;
-    background-color: white; /* Light background for contrast */
-    margin-left: 1rem;
-    width: 200px; /* Adjust width as needed */
-    position: relative;
-}
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-.search-bar input {
-    border: none;
-    outline: none;
-    font-size: var(--font-size-medium);
-    padding: 0.25rem 0.5rem;
-    flex: 1;
-    background-color: transparent; /* Matches background */
-}
+    /* Adjusted state for mobile */
+    .dropdown-content {
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        padding: 0;
+        margin: 0;
+        display: none; /* Hidden by default */
+        opacity: 0;
+        transform: translateY(10px); /* Starts slightly lower for smooth animation */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-.search-bar input::placeholder {
-    color: #aaa;
-}
+    /* Open state */
+    .dropdown-content.open {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-/* Magnifying Glass Icon */
-.search-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding-left: 0.5rem;
-}
+    /* Nested dropdown (sub-dropdown) adjustments */
+    .dropdown-content .dropdown-content {
+        position: absolute;
+        top: 0;
+        left: 100%; /* Positions nested dropdown to the right */
+        transform: translateX(10px);
+    }
 
-.search-icon img {
-    width: 18px; /* Size of the icon */
-    height: 18px;
-    opacity: 0.7;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.search-icon:hover img {
-    opacity: 1;
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    /* Open state for nested dropdowns */
+    .dropdown-content .dropdown-content.open {
+        display: block;
+        transform: translateX(0);
+    }
 }
 
 /* Hero section styling */

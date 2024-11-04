@@ -1,4 +1,71 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
+    console.log("DOM fully loaded and parsed");
+
+    // Event delegation for dropdowns
+    document.addEventListener('click', function (e) {
+        console.log("Click detected on document");
+
+        // Main dropdown button click
+        if (e.target.matches('.dropdown > button') && !e.target.closest('.dropdown-content')) {
+            console.log("Main dropdown button clicked");
+
+            const dropdownMenu = e.target.nextElementSibling;
+            const isExpanded = e.target.getAttribute('aria-expanded') === 'true';
+
+            if (isExpanded) {
+                // If already expanded, close all dropdowns and stop further action
+                closeAllDropdowns();
+                console.log("Dropdown was open; now closed");
+            } else {
+                // Otherwise, close all dropdowns first, then open the clicked one
+                closeAllDropdowns();
+                dropdownMenu.classList.add('open');
+                e.target.setAttribute('aria-expanded', 'true');
+                console.log("Dropdown opened");
+            }
+
+            e.stopPropagation();
+        }
+        // Nested dropdown button click
+        else if (e.target.closest('.dropdown-content .dropdown > button')) {
+            console.log("Nested dropdown button clicked");
+
+            const nestedToggle = e.target.closest('.dropdown-content .dropdown > button');
+            const nestedMenu = nestedToggle.nextElementSibling;
+            const isNestedExpanded = nestedToggle.getAttribute('aria-expanded') === 'true';
+
+            if (isNestedExpanded) {
+                nestedMenu.classList.remove('open');
+                nestedToggle.setAttribute('aria-expanded', 'false');
+                console.log("Nested dropdown closed");
+            } else {
+                nestedMenu.classList.add('open');
+                nestedToggle.setAttribute('aria-expanded', 'true');
+                console.log("Nested dropdown opened");
+            }
+
+            e.stopPropagation();
+        } 
+        else {
+            console.log("Clicked outside of dropdowns");
+
+            // Close all dropdowns if clicking outside
+            closeAllDropdowns();
+        }
+    });
+
+    // Close all dropdowns
+    function closeAllDropdowns() {
+        console.log("Closing all dropdowns");
+        document.querySelectorAll('.dropdown-content.open').forEach(menu => {
+            menu.classList.remove('open');
+            menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+            console.log("Dropdown closed in closeAllDropdowns function");
+        });
+    }
+
+    
     function applyScrollOffset() {
         const hash = window.location.hash.substring(1);
         const targetElement = document.getElementById(hash);
@@ -534,10 +601,18 @@ document.addEventListener('DOMContentLoaded', function () {
             for (let i = 0; i < 10; i++) {
                 dataPoints.push({
                     angle: (i / 10) * Math.PI * 2,
-                    speed: 0.002 + Math.random() * 0.01, // Random speed for each point
+                    speed: 0.002 + Math.random() * 0.002, // Random speed for each point
                 });
             }
         }
+
+        /* // Initialize data points with varied speeds
+        function initializeDataPoints() {
+            dataPoints = Array.from({ length: 10 }, () => ({
+                angle: Math.random() * Math.PI * 2,
+                speed: 0.001 + Math.random() * 0.002 // Varied speed between 0.001 and 0.003
+            }));
+        } */
 
         function setCanvasResolution(canvas) {
             if (window.innerWidth < 768) {
@@ -567,15 +642,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 const radius = baseRadius + i * layerSpacing;
                 const amplitude = baseAmplitude - i * 5;
                 const opacity = 0.9 - i * 0.2;
-                const lineWidth = 3 + i * 1;
+                const lineWidth = 2 + i * 1; // Thinner lines for a professional look
 
                 // Gradient for a blue-to-green transition (power to renewable theme)
                 const gradient = ctx.createRadialGradient(centerX, centerY, radius, centerX, centerY, radius + amplitude);
                 gradient.addColorStop(0, `rgba(0, 123, 255, ${opacity})`); // Blue center
-                gradient.addColorStop(1, `rgba(0, 200, 83, ${opacity * 0.7})`); // Green outer
+                gradient.addColorStop(1, `rgba(0, 200, 83, ${opacity * 0.5})`); // Fainter Green outer
 
                 ctx.beginPath();
-                for (let angle = 0; angle <= Math.PI * 2; angle += 0.03) {
+                for (let angle = 0; angle <= Math.PI * 2; angle += 0.05) {
                     const offset = amplitude * Math.sin(angle * 4 + waveOffset + i * 0.3);
                     const x = centerX + (radius + offset) * Math.cos(angle);
                     const y = centerY + (radius + offset) * Math.sin(angle);
@@ -590,8 +665,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 ctx.closePath();
                 ctx.strokeStyle = gradient;
                 ctx.lineWidth = lineWidth;
+
                 ctx.stroke();
             }
+
+            // Reset shadow before drawing data points
+            ctx.shadowColor = "transparent";
 
             // Draw moving energy "data points" along the wave
             dataPoints.forEach(point => {
@@ -606,8 +685,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Draw the data point
                 ctx.beginPath();
-                ctx.arc(x, y, 5, 0, Math.PI * 2); // Pulsing effect
-                ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+                ctx.arc(x, y, 4, 0, Math.PI * 2); // Pulsing effect
+                ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
                 ctx.fill();
 
                 // Update angle to move the point along the wave
@@ -620,6 +699,7 @@ document.addEventListener('DOMContentLoaded', function () {
             waveOffset += 0.01; // Slow movement for smooth animation
             requestAnimationFrame(drawCircularWaveform);
         }
+
 
         initializeDataPoints(); // Initialize data points
         drawCircularWaveform();
