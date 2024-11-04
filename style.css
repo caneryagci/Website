@@ -67,6 +67,7 @@ header nav {
     justify-content: flex-start;
 }
 
+/* General styling for the dropdown container */
 header nav ul {
     list-style-type: none;
     display: flex;
@@ -187,6 +188,7 @@ header nav ul li.dropdown > a::after {
     border-bottom: none;
 }
 
+
 /* Arrow indicator for nested dropdowns */
 .dropdown-content .dropdown > button::after {
     content: '›';
@@ -197,6 +199,8 @@ header nav ul li.dropdown > a::after {
     top: 50%;
     transform: translateY(-50%);
 }
+
+
 
 /* Accessibility: Focus styles */
 a:focus,
@@ -216,11 +220,12 @@ button:focus {
         gap: 10px;
     }
 
-    /* Adjusted state for mobile */
+    /* Base state (closed) for .dropdown-content */
     .dropdown-content {
+        position: absolute; /* To position dropdown below the toggle */
         top: 100%;
         left: 0;
-        min-width: 220px;
+        min-width: 220px; /* Adjust width as needed */
         background-color: #ffffff;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         border-radius: 4px;
@@ -234,9 +239,9 @@ button:focus {
 
     /* Open state */
     .dropdown-content.open {
-        display: block;
+        display: block; /* Shows the dropdown */
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0); /* Moves into view */
     }
 
     /* Nested dropdown (sub-dropdown) adjustments */
@@ -244,13 +249,12 @@ button:focus {
         position: absolute;
         top: 0;
         left: 100%; /* Positions nested dropdown to the right */
-        transform: translateX(10px);
+        transform: translateX(10px); /* Initial offset for animation */
     }
 
     /* Open state for nested dropdowns */
     .dropdown-content .dropdown-content.open {
-        display: block;
-        transform: translateX(0);
+        transform: translateX(0); /* Moves into view */
     }
 }
 

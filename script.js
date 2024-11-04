@@ -13,13 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const dropdownMenu = e.target.nextElementSibling;
             const isExpanded = e.target.getAttribute('aria-expanded') === 'true';
 
-            if (isExpanded) {
-                // If already expanded, close all dropdowns and stop further action
-                closeAllDropdowns();
-                console.log("Dropdown was open; now closed");
-            } else {
-                // Otherwise, close all dropdowns first, then open the clicked one
-                closeAllDropdowns();
+            // Close all dropdowns, including nested ones
+            closeAllDropdowns();
+
+            if (!isExpanded) {
+                // If not already expanded, open the clicked main dropdown
                 dropdownMenu.classList.add('open');
                 e.target.setAttribute('aria-expanded', 'true');
                 console.log("Dropdown opened");
@@ -31,15 +29,14 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (e.target.closest('.dropdown-content .dropdown > button')) {
             console.log("Nested dropdown button clicked");
 
+            // Close any other open nested dropdowns
+            closeAllNestedDropdowns();
+
             const nestedToggle = e.target.closest('.dropdown-content .dropdown > button');
             const nestedMenu = nestedToggle.nextElementSibling;
             const isNestedExpanded = nestedToggle.getAttribute('aria-expanded') === 'true';
 
-            if (isNestedExpanded) {
-                nestedMenu.classList.remove('open');
-                nestedToggle.setAttribute('aria-expanded', 'false');
-                console.log("Nested dropdown closed");
-            } else {
+            if (!isNestedExpanded) {
                 nestedMenu.classList.add('open');
                 nestedToggle.setAttribute('aria-expanded', 'true');
                 console.log("Nested dropdown opened");
@@ -55,13 +52,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Close all dropdowns
+    // Function to close all dropdowns, including nested
     function closeAllDropdowns() {
         console.log("Closing all dropdowns");
         document.querySelectorAll('.dropdown-content.open').forEach(menu => {
             menu.classList.remove('open');
             menu.previousElementSibling.setAttribute('aria-expanded', 'false');
             console.log("Dropdown closed in closeAllDropdowns function");
+        });
+    }
+
+    // Function to close all nested dropdowns only
+    function closeAllNestedDropdowns() {
+        console.log("Closing all nested dropdowns");
+        document.querySelectorAll('.dropdown-content .dropdown-content.open').forEach(menu => {
+            menu.classList.remove('open');
+            menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+            console.log("Nested dropdown closed");
         });
     }
 
