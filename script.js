@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (e.target.closest('.dropdown-content .dropdown > button')) {
             console.log("Nested dropdown button clicked");
 
-            // Close any other open nested dropdowns
-            closeAllNestedDropdowns();
-
             const nestedToggle = e.target.closest('.dropdown-content .dropdown > button');
             const nestedMenu = nestedToggle.nextElementSibling;
             const isNestedExpanded = nestedToggle.getAttribute('aria-expanded') === 'true';
+
+            // Close all other open nested dropdowns, then only open the clicked one if not already expanded
+            closeAllNestedDropdowns();
 
             if (!isNestedExpanded) {
                 nestedMenu.classList.add('open');
@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Nested dropdown closed");
         });
     }
+
 
     
     function applyScrollOffset() {
