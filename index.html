@@ -47,9 +47,15 @@
                 <li><a href="index.html#home" aria-label="Navigate to home section" role="menuitem">Home</a></li>
 
                 <!-- Dropdown for Services -->
-                <li class="dropdown">
-                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services</button>
-                    <ul class="dropdown-content" role="menu" aria-label="Services Dropdown">
+                <li class="dropdown services-title">
+                    <!-- Example dropdown toggle with SVG arrow -->
+                    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        <span>Services</span>
+                        <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-content main-title" role="menu" aria-label="Services Dropdown">
                         
                         <!-- Nested Dropdown for Power System Studies -->
                         <li class="dropdown">
@@ -118,15 +124,7 @@
             <!-- Right-Aligned Links for About Us and Contact Us -->
             <div class="header-right">
                 <ul role="menu">
-                    <li class="dropdown">
-                        <button aria-haspopup="true" aria-expanded="false">About Us</button>
-                        <ul class="dropdown-content" role="menu" aria-label="About Us Dropdown">
-                            <li><a href="about.html#mission" role="menuitem">Mission</a></li>
-                            <li><a href="about.html#vision" role="menuitem">Vision</a></li>
-                            <li><a href="about.html#core-values" role="menuitem">Core Values</a></li>
-                            <li><a href="about.html#our-team" role="menuitem">Our Team</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem">About Us</a></li>
                     <li><a href="index.html#contact" aria-label="Navigate to contact section" role="menuitem">Contact Us</a></li>
                 </ul>
             </div>

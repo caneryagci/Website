@@ -1,75 +1,88 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
+    let dropdownTimeout;
+
+    // Show dropdown on hover
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+    dropdown.addEventListener('mouseenter', () => {
+        clearTimeout(dropdownTimeout); // Clear any previous close timeout
+        dropdownContent.style.display = 'block'; // Show dropdown
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+        dropdownTimeout = setTimeout(() => {
+            dropdownContent.style.display = 'none'; // Hide dropdown after delay
+        }, 300); // 300ms delay before closing
+    });
+
+    // Also add event listeners to dropdownContent itself to avoid closing while hovering over it
+    dropdownContent.addEventListener('mouseenter', () => {
+        clearTimeout(dropdownTimeout);
+    });
+    dropdownContent.addEventListener('mouseleave', () => {
+        dropdownTimeout = setTimeout(() => {
+            dropdownContent.style.display = 'none';
+        }, 300);
+    });
+
     console.log("DOM fully loaded and parsed");
 
-    // Event delegation for dropdowns
+    let activeDropdown = null;
+
+    // Event delegation for nested dropdowns only
     document.addEventListener('click', function (e) {
-        console.log("Click detected on document");
+        const nestedButton = e.target.closest('.dropdown-content .dropdown > button');
 
-        // Main dropdown button click
-        if (e.target.matches('.dropdown > button') && !e.target.closest('.dropdown-content')) {
-            console.log("Main dropdown button clicked");
-
-            const dropdownMenu = e.target.nextElementSibling;
-            const isExpanded = e.target.getAttribute('aria-expanded') === 'true';
-
-            // Close all dropdowns, including nested ones
-            closeAllDropdowns();
-
-            if (!isExpanded) {
-                // If not already expanded, open the clicked main dropdown
-                dropdownMenu.classList.add('open');
-                e.target.setAttribute('aria-expanded', 'true');
-                console.log("Dropdown opened");
-            }
-
-            e.stopPropagation();
-        }
-        // Nested dropdown button click
-        else if (e.target.closest('.dropdown-content .dropdown > button')) {
+        if (nestedButton) {
             console.log("Nested dropdown button clicked");
 
-            const nestedToggle = e.target.closest('.dropdown-content .dropdown > button');
-            const nestedMenu = nestedToggle.nextElementSibling;
-            const isNestedExpanded = nestedToggle.getAttribute('aria-expanded') === 'true';
+            const nestedMenu = nestedButton.nextElementSibling;
+            const isExpanded = nestedButton.getAttribute('aria-expanded') === 'true';
 
-            // Close all other open nested dropdowns, then only open the clicked one if not already expanded
-            closeAllNestedDropdowns();
+            // If there's an active dropdown that's not the current one, close it
+            if (activeDropdown && activeDropdown !== nestedMenu) {
+                closeDropdown(activeDropdown);
+            }
 
-            if (!isNestedExpanded) {
-                nestedMenu.classList.add('open');
-                nestedToggle.setAttribute('aria-expanded', 'true');
+            // Toggle the current dropdown
+            if (!isExpanded) {
+                openDropdown(nestedMenu, nestedButton);
+                activeDropdown = nestedMenu;
                 console.log("Nested dropdown opened");
+            } else {
+                closeDropdown(nestedMenu);
+                activeDropdown = null;
+                console.log("Nested dropdown closed");
             }
 
             e.stopPropagation();
-        } 
-        else {
+        } else {
             console.log("Clicked outside of dropdowns");
-
-            // Close all dropdowns if clicking outside
-            closeAllDropdowns();
+            // Close all nested dropdowns if clicking outside
+            closeAllNestedDropdowns();
         }
     });
 
-    // Function to close all dropdowns, including nested
-    function closeAllDropdowns() {
-        console.log("Closing all dropdowns");
-        document.querySelectorAll('.dropdown-content.open').forEach(menu => {
-            menu.classList.remove('open');
-            menu.previousElementSibling.setAttribute('aria-expanded', 'false');
-            console.log("Dropdown closed in closeAllDropdowns function");
-        });
+    // Function to open a dropdown
+    function openDropdown(menu, button) {
+        menu.classList.add('open');
+        button.setAttribute('aria-expanded', 'true');
     }
 
-    // Function to close all nested dropdowns only
+    // Function to close a specific dropdown
+    function closeDropdown(menu) {
+        menu.classList.remove('open');
+        menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+    }
+
+    // Function to close all nested dropdowns
     function closeAllNestedDropdowns() {
         console.log("Closing all nested dropdowns");
-        document.querySelectorAll('.dropdown-content .dropdown-content.open').forEach(menu => {
-            menu.classList.remove('open');
-            menu.previousElementSibling.setAttribute('aria-expanded', 'false');
-            console.log("Nested dropdown closed");
+        document.querySelectorAll('.dropdown-content .dropdown-content').forEach(function(menu) {
+            closeDropdown(menu);
         });
+        activeDropdown = null;
     }
 
 
