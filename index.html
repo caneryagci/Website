@@ -25,19 +25,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     </head>
 <body>
+    <!-- Logo Bar -->
+    <div class="logo-bar">
+        <a href="index.html#home" aria-label="Navigate to home">
+            <img src="images/logo.png" alt="E-Power Genius Logo" class="logo" loading="lazy">
+        </a>
+    </div>
+
     <header>
+
+        <!-- Title Text -->
+        <div class="header-title">
+            <a href="https://www.google.com" aria-label="logo">
+                <span>Consulting Services</span>
+           </a>
+        </div>
+
         <nav aria-label="Main Navigation">
-            <!-- Logo on the left -->
-            <a href="index.html#home" aria-label="Navigate to home">
-                <img src="images/logo.png" alt="E-Power Genius Logo" class="logo" loading="lazy">
-            </a>
             <!-- Main Navigation Links -->
             <ul role="menu">
                 <li><a href="index.html#home" aria-label="Navigate to home section" role="menuitem">Home</a></li>
 
                 <!-- Dropdown for Services -->
                 <li class="dropdown">
-                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services ▼</button>
+                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services</button>
                     <ul class="dropdown-content" role="menu" aria-label="Services Dropdown">
                         
                         <!-- Nested Dropdown for Power System Studies -->
@@ -108,7 +119,7 @@
             <div class="header-right">
                 <ul role="menu">
                     <li class="dropdown">
-                        <button aria-haspopup="true" aria-expanded="false">About Us ▼</button>
+                        <button aria-haspopup="true" aria-expanded="false">About Us</button>
                         <ul class="dropdown-content" role="menu" aria-label="About Us Dropdown">
                             <li><a href="about.html#mission" role="menuitem">Mission</a></li>
                             <li><a href="about.html#vision" role="menuitem">Vision</a></li>
