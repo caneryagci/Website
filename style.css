@@ -6,7 +6,7 @@
     --secondary-color: #0056b3;
     --primary-color-dark: #0069d9;
     --secondary-color-dark: #00408a;
-    --background-color: #f4f4f4;
+    --background-color: white;
     --text-color: #333;
     --highlight-color: #0077b5;
     --white-color: #ffffff;
@@ -175,6 +175,12 @@ header nav ul li.dropdown:hover > .main-title {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+/* Show border line on hover or while dropdown is open */
+header nav ul li a:hover::after,
+header nav ul li.dropdown:hover > .dropdown-toggle::after {
+    opacity: 1;
+    transform: scaleX(1); /* Scale to full width */
+}
 
 header nav ul li.dropdown > .dropdown-content {
     display: none;
@@ -244,8 +250,8 @@ header nav ul li a:hover::after {
     transform-origin: center; /* Ensures the arrow rotates around its exact center */
 }
 
-/* Rotate the arrow 180 degrees on hover to achieve a flip */
-.dropdown-toggle:hover .dropdown-arrow {
+/* Flip the arrow when dropdown is hovered */
+header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     transform: scaleY(-1);
 }
 
@@ -468,11 +474,10 @@ header nav ul li a:hover::after {
 
 /* Section styling */
 section {
-    padding: 5rem 2rem;
-    margin-top: 70px;
+    padding: 3rem 2rem;
+    margin-top: 50px;
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -491,9 +496,18 @@ section#home {
 }
 
 section h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-    color: #0056b3;
+    font-size: 1.4rem; /* Smaller font size for secondary heading */
+    font-weight: 400; /* Regular weight */
+    color: #999; /* Light gray color for secondary heading */
+    margin-bottom: 1rem; /* Adjust spacing if needed */
+}
+
+section h3 {
+    font-size: 2.5rem; /* Adjust as necessary */
+    font-weight: 400; /* Regular weight */
+    color: #0056b3; /* Dark color for primary heading */
+    margin-bottom: 0.5rem; /* Smaller gap below h2 */
+
 }
 
 section p {
@@ -789,8 +803,8 @@ a:focus, button:focus {
 
 /* Learn Section */
 section#learn {
-    padding: 5rem 2rem;
-    background-color: #f9f9f9;
+    padding: 0rem 2rem;
+    background-color: var(--background-color);
     text-align: center;
     overflow-x: hidden; /* Hide any overflow outside the container */
 }
@@ -811,13 +825,12 @@ section#learn p {
     display: flex;
     gap: 2rem;
     overflow-x: auto; /* Enable horizontal scrolling */
-    padding-bottom: 1rem;
     scroll-behavior: smooth; /* Smooth scrolling when using trackpad/scrollbar */
-    padding: 0 1rem; /* Horizontal padding for mobile */
+    padding: 0 1rem 2rem; /* Add extra bottom padding for gap */
 }
 
 .pdf-container::-webkit-scrollbar {
-    height: 8px; /* Height of the scrollbar */
+    height: 14px; /* Height of the scrollbar */
     background-color: #e0e0e0;
 }
 
@@ -833,9 +846,9 @@ section#learn p {
 
 /* PDF Card */
 .pdf-card {
-    background-color: white;
+    background-color: #f9f9f9;
     padding: 1.5rem;
-    width: 300px; /* Maintain card width */
+    width: 400px; /* Maintain card width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
@@ -845,6 +858,15 @@ section#learn p {
     text-align: left;
     position: relative;
     flex-shrink: 0; /* Prevent shrinking when scrolling */
+}
+
+/* PDF Card Image */
+.pdf-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px; /* Adjust radius to match the card's rounded corners */
+    margin-bottom: 1rem;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 .pdf-card:hover {
@@ -1125,7 +1147,7 @@ figcaption {
 }
 
 section.appear {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.3s ease-out;
 }
 
 /* Services Section */
@@ -1134,7 +1156,7 @@ section.appear {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 0px 0px;
     background-color: transparent;
 }
 

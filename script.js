@@ -64,6 +64,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Close all dropdowns when the mouse leaves the dropdown area
+    document.querySelectorAll(".dropdown").forEach(dropdown => {
+        dropdown.addEventListener("mouseleave", closeAllNestedDropdowns);
+    });
+
     // Function to open a dropdown
     function openDropdown(menu, button) {
         menu.classList.add('open');
