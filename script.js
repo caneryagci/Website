@@ -145,15 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Observe each section for scroll-triggered visibility changes
     document.querySelectorAll('section').forEach(section => observer.observe(section));
 
-    // Select all overview cards with a toggle function
-    document.querySelectorAll('.overview-card').forEach(card => {
-        card.addEventListener('click', () => {
-            // Find the target container for service cards
-            const target = document.querySelector(`#${card.getAttribute('data-target')}`);
-            // Toggle the .show class to reveal or hide the service cards
-            target.classList.toggle('show');
-        });
-    });
 
     // Toggle visibility for each service section
     document.querySelectorAll('.service-link-overview').forEach(link => {
