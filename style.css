@@ -1316,7 +1316,7 @@ section.appear {
 .service-card {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     height: 200px;
     border-radius: 12px;
     overflow: hidden;

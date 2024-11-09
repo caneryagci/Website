@@ -173,7 +173,26 @@ document.addEventListener('DOMContentLoaded', function () {
                         "Harmonic Analysis": animateHarmonicWaves,
                         "Transformer Energisation Study": animateTransformerRings,
                         "Insulation Coordination Study": animateVoltageSpikes,
-                        "Under-frequency & Load Shedding Study": animateFrequencyWave
+                        "Under-frequency & Load Shedding Study": animateFrequencyWave,
+                        "Static & Dynamic Security Assessment": animateOscillatingGrid,
+                        "Congestion Management": animateFlowingArrows,
+                        "Long Term Investment": animateExpandingCircles,
+                        "Stochastic Energy Optimization": animateStochasticDots,
+                        "Motor Starting Calculations": animateMotorRipples,
+                        "Digital Twin": animateRotatingElements,
+                        "Grid Code Compliance": animatePulseGrid,
+                        "Time Domain Forecasting - Neural ODE Modeling": animateTimeDomainForecasting,
+                        "Anomaly Detection - Classification": animateAnomalyDetection,
+                        "Reinforcement Learning for Energy Systems": animateReinforcementLearning,
+                        "Data Analysis & Feature Engineering": animateDataAnalysis,
+                        "Distributed Energy Resources": animateDistributedEnergy,
+                        "EV Charging Optimization": animateEVCharging,
+                        "Flexibility Management": animateFlexibilityManagement,
+                        "Green Hydrogen Solutions": animateGreenHydrogen,
+                        "Intelligent Battery and Renewable Energy Systems": animateIntelligentBattery,
+                        "Industrial Load Planning, Modeling & Optimization": animateIndustrialLoadPlanning,
+                        "Residential Energy Systems": animateResidentialEnergy,
+                        "Intelligent Residential Heat Pump Solutions": animateResidentialHeatPump
                     };
 
                     const animation = animations[title]?.(canvas);
@@ -388,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function () {
             for (let i = 0; i < 5; i++) {
                 ctx.beginPath();
                 for (let x = 0; x < canvas.width; x += 10) {
-                    const y = canvas.height / 3 + Math.sin((x + offset + i * 25) * 0.03) * (5 + i * 6);
+                    const y = canvas.height / 3 + Math.sin((x + offset + i * 15) * 0.05) * (1 + i * 6);
                     ctx.lineTo(x, y);
                 }
                 ctx.stroke();
@@ -476,40 +495,41 @@ document.addEventListener('DOMContentLoaded', function () {
         setCanvasResolution(canvas);
         const ctx = canvas.getContext('2d');
         let animationFrameId;
-
+    
         function draw(animate = true) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
+            ctx.fillStyle = '#1a1a1a'; // Black background
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.strokeStyle = 'rgba(255, 100, 0, 0.8)';
-            ctx.lineWidth = 3;
-
-            const spikeWidth = canvas.width / 20;
-            for (let i = 0; i < canvas.width; i += spikeWidth * 2) {
-                const spikeHeight = Math.random() * (canvas.height / 2);
+    
+            // Set stroke style and shadow for glowing effect
+            ctx.strokeStyle = 'rgba(255, 80, 0, 0.8)'; // Soft orange glow
+            ctx.shadowColor = 'rgba(255, 140, 0, 0.4)'; // Light orange shadow for glow
+            ctx.shadowBlur = 10;
+            ctx.lineWidth = 2; // Sleeker line width for minimalist design
+    
+            const spikeWidth = canvas.width / 20; // Thinner spike width for more defined spikes
+            for (let i = 0; i < canvas.width; i += spikeWidth * 1.5) {
+                const spikeHeight = Math.random() * (canvas.height / 5) + canvas.height / 5; // Randomized height within a controlled range
+                ctx.beginPath();
                 ctx.moveTo(i, canvas.height);
                 ctx.lineTo(i + spikeWidth / 2, canvas.height - spikeHeight);
                 ctx.lineTo(i + spikeWidth, canvas.height);
+                ctx.stroke();
             }
-            ctx.stroke();
-
+    
             if (animate) {
                 animationFrameId = requestAnimationFrame(() => draw(true));
             }
         }
-
-        // Render a single static frame
-        function renderStaticFrame() {
-            draw(false); // Call draw without advancing animation
-        }
-
+    
+        function renderStaticFrame() { draw(false); }
+    
         return {
             start() { draw(); },
-            stop() { 
-                cancelAnimationFrame(animationFrameId); 
-                ctx.clearRect(0, 0, canvas.width, canvas.height); 
-                renderStaticFrame(); // Render static frame after stopping
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                renderStaticFrame();
             },
             renderStaticFrame
         };
@@ -555,6 +575,897 @@ document.addEventListener('DOMContentLoaded', function () {
                 cancelAnimationFrame(animationFrameId); 
                 ctx.clearRect(0, 0, canvas.width, canvas.height); 
                 renderStaticFrame(); // Render static frame after stopping
+            },
+            renderStaticFrame
+        };
+    }
+    //Static & Dynamic Security Assessment
+    function animateOscillatingGrid(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let offset = 0;
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            const gridSize = 25;
+            ctx.strokeStyle = 'rgba(0, 120, 255, 0.8)';
+            ctx.lineWidth = 1;
+    
+            for (let x = 0; x < canvas.width; x += gridSize) {
+                for (let y = 0; y < canvas.height; y += gridSize) {
+                    const offsetY = Math.sin((x + offset) * 0.1) * 10;
+                    ctx.beginPath();
+                    ctx.moveTo(x, y + offsetY);
+                    ctx.lineTo(x + gridSize, y + offsetY);
+                    ctx.stroke();
+                }
+            }
+    
+            if (animate) {
+                offset += 0.2;
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() {
+            draw(false);
+        }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Congestion Management
+    function animateFlowingArrows(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let offset = 0;
+        let animationFrameId;
+
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a'; // Black background
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Create gradient for arrows
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop(0, 'rgba(0, 255, 100, 0.1)');
+            gradient.addColorStop(0.5, 'rgba(0, 255, 100, 0.6)');
+            gradient.addColorStop(1, 'rgba(0, 255, 100, 0.1)');
+
+            ctx.strokeStyle = gradient;
+            ctx.shadowColor = 'rgba(0, 255, 100, 0.3)';
+            ctx.shadowBlur = 8;
+            ctx.lineWidth = 1.2;
+
+            // Draw flowing arrows
+            const arrowSize = 10;
+            for (let y = 0; y < canvas.height; y += 25) {
+                for (let x = 0; x < canvas.width; x += 40) {
+                    const xPos = x + (offset % 40);
+
+                    ctx.beginPath();
+                    ctx.moveTo(xPos, y);
+                    ctx.lineTo(xPos + arrowSize, y - arrowSize / 2);
+                    ctx.lineTo(xPos + arrowSize, y + arrowSize / 2);
+                    ctx.closePath();
+                    ctx.stroke();
+                }
+            }
+
+            if (animate) {
+                offset += 1;
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+
+        function renderStaticFrame() { draw(false); }
+
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Long Term Investment
+    function animateExpandingCircles(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let circles = [
+            { x: canvas.width / 2, y: canvas.height / 2, radius: 20, alpha: 1 },
+            { x: canvas.width / 3, y: canvas.height / 3, radius: 40, alpha: 0.5 },
+            { x: canvas.width / 1.5, y: canvas.height / 1.5, radius: 60, alpha: 0.2 }
+        ];
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            circles.forEach(circle => {
+                ctx.beginPath();
+                ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(100, 200, 255, ${circle.alpha})`;
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+    
+                if (animate) {
+                    circle.radius += 0.3;
+                    circle.alpha -= 0.005;
+                }
+            });
+    
+            if (animate) {
+                circles = circles.filter(circle => circle.alpha > 0);
+                if (circles.length < 3) circles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, radius: 20, alpha: 1 });
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() {
+            draw(false);
+        }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Stochastic Energy Optimization
+    function animateStochasticDots(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        const dots = Array.from({ length: 30 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 3 + 1,
+            speedX: (Math.random() - 0.5) * 0.3,
+            speedY: (Math.random() - 0.5) * 0.3
+        }));
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a'; // Black background
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // White dots for contrast
+            dots.forEach(dot => {
+                if (animate) {
+                    dot.x += dot.speedX;
+                    dot.y += dot.speedY;
+    
+                    // Wrap dots around edges
+                    if (dot.x < 0) dot.x = canvas.width;
+                    if (dot.x > canvas.width) dot.x = 0;
+                    if (dot.y < 0) dot.y = canvas.height;
+                    if (dot.y > canvas.height) dot.y = 0;
+                }
+    
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+    
+            if (animate) {
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Motor Starting
+    function animateMotorRipples(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let lines = Array.from({ length: 20 }, () => ({
+            angle: Math.random() * Math.PI * 2,
+            length: 5,
+            alpha: 1
+        }));
+        let animationFrameId;
+
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a'; // Black background
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            lines.forEach(line => {
+                const endX = centerX + Math.cos(line.angle) * line.length;
+                const endY = centerY + Math.sin(line.angle) * line.length;
+
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(endX, endY);
+                ctx.strokeStyle = `rgba(255, 165, 0, ${line.alpha})`; // Subtle orange glow for surge effect
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                if (animate) {
+                    line.length += 2; // Increase length to simulate outward surge
+                    line.alpha -= 0.02; // Fade out quickly to capture surge
+                }
+            });
+
+            if (animate) {
+                lines = lines.filter(line => line.alpha > 0);
+                if (lines.length < 20) {
+                    lines.push({
+                        angle: Math.random() * Math.PI * 2,
+                        length: 5,
+                        alpha: 1
+                    });
+                }
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+
+        function renderStaticFrame() { draw(false); }
+
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Digital Twin
+    function animateRotatingElements(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let rotationAngle = 0;
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+    
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate(rotationAngle);
+    
+            // Draw rotating squares
+            for (let i = 0; i < 4; i++) {
+                ctx.strokeStyle = `rgba(255, 255, 100, 0.6)`;
+                ctx.lineWidth = 2;
+                ctx.strokeRect(-20 * (i + 1), -20 * (i + 1), 40 * (i + 1), 40 * (i + 1));
+            }
+            ctx.restore();
+    
+            if (animate) {
+                rotationAngle += 0.01;
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() {
+            draw(false);
+        }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Grid Code Compliance
+    function animatePulseGrid(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let offset = 0;
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a'; // Black background
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            const gridSize = 20;
+            ctx.strokeStyle = 'rgba(0, 200, 100, 0.6)'; // Subtle green lines
+            ctx.lineWidth = 1;
+    
+            for (let x = 0; x < canvas.width; x += gridSize) {
+                for (let y = 0; y < canvas.height; y += gridSize) {
+                    const pulseOffset = Math.sin((x + y + offset) * 0.05) * 5;
+                    ctx.beginPath();
+                    ctx.moveTo(x + pulseOffset, y);
+                    ctx.lineTo(x + pulseOffset, y + gridSize);
+                    ctx.stroke();
+                }
+            }
+    
+            if (animate) {
+                offset += 0.5;
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Time Domain Forecasting
+    function animateTimeDomainForecasting(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let timeOffset = 0;
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            ctx.strokeStyle = 'rgba(100, 200, 255, 0.8)'; // Light blue for data visualization
+            ctx.lineWidth = 2;
+    
+            ctx.beginPath();
+            for (let x = 0; x < canvas.width; x += 10) {
+                // Use a combination of sine waves to mimic forecasting curves with varying patterns
+                const y = canvas.height / 2 + Math.sin((x + timeOffset) * 0.05) * 10 + Math.sin((x + timeOffset) * 0.02) * 5;
+                ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+    
+            if (animate) {
+                timeOffset += 0.5; // Slow incremental shift to create gradual, evolving curve
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Anomaly Detection
+    function animateAnomalyDetection(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        const particles = Array.from({ length: 20 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            isAnomaly: Math.random() > 0.85, // Some particles flagged as anomalies
+            size: Math.random() * 3 + 1
+        }));
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            particles.forEach(particle => {
+                // Different color for anomalies
+                ctx.fillStyle = particle.isAnomaly ? 'rgba(255, 0, 0, 0.8)' : 'rgba(0, 200, 200, 0.6)';
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fill();
+    
+                if (animate) {
+                    particle.x += (Math.random() - 0.5) * 2;
+                    particle.y += (Math.random() - 0.5) * 2;
+                    // Wrap particles around edges
+                    if (particle.x < 0) particle.x = canvas.width;
+                    if (particle.x > canvas.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = canvas.height;
+                    if (particle.y > canvas.height) particle.y = 0;
+                }
+            });
+    
+            if (animate) {
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Reinforcement Learning
+    function animateReinforcementLearning(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let nodes = Array.from({ length: 10 }, (_, i) => ({
+            x: (canvas.width / 10) * i + 20,
+            y: canvas.height / 2,
+            size: 4
+        }));
+        let animationFrameId;
+        let step = 0;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            ctx.strokeStyle = 'rgba(0, 255, 100, 0.8)'; // Green to represent decision pathways
+            ctx.lineWidth = 1.5;
+    
+            // Draw lines connecting nodes
+            ctx.beginPath();
+            for (let i = 0; i < nodes.length - 1; i++) {
+                ctx.moveTo(nodes[i].x, nodes[i].y);
+                ctx.lineTo(nodes[i + 1].x, nodes[i + 1].y);
+            }
+            ctx.stroke();
+    
+            // Draw nodes
+            nodes.forEach((node, index) => {
+                ctx.fillStyle = index === step % nodes.length ? 'rgba(255, 200, 0, 0.8)' : 'rgba(0, 200, 200, 0.8)';
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+    
+            if (animate) {
+                step += 1; // Gradual stepping effect along nodes
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Data Analysis
+    function animateDataAnalysis(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let animationFrameId;
+        let bars = Array.from({ length: 10 }, () => ({
+            height: Math.random() * (canvas.height / 2),
+            alpha: 0.2 // Start with a low opacity
+        }));
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            const barWidth = canvas.width / bars.length;
+            bars.forEach((bar, index) => {
+                ctx.fillStyle = `rgba(100, 200, 255, ${bar.alpha})`; // Soft blue for a data-driven look
+                ctx.fillRect(index * barWidth, canvas.height - bar.height, barWidth - 5, bar.height);
+    
+                if (animate) {
+                    bar.alpha = Math.min(bar.alpha + 0.01, 0.8); // Gradually increase opacity
+                }
+            });
+    
+            if (animate) {
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+
+    function animateDistributedEnergy(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        const nodes = Array.from({ length: 15 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 4 + 2,
+            pulseRadius: 0
+        }));
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            nodes.forEach(node => {
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.pulseRadius, 0, Math.PI * 2);
+                ctx.strokeStyle = 'rgba(0, 255, 150, 0.3)';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+    
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 255, 150, 0.8)';
+                ctx.fill();
+    
+                if (animate) {
+                    node.pulseRadius = (node.pulseRadius + 0.5) % 20; // Reset pulse radius for continuous pulse effect
+                }
+            });
+    
+            if (animate) {
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+
+    function animateEVCharging(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let offset = 0;
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            ctx.strokeStyle = 'rgba(50, 150, 255, 0.8)'; // Blue for electricity flow
+            ctx.lineWidth = 2;
+    
+            for (let y = 0; y < canvas.height; y += 20) {
+                ctx.beginPath();
+                ctx.moveTo(0, y + offset % 20);
+                ctx.lineTo(canvas.width, y + offset % 20);
+                ctx.stroke();
+            }
+    
+            if (animate) {
+                offset += 1;
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+
+    function animateFlexibilityManagement(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let waveOffset = 0;
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            ctx.strokeStyle = 'rgba(255, 200, 50, 0.7)'; // Soft yellow for flexibility
+            ctx.lineWidth = 1.5;
+    
+            for (let i = 0; i < 3; i++) {
+                ctx.beginPath();
+                for (let x = 0; x < canvas.width; x += 5) {
+                    const y = canvas.height / 2 + Math.sin((x + waveOffset) * 0.05) * (5 + i * 4);
+                    ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            }
+    
+            if (animate) {
+                waveOffset += 0.1; // Smooth oscillation for flexibility
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+
+    function animateGreenHydrogen(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let circles = [{ radius: 10, alpha: 1 }];
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            circles.forEach(circle => {
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, circle.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(0, 255, 100, ${circle.alpha})`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+    
+                if (animate) {
+                    circle.radius += 1;
+                    circle.alpha -= 0.01;
+                }
+            });
+    
+            if (animate) {
+                circles = circles.filter(circle => circle.alpha > 0); // Remove faded circles
+                if (circles.length < 5) circles.push({ radius: 10, alpha: 1 }); // Add new circle
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+
+    function animateIntelligentBattery(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let animationFrameId;
+        let bars = Array.from({ length: 10 }, () => ({
+            height: Math.random() * canvas.height * 0.5
+        }));
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            const barWidth = canvas.width / bars.length;
+    
+            bars.forEach((bar, index) => {
+                ctx.fillStyle = 'rgba(0, 200, 255, 0.7)';
+                ctx.fillRect(index * barWidth, canvas.height - bar.height, barWidth - 5, bar.height);
+    
+                if (animate) {
+                    bar.height += (Math.random() - 0.5) * 2;
+                    bar.height = Math.min(Math.max(bar.height, 10), canvas.height * 0.5);
+                }
+            });
+    
+            if (animate) {
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+
+    function animateIndustrialLoadPlanning(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let offset = 0;
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            ctx.strokeStyle = 'rgba(255, 255, 0, 0.5)';
+            ctx.lineWidth = 1;
+    
+            const gridSize = 20;
+    
+            for (let x = offset % gridSize; x < canvas.width; x += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+    
+            for (let y = offset % gridSize; y < canvas.height; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+    
+            if (animate) {
+                offset += 0.5; // Slow movement for a structured look
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Residential Energy Systems (Solar PV, EV Charging, Energy Storage)
+    function animateResidentialEnergy(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let dots = Array.from({ length: 20 }, (_, i) => ({
+            x: (canvas.width / 20) * i,
+            y: canvas.height / 2 + (Math.random() - 0.5) * 20,
+            speed: Math.random() * 1 + 0.5
+        }));
+        let animationFrameId;
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            dots.forEach(dot => {
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, 3, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 215, 0, 0.8)'; // Gold color for solar energy
+                ctx.fill();
+    
+                if (animate) {
+                    dot.x += dot.speed;
+                    if (dot.x > canvas.width) dot.x = 0; // Loop dots to represent continuous energy flow
+                }
+            });
+    
+            if (animate) {
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
+            },
+            renderStaticFrame
+        };
+    }
+    //Intelligent Residential Heat Pump Solutions
+    function animateResidentialHeatPump(canvas) {
+        setCanvasResolution(canvas);
+        const ctx = canvas.getContext('2d');
+        let animationFrameId;
+        let bars = Array.from({ length: 10 }, (_, i) => ({
+            height: Math.random() * (canvas.height / 2),
+            speed: (Math.random() - 0.5) * 0.5
+        }));
+    
+        function draw(animate = true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+            const barWidth = canvas.width / bars.length;
+            bars.forEach((bar, index) => {
+                ctx.fillStyle = 'rgba(0, 150, 255, 0.8)'; // Blue for cooling effect
+                ctx.fillRect(index * barWidth, canvas.height - bar.height, barWidth - 5, bar.height);
+    
+                if (animate) {
+                    // Adjust height for slight "pulsing" effect, simulating heat pump adjustments
+                    bar.height += bar.speed;
+                    if (bar.height > canvas.height / 1.5 || bar.height < canvas.height / 4) {
+                        bar.speed *= -1; // Reverse direction for smooth oscillation
+                    }
+                }
+            });
+    
+            if (animate) {
+                animationFrameId = requestAnimationFrame(() => draw(true));
+            }
+        }
+    
+        function renderStaticFrame() { draw(false); }
+    
+        return {
+            start() { draw(); },
+            stop() {
+                cancelAnimationFrame(animationFrameId);
+                renderStaticFrame();
             },
             renderStaticFrame
         };
