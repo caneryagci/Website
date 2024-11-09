@@ -28,7 +28,7 @@
     <!-- Logo Bar -->
     <div class="logo-bar">
         <a href="index.html#home" aria-label="Navigate to home">
-            <img src="images/logo.png" alt="E-Power Genius Logo" class="logo" loading="lazy">
+            <img src="images/logo.webp" alt="E-Power Genius Logo" class="logo" loading="lazy">
         </a>
     </div>
 
@@ -36,7 +36,7 @@
 
         <!-- Title Text -->
         <div class="header-title">
-            <a href="https://www.google.com" aria-label="logo">
+            <a href="index.html#home" aria-label="logo">
                 <span>Consulting Services</span>
            </a>
         </div>
@@ -44,11 +44,16 @@
         <nav aria-label="Main Navigation">
             <!-- Main Navigation Links -->
             <ul role="menu">
-                <li><a href="index.html#home" aria-label="Navigate to home section" role="menuitem">Home</a></li>
-
+                
                 <!-- Dropdown for Services -->
                 <li class="dropdown services-title">
-                    <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services</button>
+                    <!-- Example dropdown toggle with SVG arrow -->
+                    <a href="index.html#services" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        <span>Services</span>
+                        <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                     <ul class="dropdown-content main-title" role="menu" aria-label="Services Dropdown">
                         
                         <!-- Nested Dropdown for Power System Studies -->
