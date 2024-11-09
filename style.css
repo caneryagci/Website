@@ -471,7 +471,7 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
 
 /* Section styling */
 section {
-    padding: 3rem 2rem;
+    padding: 1rem 2rem;
     margin-top: 50px;
     background-color: #fff;
     margin-bottom: 0rem;
@@ -502,7 +502,7 @@ section h2 {
 section h3 {
     font-size: 2.5rem; /* Adjust as necessary */
     font-weight: 400; /* Regular weight */
-    color: #0056b3; /* Dark color for primary heading */
+    color: #007bff; /* Dark color for primary heading */
     margin-bottom: 0.5rem; /* Smaller gap below h2 */
 
 }
@@ -617,7 +617,7 @@ section#about h2 {
 
 /* Recent Projects Section */
 #recent-projects {
-    padding: 5rem 2rem;
+    padding: 2rem 2rem;
     background-color: #f9f9f9;
     margin-top: 2rem;
     text-align: center;
@@ -716,6 +716,7 @@ footer {
     font-size: 0.9rem;
     position: relative;
     width: 100%;
+    margin-top: 2rem;
 }
 
 .footer-content {
@@ -726,17 +727,10 @@ footer {
 }
 
 .footer-content p {
-    margin: 5px 0;
+    margin: 0;
+    font-weight: 100;
 }
 
-.footer-content a {
-    margin: 0 10px;
-    color: white;
-}
-
-.footer-content a:hover {
-    color: #007bff;
-}
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -800,7 +794,7 @@ a:focus, button:focus {
 
 /* Learn Section */
 section#learn {
-    padding: 0rem 2rem;
+    padding: 0rem 0rem;
     background-color: var(--background-color);
     text-align: center;
     overflow-x: hidden; /* Hide any overflow outside the container */
@@ -818,6 +812,14 @@ section#learn p {
     margin-bottom: 1rem;
     width: 100%;
     height: 100%;
+}
+
+/* Contact Section */
+section#contact h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #007bff;
 }
 
 /* PDF Container with Horizontal Scrolling */
@@ -1154,83 +1156,119 @@ section.appear {
 
 /* Services Section */
 
+/* Wrapper for all overview sections */
+.all-services-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
 /* Style for the Unique Overview Card */
 .overview-card {
-    max-width: 600px; /* Ensures each card has a maximum width */
+    width: 1250px; /* Ensures each card has a maximum width */
     height: 400px; /* Sets a consistent height for all cards */
     position: relative;
-    border: 1px solid #007bff; /* Increase border thickness for visibility */
-    padding: 0;
     border-radius: 12px;
+    margin: 0 auto; /* Centers the card */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    overflow: hidden;
-    margin-bottom: 0;
+    background-color: white; /* Background color for consistency */
+    border: 1px solid white; /* Increase border thickness for visibility */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
 }
 
+/* Dark Overlay on the Image */
+.overview-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent dark overlay */
+    z-index: 9; /* Ensures overlay is above the image but below the content */
+    pointer-events: none; /* Ensures it doesn’t interfere with clicks */
+}
 
 /* Style for Card Image */
 .overview-card-image {
-    
-    max-height: 150px; /* Set a max height for consistency */
-    object-fit: cover; /* Ensure image fits nicely within the space */
-    margin-bottom: 15px; /* Space between the image and text content */
-    border-radius: 8px; /* Optional: round the image corners */
+    position: absolute; /* Positions image to cover entire card */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Covers the whole card */
+    object-fit: cover;
+    z-index: 1; /* Keeps it behind the content */
+    border-radius: 12px; /* Matches card’s rounded corners */
+}
+
+.card-canvas-overview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Places it below content but above the image if needed */
+    pointer-events: none; /* Ensures it doesn’t block clicks on other elements */
+    background: transparent; /* Keeps the canvas transparent */
 }
 
 /* Style for the Overview Card Content */
 .service-content-overview {
     position: relative;
-    z-index: 2; /* Ensures content is above the canvas */
-    padding:32px;
+    padding: 20px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    text-align: left;
-    font-family: 'Poppins', sans-serif; /* Font style, if different from regular cards */
-    text-shadow: none; /* Remove text shadow if used on other cards */
+    justify-content: flex-end;
+    height: 100%; /* Makes content span the entire card */
 }
 
 /* Styling for the Overview Card Title */
 .service-content-overview h3 {
     font-size: 24px; /* Slightly larger font for emphasis */
-    font-weight: 600;
-    color: #007bff; /* Highlighted color to match the theme */
+    font-weight: 700;
+    color: #ffffff; /* Highlighted color to match the theme */
     letter-spacing: 0.03em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Soft shadow for readability */
+    z-index: 10;
 }
 
 /* Styling for the Overview Card Text */
 .service-content-overview p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.4;
-    color: 333;
+    color: white;
     margin-bottom: 15px;
-}
-/* Overview Cards Container */
-.services-container-overview {
-    display: flex; /* Aligns all cards horizontally */
-    flex-wrap: wrap; /* Allows cards to wrap onto a new line if needed */
-    gap: 20px; /* Space between each card */
-    justify-content: flex-start; /* Aligns cards to the left */
-    margin-bottom: 80px;
-    align-items: flex-start; /* Aligns items to the top of the row */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Soft shadow for readability */
+    z-index: 10;
 }
 
-/* Styling for "Learn more" Link */
+
+/* Styling for "Explore more" Link */
 .service-link-overview {
     font-weight: 600;
-    color: #007bff;
-    text-decoration: underline;
+    color: #ffffff;
     cursor: pointer;
     transition: color 0.3s ease;
+    z-index: 10;
+    border-bottom: 2px solid #ffffff; /* Thickness and color of the underline */
+    padding-bottom: 3px; /* Adjust spacing between text and underline */
 }
 
 .service-link-overview:hover {
-    color: #0056b3;
+    color: #e0e0e0;
+    border-bottom-color: #e0e0e0; /* Change underline color on hover */
 }
 
 
@@ -1244,6 +1282,7 @@ section.appear {
     visibility: hidden;
     opacity: 0;
     overflow: hidden;
+    position: absolute; /* Removes it from layout flow */
     transition: opacity 0.3s ease, visibility 0s 0.3s;
 }
 
@@ -1251,23 +1290,24 @@ section.appear {
     height: auto;
     visibility: visible;
     opacity: 1;
+    position: static; /* Resets position for normal layout flow */
     transition: opacity 0.3s ease;
 }
 
 .services-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     padding: 0px 0px;
-    background-color: white;
+    background-color: white; 
 }
 
 /* Service Card Styling */
 .service-card {
     position: relative;
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     height: 200px;
     border-radius: 12px;
     overflow: hidden;
@@ -1361,33 +1401,10 @@ section.appear {
     z-index: 3;
 }
 
-/* Full Card Clickable Link */
-.service-card-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-}
 
 .service-card-link-overview {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    text-decoration: none;
-    /* Styling for the button or link */
-    background-color: #007bff; /* Example color */
-    color: #ffffff;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    display: none;
 }
-
-.service-card-link-overview:hover {
-    background-color: #0056b3; /* Example hover color */
-}
-
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
