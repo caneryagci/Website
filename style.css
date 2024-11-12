@@ -1439,3 +1439,86 @@ section.appear {
         padding: 20px; /* Reduced padding for smaller screens */
     }
 }
+
+/* PSS Hero Section Styling using ID and Class */
+#pss-hero.hero-system-study {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-image: url('images/Consulting/PSS.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left horizontally */
+    color: #fff;
+    margin-top: 0;
+}
+
+#pss-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+#pss-hero .hero-content-pss {
+    position: relative;
+    z-index: 2;
+    text-align: left; /* Align text to the left */
+    max-width: 1200px; /* Limit width for better layout on larger screens */
+    margin-left: 80px;
+}
+
+#pss-hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+#pss-hero p {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    max-width: 1200px;
+}
+
+/* Button Styling */
+.cta-button {
+    background: #007bff; /* Bright green background */
+    color: white; /* Dark blue text */
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    border-radius: 50px; /* Rounded edges */
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    line-height: 1.5rem;
+}
+
+/* Arrow Styling */
+.button_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #005e60; /* Dark blue arrow */
+    width: 2.0rem;
+    height: 2.0rem;
+    border-radius: 50%; /* Circle around the arrow */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.cta-button:hover {
+    background: white;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
