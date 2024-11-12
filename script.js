@@ -1118,7 +1118,7 @@ document.addEventListener('DOMContentLoaded', function () {
             renderStaticFrame
         };
     }
-
+    //DER
     function animateDistributedEnergy(canvas) {
         setCanvasResolution(canvas);
         const ctx = canvas.getContext('2d');
