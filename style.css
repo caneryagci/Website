@@ -73,7 +73,6 @@ header {
 }
 
 header.scrolled {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: var(--highlight-color); /* Optional: Change background color */
     top: -2px; /* Moves the header 2px above */
     transition: all 0.3s ease-in-out;
@@ -360,44 +359,6 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     transition: transform 0.3s ease;
 }
 
-
-/* Adjustments for mobile compatibility */
-@media (max-width: 768px) {
-    header {
-        padding: 0.5rem 1rem;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Base state (closed) for .dropdown-content */
-    .dropdown-content {
-        min-width: 100%;
-        top: auto;
-        left: 0;
-        transform: none;
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    /* Nested dropdown (sub-dropdown) adjustments */
-    .dropdown-content .dropdown-content {
-        position: relative;
-        left: 0;
-        top: 0;
-        transform: none;
-        opacity: 1;
-    }
-
-    /* Open state for nested dropdowns */
-    .dropdown-content .dropdown-content.open {
-        display: block;
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 /* Hero section styling */
 .hero {
@@ -1468,36 +1429,11 @@ section.appear {
     display: none;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .service-card {
-        width: 100%;
-        max-width: 100%; /* Full width on narrow screens */
-        height: auto; /* Adjust height to fit content */
-    }
-    .services-container {
-        padding: 20px 10px; /* Reduce padding for smaller screens */
-    }
-    .service-content h3 {
-        font-size: 1.4em;
-    }
-    .service-content p {
-        font-size: 1em;
-    }
-    .overview-card {
-        max-width: 100%;
-        margin-bottom: 20px; /* Space between stacked cards */
-    }
-    .service-content-overview {
-        padding: 20px; /* Reduced padding for smaller screens */
-    }
-}
-
 /* PSS Hero Section Styling using ID and Class */
 #pss-hero.hero-system-study {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     background-image: url('images/Consulting/PSS.jpg'); /* Replace with your background image path */
     background-size: cover;
     background-position: center;
@@ -1541,7 +1477,7 @@ section.appear {
 #ai-hero.hero-ai {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     background-image: url('images/Consulting/AI.jpg'); /* Replace with your background image path */
     background-size: cover;
     background-position: center;
@@ -1576,6 +1512,50 @@ section.appear {
 }
 
 #ai-hero p {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    max-width: 1200px;
+}
+
+/* Energyhub Hero Section Styling using ID and Class */
+#energyhub-hero.hero-energyhub {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-image: url('images/Consulting/energyhub.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left horizontally */
+    color: #fff;
+    margin-top: 0;
+}
+
+#energyhub-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+#energyhub-hero .hero-content-energyhub {
+    position: relative;
+    z-index: 2;
+    text-align: left; /* Align text to the left */
+    max-width: 1200px; /* Limit width for better layout on larger screens */
+    margin-left: 80px;
+}
+
+#energyhub-hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+#energyhub-hero p {
     font-size: 1.2em;
     margin-top: 0.5em;
     max-width: 1200px;
@@ -1618,4 +1598,63 @@ section.appear {
     color: #007bff;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+/* Adjustments for mobile compatibility */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Base state (closed) for .dropdown-content */
+    .dropdown-content {
+        min-width: 100%;
+        top: auto;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Nested dropdown (sub-dropdown) adjustments */
+    .dropdown-content .dropdown-content {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        opacity: 1;
+    }
+
+    /* Open state for nested dropdowns */
+    .dropdown-content .dropdown-content.open {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .service-card {
+        width: 100%;
+        max-width: 100%; /* Full width on narrow screens */
+        height: auto; /* Adjust height to fit content */
+    }
+    .services-container {
+        padding: 20px 10px; /* Reduce padding for smaller screens */
+    }
+    .service-content h3 {
+        font-size: 1.4em;
+    }
+    .service-content p {
+        font-size: 1em;
+    }
+    .overview-card {
+        max-width: 100%;
+        margin-bottom: 20px; /* Space between stacked cards */
+    }
+    .service-content-overview {
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
 }
