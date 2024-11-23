@@ -23,12 +23,18 @@
         <!-- Fonts and Stylesheets -->
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     </head>
 <body>
     <!-- Logo Bar -->
     <div class="logo-bar" id="logo-bar">
-        <a href="index.html#logo-bar" aria-label="Navigate to home">
-            <img src="images/logo.webp" alt="E-Power Genius Logo" class="logo" loading="lazy">
+        <a href="index.html#logo-bar" aria-label="Navigate to home" class="logo-container">
+            <img src="images/logocut.webp" alt="E-Power Genius Logo" class="logo" loading="lazy">
+            <span class="logo-text">NOKS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
         </a>
     </div>
 
@@ -36,9 +42,9 @@
 
         <!-- Title Text -->
         <div class="header-title">
-            <a href="index.html#logo-bar" aria-label="logo">
-                <span>Consulting Services</span>
-           </a>
+            <a href="index.html#logo-bar" aria-label="Home">
+                <span class="material-icons">home</span>
+            </a>
         </div>
 
         <nav aria-label="Main Navigation">
@@ -105,8 +111,8 @@
                         <li class="dropdown">
                             <button aria-haspopup="true" aria-expanded="false">Residential Applications</button>
                             <ul class="dropdown-content" role="menu" aria-label="Residential Applications Dropdown">
-                                <li><a href="services.html#residential-energy-systems-h3" aria-label="Navigate to Residential Energy Systems section">Residential Energy Systems (Solar PV, EV Charging, Energy Storage)</a></li>
-                                <li><a href="services.html#residential-heat-pump-h3" aria-label="Navigate to Intelligent Residential Heat Pump Solutions section">Intelligent Residential Heat Pump Solutions</a></li>
+                                <li><a href="resapp-.html#residential-energy-systems-h3" aria-label="Navigate to Residential Energy Systems section">Residential Energy Systems (Solar PV, EV Charging, Energy Storage)</a></li>
+                                <li><a href="resapp-services.html#residential-heat-pump-h3" aria-label="Navigate to Intelligent Residential Heat Pump Solutions section">Intelligent Residential Heat Pump Solutions</a></li>
                             </ul>
                         </li>
 
@@ -408,73 +414,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div id="services-energy-hub" class="services-container hidden">
-                    <!-- Distributed Energy Resources Card -->
-                    <div class="service-card">
-                        <a href="services.html#distributed-energy-h3" class="service-card-link"></a>
-                        <canvas class="card-canvas"></canvas>
-                        <div class="service-content">
-                            <h3>Distributed Energy Resources</h3>
-                            <p>Optimize distributed energy resources for a resilient and flexible energy grid.</p>
-                            <span class="service-link">Read more</span>
-                        </div>
-                    </div>
-                    <!-- EV Charging Optimization Card -->
-                    <div class="service-card">
-                        <a href="services.html#ev-charging-h3" class="service-card-link"></a>
-                        <canvas class="card-canvas"></canvas>
-                        <div class="service-content">
-                            <h3>EV Charging Optimization</h3>
-                            <p>Implement efficient EV charging strategies for maximum convenience and grid stability.</p>
-                            <span class="service-link">Read more</span>
-                        </div>
-                    </div>
-
-                    <!-- Flexibility Management Card -->
-                    <div class="service-card">
-                        <a href="services.html#flexibility-management-h3" class="service-card-link"></a>
-                        <canvas class="card-canvas"></canvas>
-                        <div class="service-content">
-                            <h3>Flexibility Management</h3>
-                            <p>Enable dynamic response capabilities in energy systems for better load management.</p>
-                            <span class="service-link">Read more</span>
-                        </div>
-                    </div>
-
-                    <!-- Green Hydrogen Solutions Card -->
-                    <div class="service-card">
-                        <a href="services.html#green-hydrogen-h3" class="service-card-link"></a>
-                        <canvas class="card-canvas"></canvas>
-                        <div class="service-content">
-                            <h3>Green Hydrogen Solutions</h3>
-                            <p>Explore innovative solutions for green hydrogen production and integration.</p>
-                            <span class="service-link">Read more</span>
-                        </div>
-                    </div>
-
-                    <!-- Intelligent Battery and Renewable Systems Card -->
-                    <div class="service-card">
-                        <a href="services.html#intelligent-battery-h3" class="service-card-link"></a>
-                        <canvas class="card-canvas"></canvas>
-                        <div class="service-content">
-                            <h3>Intelligent Battery and Renewable Energy Systems</h3>
-                            <p>Integrate intelligent battery storage for optimized renewable energy usage.</p>
-                            <span class="service-link">Read more</span>
-                        </div>
-                    </div>
-
-                    <!-- Industrial Load Planning Card -->
-                    <div class="service-card">
-                        <a href="services.html#industrial-load-planning-h3" class="service-card-link"></a>
-                        <canvas class="card-canvas"></canvas>
-                        <div class="service-content">
-                            <h3>Industrial Load Planning, Modeling & Optimization</h3>
-                            <p>Optimize industrial load planning and modeling for cost-effective power usage.</p>
-                            <span class="service-link">Read more</span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Residential Applications Section -->
@@ -482,21 +421,21 @@
                 <div class="services-container-overview">
                     <!-- Overview Card for Residential Applications -->
                     <div class="overview-card">
-                        <a href="#" class="service-card-link-overview" data-target="services-residential"></a>
+                        <a href="resapp-services.html#resapp-hero" class="service-card-link-overview"></a>
                         <canvas class="card-canvas-overview"></canvas>
                         <div class="service-content-overview">
                             <!-- Image for the Card -->
                             <img src="images/Consulting/Residential.jpg" alt="Residential" loading="lazy" class="overview-card-image">
                             <h3>Residential Applications</h3>
                             <p>Empowering homes with advanced energy solutions like solar PV, EV charging, and intelligent heat pumps to increase efficiency and sustainability.</p>
-                            <span class="service-link-overview" data-target="services-residential">Explore more</span>
+                            <a href="resapp-services.html#energyhub-hero" class="service-link-overview-static">Explore more</a>
                         </div>
                     </div>
                 </div>
                 <div id="services-residential" class="services-container hidden">
                     <!-- Residential Energy Systems Card -->
                     <div class="service-card">
-                        <a href="services.html#residential-energy-systems-h3" class="service-card-link"></a>
+                        <a href="resapp-services.html#residential-energy-systems-h3" class="service-card-link"></a>
                         <canvas class="card-canvas"></canvas>
                         <div class="service-content">
                             <h3>Residential Energy Systems</h3>
@@ -506,7 +445,7 @@
                     </div>
                     <!-- Intelligent Residential Heat Pump Solutions Card -->
                     <div class="service-card">
-                        <a href="services.html#residential-heat-pump-h3" class="service-card-link"></a>
+                        <a href="resapp-services.html#residential-heat-pump-h3" class="service-card-link"></a>
                         <canvas class="card-canvas"></canvas>
                         <div class="service-content">
                             <h3>Intelligent Residential Heat Pump Solutions</h3>

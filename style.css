@@ -51,11 +51,25 @@ body {
     height: 70px;
 }
 
+.logo-text {
+    font-size: 20px; /* Adjust font size */
+    color: var(--highlight-color); /* Adjust color to match your design */
+    font-weight: 400; /* Optional for emphasis */
+    margin-top: 10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
 /* Adjust the logo size if needed */
 .logo {
     height: 50px; /* Adjust as needed */
     margin-left: 65px;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-right: 20px; /* Adds space between logo and text */
 }
 
 /* Header styling */
@@ -1556,6 +1570,50 @@ section.appear {
 }
 
 #energyhub-hero p {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    max-width: 1200px;
+}
+
+/* Residential Application Hero Section Styling using ID and Class */
+#resapp-hero.hero-resapp {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-image: url('images/Consulting/Residential.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left horizontally */
+    color: #fff;
+    margin-top: 0;
+}
+
+#resapp-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+#resapp-hero .hero-content-resapp {
+    position: relative;
+    z-index: 2;
+    text-align: left; /* Align text to the left */
+    max-width: 1200px; /* Limit width for better layout on larger screens */
+    margin-left: 80px;
+}
+
+#resapp-hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+#resapp-hero p {
     font-size: 1.2em;
     margin-top: 0.5em;
     max-width: 1200px;
