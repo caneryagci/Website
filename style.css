@@ -175,13 +175,6 @@ header nav ul li.dropdown:hover > .main-title {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Show border line on hover or while dropdown is open */
-header nav ul li a:hover::after,
-header nav ul li.dropdown:hover > .dropdown-toggle::after {
-    opacity: 1;
-    transform: scaleX(1); /* Scale to full width */
-}
-
 header nav ul li.dropdown > .dropdown-content {
     display: none;
     opacity: 0;
@@ -195,7 +188,6 @@ header nav ul li a:hover::after {
     transform: scaleX(1); /* Scale to full width */
 }
 
-
 /* General dropdown structure */
 .dropdown {
     position: relative;
@@ -208,7 +200,6 @@ header nav ul li a:hover::after {
     top: 200%;
     left: 0;
     background-color: #ffffff;
-    border: 1px solid #e0e0e0; /* Light border for elegance */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
     border-radius: 8px;
     padding: 0rem;
@@ -226,7 +217,7 @@ header nav ul li a:hover::after {
 .dropdown-content::before {
     content: '';
     position: absolute;
-    top: -10px;
+    top: -9px;
     left: 20px; /* Adjust based on alignment preference */
     width: 0;
     height: 0;
@@ -284,28 +275,50 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
 }
 
 /* Link styling */
-.dropdown-content a,
+.dropdown-content a {
+    color: #222; /* Use a slightly darker color for text for better readability */
+    padding: 10px 20px; /* Adequate spacing for a clean look and easy clicking */
+    text-decoration: none;
+    display: block;
+    background-color: transparent; /* Neutral background */
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%; /* Ensure full-width clickable area */
+    font-size: 1rem; /* Standard professional font size */
+    font-weight: 400; /* Neutral font weight for balance */
+    line-height: 1.6; /* Add breathing space between items */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show ellipsis for overflow */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
 .dropdown-content button {
-    color: #333;
+    color: #222;
     padding: 15px 40px;
     text-decoration: none;
     display: block;
-    background: none;
+    background-color: transparent; /* Ensure background remains neutral */
     border: none;
     cursor: pointer;
     text-align: left;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 500;
-    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.5; /* Ensure enough spacing between buttons */
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Hover Effect */
-.dropdown-content a:hover,
+.dropdown-content a:hover {
+    background-color: #f4f4f4; /* Gentle highlight on hover */
+    color: #0056b3; /* Brand color or a subtle blue */
+    border-radius: 8px;
+}
 .dropdown-content button:hover {
     background-color: #f4f4f4; /* Gentle highlight on hover */
     color: #0056b3; /* Brand color or a subtle blue */
+    border-radius: 8px;
 }
 
 
@@ -1279,6 +1292,21 @@ section.appear {
     border-bottom-color: #e0e0e0; /* Change underline color on hover */
 }
 
+.service-link-overview-static {
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10;
+    border-bottom: 2px solid #ffffff; /* Thickness and color of the underline */
+    padding-bottom: 3px; /* Adjust spacing between text and underline */
+    text-decoration: none;
+}
+
+.service-link-overview-static:hover {
+    color: #e0e0e0;
+    border-bottom-color: #e0e0e0; /* Change underline color on hover */
+}
 
 .service-content-overview .service-link:hover {
     color: #0056b3; /* Darker shade on hover */
