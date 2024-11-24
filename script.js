@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdownContent.addEventListener('mouseleave', () => {
         dropdownTimeout = setTimeout(() => {
             dropdownContent.style.display = 'none';
-        }, 300);
+        }, 350);
     });
 
     console.log("DOM fully loaded and parsed");
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 entry.target.classList.remove('appear');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 });
 
     // Observe each section for scroll-triggered visibility changes
     document.querySelectorAll('section').forEach(section => observer.observe(section));

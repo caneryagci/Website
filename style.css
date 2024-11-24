@@ -867,12 +867,12 @@ section#learn {
 section#learn h2 {
     font-size: 2.5rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: #007bff;
 }
 
 section#learn p {
-    font-size: 14px;
+    font-size: 1.15rem;
     margin-bottom: 1rem;
     width: 100%;
     height: 100%;

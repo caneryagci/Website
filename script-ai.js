@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdownContent.addEventListener('mouseleave', () => {
         dropdownTimeout = setTimeout(() => {
             dropdownContent.style.display = 'none';
-        }, 300);
+        }, 350);
     });
     let activeDropdown = null;
 
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 entry.target.classList.remove('appear');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 });
     
     document.querySelectorAll('section').forEach(section => observer.observe(section));
 
