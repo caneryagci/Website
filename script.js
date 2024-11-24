@@ -1497,7 +1497,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resizeTimeout = setTimeout(() => {
                 resizeCanvas();
                 drawCircularWaveform(); // Redraw after resize
-            }, 200); // Adjust delay as needed
+            }, 1000); // Adjust delay as needed
         });
 
         resizeCanvas();
@@ -1515,14 +1515,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        /* // Initialize data points with varied speeds
-        function initializeDataPoints() {
-            dataPoints = Array.from({ length: 10 }, () => ({
-                angle: Math.random() * Math.PI * 2,
-                speed: 0.001 + Math.random() * 0.002 // Varied speed between 0.001 and 0.003
-            }));
-        } */
-
         function setCanvasResolution(canvas) {
             if (window.innerWidth < 768) {
                 canvas.width = canvas.offsetWidth / 2;  // Half resolution for smaller screens
@@ -1539,13 +1531,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Define center point
             const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
+            const centerY = canvas.height / 2.4;
 
             // Base properties for tubular effect
-            const baseRadius = Math.min(canvas.width, canvas.height) / 2;
-            const layers = 4;
-            const layerSpacing = 20;
-            const baseAmplitude = 30;
+            const baseRadius = Math.min(canvas.width, canvas.height) / 1.15;
+            const layers = 18;
+            const layerSpacing = 12;
+            const baseAmplitude = 10;
 
             for (let i = 0; i < layers; i++) {
                 const radius = baseRadius + i * layerSpacing;

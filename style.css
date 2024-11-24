@@ -461,6 +461,12 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     color: #fff; /* Example: Yellow */
 }
 
+.keyword-color5 {
+    color: #fff; 
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
 .hero-header p {
     flex: 1; /* Allow p to grow/shrink as needed */
     font-size: 1.1rem;
