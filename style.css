@@ -244,7 +244,7 @@ header nav ul li a:hover::after {
     border-radius: 8px;
     padding: 0rem;
     margin: 0;
-    min-width: 250px;
+    min-width: 350px;
     white-space: nowrap;
     z-index: 5;
     opacity: 0;
@@ -358,13 +358,14 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     background-color: #f4f4f4; /* Gentle highlight on hover */
     color: #0056b3; /* Brand color or a subtle blue */
     border-radius: 8px;
+    font-weight: bold;
 }
 
 
 /* Nested dropdown icon indicator */
 .dropdown-content .dropdown > button::after {
     content: '›';
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     position: absolute;
     right: 15px; /* Adjust as needed */
     top: 50%;
@@ -414,29 +415,63 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
+    width: 90%;
     padding: 20px; /* Add padding if needed */
-    text-align: center;
     background-color: transparent; /* Ensure no background color */
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+}
+
+/* Header section with h1 and p */
+.hero-header {
+    display: flex;
+    flex-direction: row; /* Align h1 and p horizontally */
+    justify-content: space-between; /* Create space between h1 and p */
+    align-items: center; /* Vertically align content */
+    gap: 20px; /* Spacing between h1 and p */
+    width: 100%;
+    margin-bottom: 2rem; /* Space between header and buttons */
 }
 
 
-.hero-content h1 {
-    font-size: 3rem;
+.hero-header h1 {
+    flex: 1; /* Allow h1 to grow/shrink as needed */
+    font-size: 3.4rem;
     font-weight: 600;
-    margin-bottom: 1rem;
     color: #fff;
+    margin: 0; /* Remove default margin */
+    line-height: 1;
+    text-align: left;
+    min-width: 750px;
 }
 
-.hero-content p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+.keyword-color1 {
+    color: #fff; /* Example: Orange */
+}
+
+.keyword-color2 {
+    color: #fff; /* Example: Light Blue */
+}
+
+.keyword-color3 {
+    color: #fff; /* Example: Green */
+}
+
+.keyword-color4 {
+    color: #fff; /* Example: Yellow */
+}
+
+.hero-header p {
+    flex: 1; /* Allow p to grow/shrink as needed */
+    font-size: 1.1rem;
+    font-weight: 400;
     color: #f8f9fa;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+    margin: 0; /* Remove default margin */
+    text-align: left; /* Align paragraph text to the left */
+    text-align: justify;
+    line-height: 1.6;
+} 
+   
 
 /* Call-to-action buttons */
 .cta-buttons {
@@ -452,7 +487,7 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     padding: 0.5rem 2rem;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.3s ease;
     background-color: white;
@@ -462,6 +497,7 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
 .cta-btn:hover,
 .linkedin-btn:hover {
     background-color: #e2e6ea;
+    border-radius: 8px;
     transform: translateY(-2px);
 }
 
@@ -471,7 +507,7 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     color: #0077b5;
     padding: 0.75rem 2rem;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
     text-align: center;
 }
@@ -479,6 +515,18 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
 .linkedin-btn img.linkedin-icon {
     height: 22px;
     margin-right: 10px;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .hero-header {
+        flex-direction: column; /* Stack h1 and p vertically */
+        text-align: center;
+    }
+    .hero-header h1,
+    .hero-header p {
+        text-align: center; /* Center align text for smaller screens */
+    }
 }
 
 
@@ -1580,7 +1628,7 @@ section.appear {
     position: relative;
     width: 100%;
     height: 90vh;
-    background-image: url('images/Consulting/Residential.jpg'); /* Replace with your background image path */
+    background-image: url('images/Consulting/Residential2.jpg'); /* Replace with your background image path */
     background-size: cover;
     background-position: center;
     display: flex;
