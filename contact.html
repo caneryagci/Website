@@ -3,22 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About Us - E-Power Genius</title>
-        <meta name="description" content="Learn more about E-Power Genius, our mission, vision, core values, and expert team dedicated to delivering excellence in power systems engineering.">
-        <meta name="keywords" content="power systems, engineering consultancy, about us, mission, vision, E-Power Genius">
-        
+        <title>E-Power Genius - Electrical Power System Engineering Solutions</title>
+        <meta name="description" content="E-Power Genius provides cutting-edge engineering solutions in electrical power systems. Discover our services, solutions, and educational resources for sustainable innovation.">
+        <meta name="keywords" content="power systems, engineering consultancy, load flow analysis, short circuit analysis, E-Power Genius">
+        <meta name="robots" content="index, follow">
         <!-- Open Graph Meta Tags for SEO and Social Media Sharing -->
-        <meta property="og:title" content="About Us - E-Power Genius">
-        <meta property="og:description" content="Discover E-Power Genius, our mission, vision, and core values. Meet our team of engineering consultants specializing in power systems.">
-        <meta property="og:image" content="images/logo.png">
-        <meta property="og:url" content="https://www.epowergenius.com/about.html">
+        <meta property="og:title" content="E-Power Genius - Electrical Power System Engineering Solutions">
+        <meta property="og:description" content="Providing cutting-edge engineering solutions in electrical power systems.">
+        <meta property="og:image" content="images/logo.png"> <!-- Make sure this image path is absolute when live -->
+        <meta property="og:url" content="https://www.epowergenius.com"> <!-- Replace with the actual URL of the site -->
         <meta property="og:type" content="website">
         
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="About Us - E-Power Genius">
-        <meta name="twitter:description" content="Discover E-Power Genius, our mission, vision, and core values. Meet our team of engineering consultants specializing in power systems.">
-        <meta name="twitter:image" content="images/logo.png">
+        <meta name="twitter:title" content="E-Power Genius - Electrical Power System Engineering Solutions">
+        <meta name="twitter:description" content="Providing cutting-edge engineering solutions in electrical power systems.">
+        <meta name="twitter:image" content="images/logo.png"> <!-- Ensure this image path is absolute -->  
         
         <!-- Fonts and Stylesheets -->
         <link rel="stylesheet" href="style.css">
@@ -27,6 +27,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     </head>
 <body>
     <!-- Logo Bar -->
@@ -134,115 +135,61 @@
             </div>
         </nav>
     </header>
-    
 
-    <section id="about">
-        <h2>About Us</h2>
-        <div class="about-subsection" id="mission">
-            <h3 id="mission-h3">Mission</h3>
-            <p>We are dedicated to delivering innovative and reliable engineering solutions that meet the needs of industries worldwide, fostering growth and sustainability. Delivering genius-level solutions in electrical and technological domains, empowering industries with cutting-edge engineering expertise and innovative software solutions.</p>
-        </div>
-        
-        <div class="about-subsection" id="vision">
-            <h3 id="vision-h3">Vision</h3>
-            <p>To lead the future of engineering by constantly pushing the boundaries of innovation and excellence in every project we undertake. To be the premier consultancy for delivering intelligent power system and power electronic analysis through advanced simulation software and scripting. We are dedicated to empowering our clients with innovative, precise, and efficient solutions that address the complexities of modern electrical engineering challenges.</p>
-        </div>
-        
-        <div class="about-subsection" id="core-values">
-            <h3 id="core-values-h3">Core Values</h3>
-            <div class="core-values-container">
-                <!-- Core Value items -->
-                <div class="core-value">
-                    <img src="images/CoreValues/innovation.png" alt="Icon representing innovation" class="core-value-icon" loading="lazy">
-                    <h4>Innovation</h4>
-                    <p>We are committed to advancing the frontiers of technology and engineering through continuous innovation.</p>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact us</h2>
+        <h3>Consulting Services</h3>
+        <p>Reach out to discuss your project needs or learn more about our consulting services. We look forward to hearing from you.</p>
+        <form method="POST" action="/submit-form-endpoint" novalidate>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="first-name">*First Name:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="John" required>
                 </div>
-                <div class="core-value">
-                    <img src="images/CoreValues/integrity.png" alt="Integrity Icon" class="core-value-icon" loading="lazy">
-                    <h4>Integrity</h4>
-                    <p>We adhere to the highest standards of ethical conduct, ensuring transparency and trust in all our actions.</p>
+                <div class="form-group">
+                    <label for="last-name">*Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Doe" required>
                 </div>
-                <div class="core-value">
-                    <img src="images/CoreValues/excellence.png" alt="Technical Excellence Icon" class="core-value-icon" loading="lazy">
-                    <h4>Technical Excellence</h4>
-                    <p>We strive for unparalleled quality in our engineering and software development, delivering solutions that meet the highest industry standards.</p>
+                <div class="form-group">
+                    <label for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" name="company-name" placeholder="Your Company">
                 </div>
-                <div class="core-value">
-                    <img src="images/CoreValues/customer.png" alt="Customer Focus Icon" class="core-value-icon" loading="lazy">
-                    <h4>Customer Focus</h4>
-                    <p>Our clients’ needs are at the forefront of everything we do, and we are dedicated to providing tailored high-impact solutions.</p>
+                <div class="form-group">
+                    <label for="email">*E-mail Address:</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
                 </div>
-                <div class="core-value">
-                    <img src="images/CoreValues/teamwork.png" alt="Teamwork Icon" class="core-value-icon" loading="lazy">
-                    <h4>Teamwork and Collaboration</h4>
-                    <p>We cultivate a collaborative environment that leverages the diverse talents and perspectives of our team, driving collective success.</p>
+                <div class="form-group">
+                    <label for="location">*Location:</label>
+                    <input type="text" id="location" name="location" placeholder="City, Country" required>
                 </div>
-                <div class="core-value">
-                    <img src="images/CoreValues/diversity.png" alt="Diversity and Inclusion Icon" class="core-value-icon" loading="lazy">
-                    <h4>Diversity and Inclusion</h4>
-                    <p>We value and promote diversity, fostering an inclusive culture that encourages innovation and respects all voices.</p>
+                <div class="form-group">
+                    <label for="job-title">Job Title:</label>
+                    <input type="text" id="job-title" name="job-title" placeholder="Your Job Title">
                 </div>
-            </div>
-        </div>
-        
-        <div class="about-subsection" id="our-team">
-            <h3 id="our-team-h3">Our Team</h3>
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="images/Team/byagci_image5.jpeg" alt="Bekir Caner Yagci, Power Systems Consultant" class="team-photo" loading="lazy">
-                    <h4>Bekir Caner Yagci</h4>
-                    <p>Power Systems Consultant</p>
-                    <p>Expert in power system analysis, load flow studies, and short-circuit calculations.</p>
-                    <a href="https://www.linkedin.com/in/bekir-caner-yagci/" target="_blank" class="linkedin-btn" aria-label="Connect with Bekir Caner Yagci on LinkedIn - Power Systems Consultant" rel="noopener noreferrer"> 
-                        <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon"> 
-                        Connect on LinkedIn
-                    </a>
+                <div class="form-group">
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="tel" id="phone-number" name="phone-number" placeholder="+1234567890">
                 </div>
-                
-                <div class="team-member">
-                    <img src="images/Team/mkaracelebi_image1.jpeg" alt="Mert Karacelebi, Intelligent Power Systems Consultant" class="team-photo" loading="lazy">
-                    <h4>Mert Karacelebi</h4>
-                    <p>Intelligent Power Systems Consultant</p>
-                    <p>Specializes in power quality, harmonic analysis, and transformer energisation studies.</p>
-                    <a href="https://www.linkedin.com/in/mert-kara%C3%A7elebi-37827854/" target="_blank" class="linkedin-btn" aria-label="Connect with Mert Karacelebi on LinkedIn - Intelligent Power Systems Consultant" rel="noopener noreferrer"> 
-                        <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon"> 
-                        Connect on LinkedIn
-                    </a>
+                <div class="form-group">
+                    <label for="inquiry-subject">*Inquiry Subject:</label>
+                    <select id="inquiry-subject" name="inquiry-subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="consulting">Consulting Services</option>
+                        <option value="project">Project Discussion</option>
+                        <option value="support">Technical Support</option>
+                    </select>
                 </div>
-                
-                <div class="team-member">
-                    <img src="images/Team/hpolat_image1.jpeg" alt="Hakan Polat, Power Electronics Consultant" class="team-photo" loading="lazy">
-                    <h4>Hakan Polat</h4>
-                    <p>Power Electronics Consultant</p>
-                    <p>Focuses on insulation coordination, under-frequency, and load shedding studies.</p>
-                    <a href="https://www.linkedin.com/in/hakan-polat-199634155/" target="_blank" class="linkedin-btn" aria-label="Connect with Hakan Polat on LinkedIn - Power Electronics Consultant" rel="noopener noreferrer"> 
-                        <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon"> 
-                        Connect on LinkedIn
-                    </a>
-                </div>
-        
-                <div class="team-member">
-                    <img src="images/Team/soral_image1.jpeg" alt="Sarp Oral, Project and Cost Control" class="team-photo" loading="lazy">
-                    <h4>Sarp Oral</h4>
-                    <p>Project and Cost Control / Contractor</p>
-                    <p>Experienced in voltage stability studies and renewable energy integration.</p>
-                    <a href="https://www.linkedin.com/in/sarporal95/" target="_blank" class="linkedin-btn" aria-label="Connect with John Doe on LinkedIn - Electrical Engineer" rel="noopener noreferrer"> 
-                        <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon"> 
-                        Connect on LinkedIn
-                    </a>
-                </div>
-                
-                <div class="team-member">
-                    <img src="images/Team/hyilmaz_image1.jpeg" alt="Hakan Yilmaz, IT Director" class="team-photo" loading="lazy">
-                    <h4>Hakan Yilmaz</h4>
-                    <p>IT Director</p>
-                    <p>Expert in energy management systems and grid resilience strategies.</p>
-                    <a href="https://www.linkedin.com/in/nhakanyilmaz/" target="_blank" class="linkedin-btn" aria-label="Connect with Jane Smith on LinkedIn - Energy Systems Analyst" rel="noopener noreferrer"> 
-                        <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon"> 
-                        Connect on LinkedIn
-                    </a>
+                <div class="form-group">
+                    <label for="message">*Please provide additional details about your inquiry:</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
                 </div>
             </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="form-feedback" class="form-feedback" style="display: none;">
+            Thank you for reaching out! We will get back to you shortly.
         </div>
     </section>
 
@@ -252,6 +199,7 @@
             <p>KVK Number: 000000</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

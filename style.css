@@ -103,7 +103,7 @@ header.scrolled nav ul li.dropdown.services-title a svg.dropdown-arrow {
 header.scrolled nav ul li a[href="recent-projects.html#recent-projects"],
 header.scrolled nav ul li a[href="index.html#learn"],
 header.scrolled .header-right ul li a[href="about.html#about"],
-header.scrolled .header-right ul li a[href="index.html#contact"]  {
+header.scrolled .header-right ul li a[href="contact.html#contact"]  {
     color: #fff; /* White color for text when scrolled */
 }
 
@@ -886,11 +886,134 @@ section#learn p {
 
 /* Contact Section */
 section#contact h2 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    color: #007bff;
+    font-size: 1.4rem; /* Smaller font size for secondary heading */
+    font-weight: 400; /* Regular weight */
+    color: #999999; /* Light gray color for secondary heading */
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 0%;
 }
+
+.contact-section {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(237, 237, 237, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h3 {
+margin-left: 50px;
+}
+
+.contact-section p {
+    font-size: 16px;
+    margin-bottom: 4rem;
+    text-align: left;
+    color: #555;
+    margin-left: 50px;
+}
+
+/* Center the form container */
+form {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 1.5rem; /* Spacing between elements */
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.0rem;
+    margin-left: 0;
+    width: 1200px;
+}
+
+.form-group {
+    min-width: 400px; /* Prevent layout break on smaller screens */
+}
+
+
+
+/* Contact Section */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd; /* Softer border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+input {
+    height: 50px;
+    resize: none;
+}
+
+textarea#message {
+    height: 140px;
+    width:810px;
+    resize: none;
+}
+
+
+button {
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form-feedback {
+    margin-top: 20px;
+    padding: 10px;
+    color: #28a745;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
 
 /* PDF Container with Horizontal Scrolling */
 .pdf-container {

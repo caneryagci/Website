@@ -1485,43 +1485,42 @@ document.addEventListener('DOMContentLoaded', function () {
     if (canvas) {
         const ctx = canvas.getContext("2d");
 
+
+        let animationFrame; // Store the animation frame
+        let waveOffset = 0; // Controls wave movement
+        let dataPoints = []; // Array to store data point positions
+
         function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            if (window.innerWidth < 768) {
+                canvas.width = window.innerWidth / 2; // Lower resolution for small screens
+                canvas.height = window.innerHeight / 2;
+            } else {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
         }
 
         // Throttled resize
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
+            cancelAnimationFrame(animationFrame); // Stop the current animation loop
             resizeTimeout = setTimeout(() => {
                 resizeCanvas();
-                drawCircularWaveform(); // Redraw after resize
+                drawCircularWaveform(); // Restart animation after resizing
             }, 1000); // Adjust delay as needed
         });
 
         resizeCanvas();
 
-        let waveOffset = 0; // Controls wave movement
-        let dataPoints = []; // Array to store data point positions
-
         // Generate initial positions for data points along the wave
         function initializeDataPoints() {
+            dataPoints = []; // Clear existing points to avoid duplicates
             for (let i = 0; i < 10; i++) {
                 dataPoints.push({
                     angle: (i / 10) * Math.PI * 2,
-                    speed: 0.002 + Math.random() * 0.002, // Random speed for each point
+                    speed: 0.001 + Math.random() * 0.0001, // Random speed for each point
                 });
-            }
-        }
-
-        function setCanvasResolution(canvas) {
-            if (window.innerWidth < 768) {
-                canvas.width = canvas.offsetWidth / 2;  // Half resolution for smaller screens
-                canvas.height = canvas.offsetHeight / 2;
-            } else {
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
             }
         }
         
@@ -1534,14 +1533,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const centerY = canvas.height / 2.4;
 
             // Base properties for tubular effect
-            const baseRadius = Math.min(canvas.width, canvas.height) / 1.15;
-            const layers = 18;
-            const layerSpacing = 12;
-            const baseAmplitude = 10;
+            const baseRadius = Math.min(canvas.width, canvas.height) / 1.1;
+            const layers = 10;
+            const layerSpacing = 1;
+            const baseAmplitude = 12;
 
             for (let i = 0; i < layers; i++) {
                 const radius = baseRadius + i * layerSpacing;
-                const amplitude = baseAmplitude - i * 5;
+                const amplitude = baseAmplitude - i * 20;
                 const opacity = 0.9 - i * 0.2;
                 const lineWidth = 2 + i * 1; // Thinner lines for a professional look
 
@@ -1551,7 +1550,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 gradient.addColorStop(1, `rgba(0, 200, 83, ${opacity * 0.5})`); // Fainter Green outer
 
                 ctx.beginPath();
-                for (let angle = 0; angle <= Math.PI * 2; angle += 0.05) {
+                for (let angle = 0; angle <= Math.PI * 2; angle += 0.15) {
                     const offset = amplitude * Math.sin(angle * 4 + waveOffset + i * 0.3);
                     const x = centerX + (radius + offset) * Math.cos(angle);
                     const y = centerY + (radius + offset) * Math.sin(angle);
@@ -1598,7 +1597,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             waveOffset += 0.01; // Slow movement for smooth animation
-            requestAnimationFrame(drawCircularWaveform);
+            animationFrame = requestAnimationFrame(drawCircularWaveform); // Save the frame ID
         }
 
 
