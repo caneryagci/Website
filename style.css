@@ -443,7 +443,7 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     margin: 0; /* Remove default margin */
     line-height: 1;
     text-align: left;
-    min-width: 600px;
+    min-width: 740px;
     max-width: 750px;
     margin-left: 2rem;
 }
@@ -476,7 +476,6 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     font-weight: 400;
     color: #f8f9fa;
     margin: 0; /* Remove default margin */
-    text-align: left; /* Align paragraph text to the left */
     text-align: justify;
     line-height: 1.6;
     max-width: 900px;
