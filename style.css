@@ -67,7 +67,7 @@ body {
 /* Adjust the logo size if needed */
 .logo {
     height: 50px; /* Adjust as needed */
-    margin-left: 65px;
+    margin-left: 20px;
     margin-top: 0px;
     margin-right: 20px; /* Adds space between logo and text */
 }
