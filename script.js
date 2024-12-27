@@ -8,14 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const header = document.querySelector('header');
-
-        menuToggle.addEventListener('click', () => {
-            header.classList.toggle('nav-open');
-        });
+    document.querySelector('.lang-btn').addEventListener('click', function () {
+        const dropdown = document.querySelector('.lang-dropdown');
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        dropdown.style.display = !expanded ? 'block' : 'none';
     });
+    
+    document.addEventListener('click', function (event) {
+        const dropdown = document.querySelector('.lang-dropdown');
+        const langBtn = document.querySelector('.lang-btn');
+        if (!langBtn.contains(event.target)) {
+            dropdown.style.display = 'none';
+            langBtn.setAttribute('aria-expanded', false);
+        }
+    });
+
     
     let dropdownTimeout;
 

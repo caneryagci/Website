@@ -2183,3 +2183,52 @@ section.appear {
         cursor: pointer;
     }
 }
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px; /* Adjust spacing as needed */
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lang-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 5px 0;
+    z-index: 10000;
+}
+
+.lang-dropdown li {
+    padding: 8px 16px;
+}
+
+.lang-dropdown li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.lang-dropdown li a:hover {
+    background-color: #f0f0f0;
+}
+
+.language-selector:hover .lang-dropdown {
+    display: block;
+}
