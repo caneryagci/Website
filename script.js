@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
             header.classList.remove("scrolled");
         }
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const header = document.querySelector('header');
+
+        menuToggle.addEventListener('click', () => {
+            header.classList.toggle('nav-open');
+        });
+    });
     
     let dropdownTimeout;
 
