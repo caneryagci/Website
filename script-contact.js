@@ -1,10 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent actual form submission
-        document.getElementById("form-feedback").style.display = "block";
-        this.reset(); // Optionally reset the form
-    });
+    // document.querySelector("form").addEventListener("submit", function (e) {
+    //     e.preventDefault(); // Prevent actual form submission
+    //     document.getElementById("form-feedback").style.display = "block";
+    //     this.reset(); // Optionally reset the form
+    // });
     
+    // Replace the current URL without reloading
+    if (window.location.hash === "#contact") {
+       history.replaceState({}, "", "/contact-us");
+    }
+
     document.addEventListener("scroll", () => {
         const header = document.querySelector("header");
         if (window.scrollY > 50) {
