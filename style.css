@@ -1758,7 +1758,7 @@ section.appear {
 }
 
 /* PSS Hero Section Styling using ID and Class */
-#pss-hero.hero-system-study {
+#design.hero-system-study {
     position: relative;
     width: 100%;
     height: 90vh;
@@ -1772,7 +1772,7 @@ section.appear {
     margin-top: 0;
 }
 
-#pss-hero .overlay {
+#design .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -1782,7 +1782,7 @@ section.appear {
     z-index: 1;
 }
 
-#pss-hero .hero-content-pss {
+#design .hero-content-pss {
     position: relative;
     z-index: 2;
     text-align: left; /* Align text to the left */
@@ -1790,12 +1790,12 @@ section.appear {
     margin-left: 80px;
 }
 
-#pss-hero h1 {
+#design h1 {
     font-size: 3em;
     margin: 0;
 }
 
-#pss-hero p {
+#design p {
     font-size: 1.2em;
     margin-top: 0.5em;
     max-width: 1200px;
