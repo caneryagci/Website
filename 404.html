@@ -27,20 +27,47 @@
             text-decoration: none;
             color: #007BFF;
         }
+        .image-container img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="images/bar_logo.webp" alt="404 Error Image">
+        </div>
+        <!-- Heading and Message -->
         <h1>404 - Page Not Found</h1>
         <p>The page you're looking for doesn't exist. You will be redirected shortly.</p>
         <p>If you are not redirected, <a href="/index.html#logo-bar">click here</a> to go back to the homepage.</p>
     </div>
     <script>
-        // Check if the requested URL is `/home`
-        if (window.location.pathname === "/home") {
-            // Redirect to `/index.html#logo-bar`
-            window.location.replace("/index.html#logo-bar");
-        }
+        // Define redirection mapping
+        const redirects = {
+            "/home": "/index.html#logo-bar",
+            "/contact-us": "/contact.html#contact",
+            "/about-us": "/about.html#about",
+            "/recent-works": "/recent-projects.html#recent-projects",
+            "/ts1400-turboshaft-engine-ips-blower": "/learn1.html#turbo-shaft-h3",
+            "/cooling-system-development": "/learn2.html#cooling-system-h3",
+            "/filter-by-pass-valves-for-aerospace-industry": "/learn3.html#valve-h3",
+            "/pedestrian-bridge-railing": "/learn4.html#bridge-rail-h3",
+            "/design": "/services.html#design",
+            "/analyse": "/ai-services.html#ai-hero",
+            "/build": "/energyhub-services.html#energyhub-hero",
+            "/test": "/resapp-services.html#resapp-hero"
+        };
+
+        // Get the current path
+        const currentPath = window.location.pathname;
+
+        // Redirect based on the path or fallback to homepage
+        const redirectTo = redirects[currentPath] || "/index.html#logo-bar";
+        window.location.replace(redirectTo);
     </script>
 </body>
 </html>
