@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+       // Replace the current URL without reloading
+       if (window.location.hash === "#resapp-hero") {
+        history.replaceState({}, "", "/test");
+    }
+
     document.addEventListener("scroll", () => {
         const header = document.querySelector("header");
         if (window.scrollY > 50) {

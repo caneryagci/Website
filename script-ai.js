@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+     // Replace the current URL without reloading
+     if (window.location.hash === "#ai-hero") {
+        history.replaceState({}, "", "/analyse");
+    }
+
     document.addEventListener("scroll", () => {
         const header = document.querySelector("header");
         if (window.scrollY > 50) {

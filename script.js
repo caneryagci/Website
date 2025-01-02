@@ -5,6 +5,42 @@ document.addEventListener('DOMContentLoaded', function () {
         history.replaceState({}, "", "/home");
     }
 
+     // Replace the current URL without reloading
+     if (window.location.hash === "#contact") {
+        history.replaceState({}, "", "/contact-us");
+    }
+
+     // Replace the current URL without reloading
+     if (window.location.hash === "#about") {
+        history.replaceState({}, "", "/about-us");
+    }
+
+    // Replace the current URL without reloading
+    if (window.location.hash === "#recent-projects") {
+        history.replaceState({}, "", "/recent-works");
+    }
+
+    // Replace the current URL without reloading
+    if (window.location.hash === "#turbo-shaft-h3") {
+        history.replaceState({}, "", "/ts1400-turboshaft-engine-ips-blower");
+    }
+
+    // Replace the current URL without reloading
+    if (window.location.hash === "#cooling-system-h3") {
+        history.replaceState({}, "", "/cooling-system-development");
+    }
+
+    // Replace the current URL without reloading
+    if (window.location.hash === "#valve-h3") {
+        history.replaceState({}, "", "/filter-by-pass-valves-for-aerospace-industry");
+    }
+
+    // Replace the current URL without reloading
+    if (window.location.hash === "#bridge-rail-h3") {
+        history.replaceState({}, "", "/pedestrian-bridge-railing");
+    }
+
+
     document.addEventListener("scroll", () => {
         const header = document.querySelector("header");
         if (window.scrollY > 50) {
