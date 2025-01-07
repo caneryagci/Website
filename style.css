@@ -1414,6 +1414,10 @@ figcaption {
         flex-direction: column; /* Stack figures vertically on small screens */
         align-items: center;
     }
+
+    .small-image3 {
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
