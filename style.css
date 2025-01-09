@@ -2725,8 +2725,8 @@ section.appear {
 
 
     header nav ul li a, header nav ul li button, .header-right ul li button {
-        font-size: 9px;
-        font-weight: 400;
+        font-size: 8.5px;
+        font-weight: 350;
         margin: 0; /* Ensure no margin on list items */
         padding: 0; /* Ensure no padding on list items */
     }
