@@ -34,14 +34,28 @@
      <div class="logo-bar" id="logo-bar">
         <a href="index.html#logo-bar" aria-label="Navigate to home" class="logo-container">
             <img src="images/bar_logo2.webp" alt="termavis Logo" class="logo" loading="lazy">
-            <span class="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
+            <span class="logo-text" data-translate="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
         </a>
         <div class="cta-buttons" id="logo-buttons">
-            <a href="contact.html#contact" class="cta-btn">Get in Touch</a>
+            <a href="contact.html#contact" class="cta-btn" data-translate="cta-btn">Get in Touch</a>
             <a href="https://www.linkedin.com/company/termavis/" target="_blank" class="linkedin-btn">
                 <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon">
-                Follow us on LinkedIn
+                <span data-translate="linkedin-text">Follow us on LinkedIn</span>
             </a>
+            <div class="language-dropdown">
+                <button id="selected-language" class="language-button" aria-haspopup="true" aria-expanded="false">
+                    <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon" id="current-flag"> ENG
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="language-options" aria-hidden="true">
+                    <div class="language-option">
+                        <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon"> ENG
+                    </div>
+                    <div class="language-option">
+                        <img src="images/flags/tr.webp" alt="TR Flag" class="flag-icon"> TR
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -62,7 +76,7 @@
                 <li class="dropdown services-title">
                     <!-- Example dropdown toggle with SVG arrow -->
                     <a href="index.html#services" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        <span>Services</span>
+                        <span data-translate="services-title">Services</span>
                         <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -71,36 +85,36 @@
                         
                         <!-- Nested Dropdown for Power System Studies -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';">Design</button>
+                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';" data-translate="dropdown-design">Design</button>
                         </li>
 
                         <!-- Nested Dropdown for Artificial Intelligence Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';">Analyse</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';" data-translate="dropdown-analyse">Analyse</button>
                         </li>
 
                         <!-- Nested Dropdown for Energy Hub Solution Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';">Build</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';" data-translate="dropdown-build">Build</button>
                         </li>
 
                         <!-- Nested Dropdown for Residential Applications-->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';">Test</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';" data-translate="dropdown-test">Test</button>
                         </li>
                         
                     </ul>
                 </li>
 
                 <!-- Other Main Navigation Links -->
-                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem">Recent Works</a></li>
+                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem" data-translate="recent-works">Recent Works</a></li>
             </ul>
 
             <!-- Right-Aligned Links for About Us and Contact Us -->
             <div class="header-right">
                 <ul role="menu">
-                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem">About Us</a></li>
-                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem">Contact Us</a></li>
+                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem" data-translate="about-us">About Us</a></li>
+                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem" data-translate="contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -108,86 +122,87 @@
     
 
     <section id="about">
-        <h2>About Us</h2>
-        <p>At termavis, we specialize in cutting-edge engineering design, analysis, and prototype production. With a deep understanding of thermal technology and its vast applications, we deliver high-performance solutions tailored to meet the unique demands of our clients. Our expertise spans multiple industries, driving innovation through precision engineering and forward-thinking design, all while maintaining a focus on sustainability and efficiency.</p>
+        <h2 data-translate="about-header">About Us</h2>
+        <p data-translate="about-description">At termavis, we specialize in cutting-edge engineering design, analysis, and prototype production. With a deep understanding of thermal technology and its vast applications, we deliver high-performance solutions tailored to meet the unique demands of our clients. Our expertise spans multiple industries, driving innovation through precision engineering and forward-thinking design, all while maintaining a focus on sustainability and efficiency.</p>
+    
         <div class="about-subsection" id="mission">
-            <h3 id="mission-h3">Mission</h3>
-            <p>We are dedicated to revolutionize the engineering landscape by providing state-of-the-art thermal solutions and engineering services. We strive to deliver top-tier designs, advanced analysis, and high-quality prototypes that empower our clients to push the boundaries of what is possible. Through collaboration, innovation, and integrity, we aim to meet the evolving challenges of modern industries with precision and excellence.</p>
+            <h3 id="mission-h3" data-translate="mission-header">Mission</h3>
+            <p data-translate="mission-description">We are dedicated to revolutionize the engineering landscape by providing state-of-the-art thermal solutions and engineering services. We strive to deliver top-tier designs, advanced analysis, and high-quality prototypes that empower our clients to push the boundaries of what is possible. Through collaboration, innovation, and integrity, we aim to meet the evolving challenges of modern industries with precision and excellence.</p>
         </div>
         
         <div class="about-subsection" id="vision">
-            <h3 id="vision-h3">Vision</h3>
-            <p>To become a global leader in thermal technology and engineering solutions, shaping the future of industries by setting new standards for innovation and performance. We aspire to create sustainable, efficient, and impactful designs that enhance both technological advancement and the human experience, fostering a future where our solutions drive positive change.</p>
+            <h3 id="vision-h3" data-translate="vision-header">Vision</h3>
+            <p data-translate="vision-description">To become a global leader in thermal technology and engineering solutions, shaping the future of industries by setting new standards for innovation and performance. We aspire to create sustainable, efficient, and impactful designs that enhance both technological advancement and the human experience, fostering a future where our solutions drive positive change.</p>
         </div>
         
         <div class="about-subsection" id="core-values">
-            <h3 id="core-values-h3">Core Values</h3>
+            <h3 id="core-values-h3" data-translate="core-values-header">Core Values</h3>
             <div class="core-values-container">
                 <!-- Core Value items -->
                 <div class="core-value">
                     <img src="images/CoreValues/innovation.webp" alt="Icon representing innovation" class="core-value-icon" loading="lazy">
-                    <h4>Innovation</h4>
-                    <p>We are committed to advancing the frontiers of technology and engineering through continuous innovation.</p>
+                    <h4 data-translate="innovation-header">Innovation</h4>
+                    <p data-translate="innovation-description">We are committed to advancing the frontiers of technology and engineering through continuous innovation.</p>
                 </div>
                 <div class="core-value">
                     <img src="images/CoreValues/integrity.webp" alt="Integrity Icon" class="core-value-icon" loading="lazy">
-                    <h4>Integrity</h4>
-                    <p>We adhere to the highest standards of ethical conduct, ensuring transparency and trust in all our actions.</p>
+                    <h4 data-translate="integrity-header">Integrity</h4>
+                    <p data-translate="integrity-description">We adhere to the highest standards of ethical conduct, ensuring transparency and trust in all our actions.</p>
                 </div>
                 <div class="core-value">
                     <img src="images/CoreValues/excellence.webp" alt="Technical Excellence Icon" class="core-value-icon" loading="lazy">
-                    <h4>Technical Excellence</h4>
-                    <p>We strive for unparalleled quality in our engineering and software development, delivering solutions that meet the highest industry standards.</p>
+                    <h4 data-translate="technical-excellence-header">Technical Excellence</h4>
+                    <p data-translate="technical-excellence-description">We strive for unparalleled quality in our engineering and software development, delivering solutions that meet the highest industry standards.</p>
                 </div>
                 <div class="core-value">
                     <img src="images/CoreValues/customer.webp" alt="Customer Focus Icon" class="core-value-icon" loading="lazy">
-                    <h4>Customer Focus</h4>
-                    <p>Our clients’ needs are at the forefront of everything we do, and we are dedicated to providing tailored high-impact solutions.</p>
+                    <h4 data-translate="customer-focus-header">Customer Focus</h4>
+                    <p data-translate="customer-focus-description">Our clients’ needs are at the forefront of everything we do, and we are dedicated to providing tailored high-impact solutions.</p>
                 </div>
                 <div class="core-value">
                     <img src="images/CoreValues/teamwork.webp" alt="Teamwork Icon" class="core-value-icon" loading="lazy">
-                    <h4>Teamwork and Collaboration</h4>
-                    <p>We cultivate a collaborative environment that leverages the diverse talents and perspectives of our team, driving collective success.</p>
+                    <h4 data-translate="teamwork-header">Teamwork and Collaboration</h4>
+                    <p data-translate="teamwork-description">We cultivate a collaborative environment that leverages the diverse talents and perspectives of our team, driving collective success.</p>
                 </div>
                 <div class="core-value">
                     <img src="images/CoreValues/diversity.png" alt="Diversity and Inclusion Icon" class="core-value-icon" loading="lazy">
-                    <h4>Diversity and Inclusion</h4>
-                    <p>We value and promote diversity, fostering an inclusive culture that encourages innovation and respects all voices.</p>
+                    <h4 data-translate="diversity-header">Diversity and Inclusion</h4>
+                    <p data-translate="diversity-description">We value and promote diversity, fostering an inclusive culture that encourages innovation and respects all voices.</p>
                 </div>
             </div>
         </div>
         
         <div class="about-subsection" id="our-team">
-            <h3 id="our-team-h3">Our Team</h3>
+            <h3 id="our-team-h3" data-translate="our-team-header">Our Team</h3>
             <div class="team-container">
                 
                 <div class="team-member">
                     <img src="images/Team/yagcialican.webp" alt="Alican Yagci, Mechanical Engineer" class="team-photo" loading="lazy">
-                    <h4>Alican Yagci</h4>
-                    <p>Founder & M.Sc. Mechanical Engineer</p>
+                    <h4 data-translate="team-member-1-name">Alican Yagci</h4>
+                    <p data-translate="team-member-1-title">Founder & M.Sc. Mechanical Engineer</p>
                     <a href="https://www.linkedin.com/in/alican-yagci/" target="_blank" class="linkedin-btn" aria-label="Connect with Alican Yagci on LinkedIn" rel="noopener noreferrer"> 
                         <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon"> 
-                        Connect on LinkedIn
+                        <span data-translate="connect-link">Connect on LinkedIn</span>
                     </a>
                 </div>
                 
                 <div class="team-member">
                     <img src="images/Team/uslualper.webp" alt="Alper Uslu, Mechanical Engineer" class="team-photo" loading="lazy">
-                    <h4>Alper Uslu</h4>
-                    <p>Mechanical Engineer</p>
+                    <h4 data-translate="team-member-2-name">Alper Uslu</h4>
+                    <p data-translate="team-member-2-title">Mechanical Engineer</p>
                     <a href="https://www.linkedin.com/in/alper-uslu-a0653696/" target="_blank" class="linkedin-btn" aria-label="Connect with Alper Uslu on LinkedIn - Mechanical Engineering Consultant" rel="noopener noreferrer"> 
                         <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon"> 
-                        Connect on LinkedIn
+                        <span data-translate="connect-link">Connect on LinkedIn</span>
                     </a>
                 </div>
 
                 <div class="team-member">
                     <img src="images/Team/byagci_image5.webp" alt="Bekir Caner Yagci, Electrical Engineer" class="team-photo" loading="lazy">
-                    <h4>Bekir Caner Yagci</h4>
-                    <p>M.Sc. Electrical Engineer</p>
+                    <h4 data-translate="team-member-3-name">Bekir Caner Yagci</h4>
+                    <p data-translate="team-member-3-title">M.Sc. Electrical Engineer</p>
                     <a href="https://www.linkedin.com/in/bekir-caner-yagci/" target="_blank" class="linkedin-btn" aria-label="Connect with Bekir Caner Yagci on LinkedIn - Power Systems Consultant" rel="noopener noreferrer"> 
                         <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon"> 
-                        Connect on LinkedIn
+                        <span data-translate="connect-link">Connect on LinkedIn</span>
                     </a>
                 </div>
                 
@@ -197,7 +212,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
+            <p data-translate="footer-text">&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
             <p><i class="fas fa-envelope"></i> info@termavis.com | <i class="fas fa-phone-alt"></i> +90 (537) 791 7878</p>
         </div>
     </footer>

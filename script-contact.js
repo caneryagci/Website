@@ -4,6 +4,105 @@ document.addEventListener('DOMContentLoaded', function () {
     //     document.getElementById("form-feedback").style.display = "block";
     //     this.reset(); // Optionally reset the form
     // });
+
+    // Language texts
+    const translations = {
+        en: {
+            "logo-text": "TERMAVIS ENGINEERING | CONSULTING SERVICES",
+            "cta-btn": "Get in Touch",
+            "linkedin-text": "Follow us on LinkedIn",
+            "connect-link": "Connect on LinkedIn",
+            "services-title": "Services",
+            "dropdown-design": "Design",
+            "dropdown-analyse": "Analyse",
+            "dropdown-build": "Build",
+            "dropdown-test": "Test",
+            "recent-works": "Recent Works",
+            "recent-description": "Explore our recent services and solutions.",
+            "about-us": "About Us",
+            "contact-us": "Contact Us",
+            "explore-link": "Explore more",
+            "learn-link": "Learn more",
+            "footer-text": "&copy; 2024 Termavis Engineering. All rights reserved.",
+
+            "contact-header": "Contact Us",
+            "consulting-services-header": "Consulting Services",
+            "consulting-services-description": "We actively seek new opportunities and are experienced in working on international projects.<br>Contact us to discuss your project requirements or to learn more about our consulting services.<br>We look forward to collaborating with you.",
+            "contact-form-header": "Contact Form",
+            "contact-form-description": "We are currently enhancing our contact form to serve you better.<br><br>In the meantime, please feel free to send your inquiries directly to <a href='mailto:info@termavis.com'>info@termavis.com</a>.<br>We appreciate your understanding and look forward to assisting you.",
+            "our-address-header": "Our Address",
+            "design-office-header": "Design Office and Test & Assembly Workshop:",
+            "office-header": "Office",
+            "form-feedback-message": "Thank you for reaching out! We will get back to you shortly."
+        },
+
+        tr: {
+            "logo-text": "TERMAVIS MÜHENDİSLİK | DANIŞMANLIK HİZMETLERİ",
+            "cta-btn": "İletişime Geç",
+            "linkedin-text": "LinkedIn'de Takip Edin",
+            "connect-link": "LinkedIn'de Takip Edin",
+            "services-title": "Hizmetler",
+            "dropdown-design": "Tasarim",
+            "dropdown-analyse": "Analiz",
+            "dropdown-build": "Üretim",
+            "dropdown-test": "Test",
+            "recent-works": "Son İşler",
+            "recent-description": "Son hizmet ve çözümlerimizi keşfedin.",
+            "about-us": "Hakkımızda",
+            "contact-us": "Bize Ulaşın",
+            "explore-link": "Daha fazla keşfedin",
+            "learn-link": "Daha fazla bilgi",
+            "footer-text": "&copy; 2024 Termavis Mühendislik. Tüm hakları saklıdır.",
+
+            "contact-header": "Bize Ulaşın",
+            "consulting-services-header": "Danışmanlık Hizmetleri",
+            "consulting-services-description": "Uluslararası projelerde deneyime sahip bir ekip olarak yeni iş birlikleri için fırsatları değerlendirmekteyiz.<br>Proje gereksinimlerinizi görüşmek veya danışmanlık hizmetlerimiz hakkında detaylı bilgi almak için bizimle iletişime geçebilirsiniz.<br> Sizinle iş birliği yapmaktan memnuniyet duyarız.",
+            "contact-form-header": "İletişim Formu",
+            "contact-form-description": "İletişim formumuzu sizlere daha iyi hizmet verebilmek adına güncelliyoruz.<br><br>Bu süre zarfında sorularınızı <a href='mailto:info@termavis.com'>info@termavis.com</a> adresine iletebilirsiniz.<br> Anlayışınız için teşekkür eder, en kısa sürede size yardımcı olmayı sabırsızlıkla bekliyoruz.",
+            "our-address-header": "Adresimiz",
+            "design-office-header": "Tasarım Ofisi ve Test & Montaj Atölyesi:",
+            "office-header": "Ofis",
+            "form-feedback-message": "Bizimle iletişime geçtiğiniz için teşekkür ederiz! En kısa sürede size geri dönüş yapacağız."
+        }
+    };
+
+     // Function to update the page text based on the selected language
+     function updateTexts(lang) {
+        document.querySelectorAll("[data-translate]").forEach(el => {
+            const key = el.getAttribute("data-translate");
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key]; // Use innerHTML for special characters
+            }
+        });
+    }
+
+    // Function to set the selected language
+    function setLanguage(lang) {
+        const langText = lang === 'en' ? 'ENG' : 'TR';
+        const flagSrc = lang === 'en' ? 'images/flags/en.webp' : 'images/flags/tr.webp';
+
+        const languageButton = document.getElementById('selected-language');
+        languageButton.innerHTML = `<img src="${flagSrc}" alt="${langText} Flag" class="flag-icon"> ${langText} <i class="fas fa-caret-down"></i>`;
+
+        // Save the selected language to localStorage
+        localStorage.setItem('selectedLanguage', lang);
+
+        // Update the text on the page
+        updateTexts(lang);
+    }
+
+    // Load the saved language or default to English
+    const savedLang = localStorage.getItem('selectedLanguage') || 'tr';
+    setLanguage(savedLang);
+
+    // Event listener for language options
+    document.querySelectorAll('.language-option').forEach(option => {
+        option.addEventListener('click', function () {
+            const langText = this.textContent.trim(); // Get text content (e.g., "ENG" or "TR")
+            const lang = langText === 'ENG' ? 'en' : 'tr'; // Convert to language code
+            setLanguage(lang);
+        });
+    });
     
     // Replace the current URL without reloading
     if (window.location.hash === "#contact") {

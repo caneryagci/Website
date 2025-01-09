@@ -484,7 +484,7 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
 .cta-buttons {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
     margin-top: 0;
 }
 
@@ -1885,6 +1885,65 @@ section.appear {
     color: var(--highlight-color2);
     cursor: pointer;
     transition: all 0.3s;
+}
+
+.language-dropdown {
+    position: relative;
+    display: flex;
+    z-index: 10000;
+    flex-grow: 0.5;
+}
+
+.language-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.flag-icon {
+    width: 24px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 87px;
+}
+
+.language-option {
+    font-size: 14px;
+    font-weight: 400;
+}
+.language-option img {
+    width: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+.language-button:hover + .language-options,
+.language-options:hover {
+    display: block;
+}
+
+.language-option {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.language-option:hover {
+    background-color: #f4f4f4;
 }
 
 

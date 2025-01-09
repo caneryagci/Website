@@ -1,4 +1,222 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Language texts
+    const translations = {
+        en: {
+            "logo-text": "TERMAVIS ENGINEERING | CONSULTING SERVICES",
+            "cta-btn": "Get in Touch",
+            "linkedin-text": "Follow us on LinkedIn",
+            "connect-link": "Connect on LinkedIn",
+            "services-title": "Services",
+            "dropdown-design": "Design",
+            "dropdown-analyse": "Analyse",
+            "dropdown-build": "Build",
+            "dropdown-test": "Test",
+            "recent-works": "Recent Works",
+            "recent-description": "Explore our recent services and solutions.",
+            "about-us": "About Us",
+            "contact-us": "Contact Us",
+            "hero-header": "PROVIDING TECHNOLOGY WITH ACCURACY AND CREATIVITY",
+            "hero-description": "expertly delivering detailed design and analysis of engineering projects to the development and production of functional prototypes.",
+            "solutions-header": "Our Solutions",
+            "solutions-subheader": "What We Do",
+            "solutions-description0": "From detailed design and analysis to prototype production.",
+            "solutions-description1": "We are committed to innovation, precision, and efficiency, consistently advancing technology and optimizing performance across a range of disciplines.",
+            "solutions-description2": "Get a closer look at consulting services and how we are providing solutions for customers and partners around the world.",
+            "design-card": "Design it.",
+            "analyse-card": "Analyse it.",
+            "build-card": "Build it.",
+            "test-card": "Test it.",
+            "explore-link": "Explore more",
+            "case-study-1-title": "TS1400 Turboshaft Engine IPS Blower Aerodynamic Design & Analysis",
+            "case-study-2-title": "Cooling System Development Project Aimed at Reducing the Maintenance Time of Turbofan Engines",
+            "case-study-3-title": "Filter By-pass Valves for Aerospace Industry",
+            "case-study-4-title": "Pedestrian Bridge Railing Design and Production",
+            "learn-link": "Learn more",
+            "footer-text": "&copy; 2024 Termavis Engineering. All rights reserved.",
+            
+            "h3-text-0": "TS1400 Turboshaft Engine IPS Blower",
+            "h2-text-0": "Aerodynamic Design & Analysis",
+            "p-text-0": "A comprehensive rotor-stator design and detailed analysis for the blower component within the TS1400 Turboshaft Engine Integrated Particle Separation System has been meticulously carried out in accordance with the latest updated technical requirements. Utilizing advanced and sophisticated 2D and 3D turbo machinery design software, a highly efficient blower was designed to be fully compatible with the existing system interface, ensuring seamless integration. Additionally, its overall performance was validated through analysis and confirming its reliability and efficacy in meeting the required operational standards.",
+            "h3-text-1": "Cooling System Development",
+            "h2-text-1": "Reducing the Maintenance Time of Turbofan Engines",
+            "p-text-1": "Turbofan engine cooling system project focuses on optimizing the maintenance processes of commercial aviation fleets to achieve operational excellence and cost reduction. By streamlining maintenance schedules, we aim to significantly reduce downtime, allowing aircraft to return to service faster. This not only increases the fleet’s overall flight capacity but also ensures that aircraft undergo more frequent and thorough safety checks, improving flight safety. By minimizing the maintenance times of turbofan engines, we offer a competitive advantage to airlines, enabling them to lower operational costs and enhance customer satisfaction. This Tübitak-supported initiative is designed to provide long-term benefits, improving operational efficiency and cost-effectiveness for commercial air fleets.",
+            "h3-text-2": "Filter By-pass Valves for Aerospace Industry",
+            "p-text-2": "We are developing advanced filter by-pass valves specifically designed for the aviation industry. Oil bypass valves play a critical role in ensuring the uninterrupted operation of aircraft systems by allowing fluid to bypass the filter when it becomes clogged or experiences high pressure, preventing engine damage or system failure. Our filter by-pass valves are engineered for maximum reliability and performance, ensuring that even in extreme conditions, aircraft maintain optimal functionality. The specifics can be optimized based on their intended applications.",
+            "h3-text-3": "Pedestrian Bridge Railing",
+            "h2-text-3": "Design and Production",
+            "p-text-3": "We designed and produced a durable and aesthetically pleasing pedestrian bridge railing system, tailored to enhance both safety and visual appeal. The design process involved detailed analysis to ensure structural integrity, while meeting local regulations and safety standards. Using high-quality materials and precise engineering, the railing provides long-lasting performance in various weather conditions. Our commitment to innovation and craftsmanship is reflected in the seamless integration of the railing into the overall bridge structure, ensuring both functionality and a modern appearance.",
+            
+            "about-header": "About Us",
+            "about-description": "At termavis, we specialize in cutting-edge engineering design, analysis, and prototype production. With a deep understanding of thermal technology and its vast applications, we deliver high-performance solutions tailored to meet the unique demands of our clients. Our expertise spans multiple industries, driving innovation through precision engineering and forward-thinking design, all while maintaining a focus on sustainability and efficiency.",
+            "mission-header": "Mission",
+            "mission-description": "We are dedicated to revolutionize the engineering landscape by providing state-of-the-art thermal solutions and engineering services. We strive to deliver top-tier designs, advanced analysis, and high-quality prototypes that empower our clients to push the boundaries of what is possible. Through collaboration, innovation, and integrity, we aim to meet the evolving challenges of modern industries with precision and excellence.",
+            "vision-header": "Vision",
+            "vision-description": "To become a global leader in thermal technology and engineering solutions, shaping the future of industries by setting new standards for innovation and performance. We aspire to create sustainable, efficient, and impactful designs that enhance both technological advancement and the human experience, fostering a future where our solutions drive positive change.",
+            "core-values-header": "Core Values",
+            "innovation-header": "Innovation",
+            "innovation-description": "We are committed to advancing the frontiers of technology and engineering through continuous innovation.",
+            "integrity-header": "Integrity",
+            "integrity-description": "We adhere to the highest standards of ethical conduct, ensuring transparency and trust in all our actions.",
+            "technical-excellence-header": "Technical Excellence",
+            "technical-excellence-description": "We strive for unparalleled quality in our engineering and software development, delivering solutions that meet the highest industry standards.",
+            "customer-focus-header": "Customer Focus",
+            "customer-focus-description": "Our clients’ needs are at the forefront of everything we do, and we are dedicated to providing tailored high-impact solutions.",
+            "teamwork-header": "Teamwork and Collaboration",
+            "teamwork-description": "We cultivate a collaborative environment that leverages the diverse talents and perspectives of our team, driving collective success.",
+            "diversity-header": "Diversity and Inclusion",
+            "diversity-description": "We value and promote diversity, fostering an inclusive culture that encourages innovation and respects all voices.",
+            "our-team-header": "Our Team",
+            "team-member-1-name": "Alican Yagci",
+            "team-member-1-title": "Founder & M.Sc. Mechanical Engineer",
+            "team-member-2-name": "Alper Uslu",
+            "team-member-2-title": "Mechanical Engineer",
+            "team-member-3-name": "Bekir Caner Yagci",
+            "team-member-3-title": "M.Sc. Electrical Engineer",
+
+            "recent-works-header": "Recent Works",
+            "recent-works-description-1": "Our expertise extends from the detailed design and analysis of engineering projects to the development and production of functional prototypes. While our work encompasses a wide range of engineering disciplines, every project we undertake is united by a commitment to innovation and precision, delivering solutions that advance both technology and efficiency.",
+            "recent-works-description-2": "We are proud to showcase our recent consulting engagements, demonstrating our expertise in delivering top-tier engineering solutions for a variety of clients.",
+
+            "pressure-valve-title": "Pressure Valve:",
+            "pressure-valve-item-1": "Cracking pressure in the range of 100 kPa - 500 kPa,",
+            "pressure-valve-item-2": "Optimized for low pressure drop,",
+            "pressure-valve-item-3": "Lightweight and compact design with aluminum body,",
+            "pressure-valve-item-4": "Operating temperature range of -50°C to +150°C.",
+            "thermal-valve-title": "Thermal Pressure Valve:",
+            "thermal-valve-item-1": "Adjustable opening/closing mode in the range of -40°C to 100°C,",
+            "thermal-valve-item-2": "Cracking pressure in the range of 100 kPa - 500 kPa,",
+            "thermal-valve-item-3": "Optimized for low pressure drop,",
+            "thermal-valve-item-4": "Lightweight and compact design with aluminum body,",
+            "thermal-valve-item-5": "Operating temperature range of -50°C to +150°C."
+        },
+
+        tr: {
+            "logo-text": "TERMAVIS MÜHENDİSLİK | DANIŞMANLIK HİZMETLERİ",
+            "cta-btn": "İletişime Geç",
+            "linkedin-text": "LinkedIn'de Takip Edin",
+            "connect-link": "LinkedIn'de Takip Edin",
+            "services-title": "Hizmetler",
+            "dropdown-design": "Tasarim",
+            "dropdown-analyse": "Analiz",
+            "dropdown-build": "Üretim",
+            "dropdown-test": "Test",
+            "recent-works": "Son İşler",
+            "recent-description": "Son hizmet ve çözümlerimizi keşfedin.",
+            "about-us": "Hakkımızda",
+            "contact-us": "Bize Ulaşın",
+            "hero-header": "HASSASİYET VE YARATICILIK İLE TEKNOLOJİ SAĞLIYORUZ",
+            "hero-description": "mühendislik projelerinin detaylı tasarım ve analizinden işlevsel prototiplerin geliştirilmesi ve üretimine kadar uzmanlıkla hizmet sunar.",
+            "solutions-header": "Çözümlerimiz",
+            "solutions-subheader": "Ne Yapıyoruz",
+            "solutions-description0": "Detaylı tasarım ve analizden prototip üretimine kadar mühendislik çözümleri.",
+            "solutions-description1": "Yenilikçilik, hassasiyet ve verimliliğe olan bağlılığımızla, çeşitli disiplinlerde teknolojiyi sürekli geliştiriyor ve performansı optimize ediyoruz.",
+            "solutions-description2": "Danışmanlık hizmetlerimizi ve dünya çapında müşterilerimiz ve iş ortaklarımız için nasıl çözümler sunduğumuzu yakından inceleyin.",
+            "design-card": "Tasarım Yapın.",
+            "analyse-card": "Analiz Edin.",
+            "build-card": "Üretin.",
+            "test-card": "Test Edin.",
+            "explore-link": "Daha fazla keşfedin",
+            "case-study-1-title": "TS1400 Turboşaft Motor IPS Üfleyici Aerodinamik Tasarım ve Analiz",
+            "case-study-2-title": "Turbofan Motorlarının Bakım Sürelerini Azaltmaya Yönelik Soğutma Sistemi Geliştirme Projesi",
+            "case-study-3-title": "Havacılık Sektörü için Baypas Valfleri",
+            "case-study-4-title": "Yaya Köprüsü Korkuluğu Tasarım ve Üretimi",
+            "learn-link": "Daha fazla bilgi edin",
+            "footer-text": "&copy; 2024 Termavis Mühendislik. Tüm hakları saklıdır.",
+            
+            "h3-text-0": "TS1400 Turboşaft Motor IPS Üfleyici",
+            "h2-text-0": "Aerodinamik Tasarım ve Analiz",
+            "p-text-0": "TS1400 Turboşaft Motor Entegre Parçacık Ayırma Sistemi'nin üfleyici bileşeni için kapsamlı rotor-stator tasarımı ve detaylı analiz, en güncel teknik gereksinimlere uygun olarak titizlikle gerçekleştirilmiştir. Gelişmiş ve sofistike 2D ve 3D turbo makine tasarım yazılımı kullanılarak, mevcut sistem arayüzü ile tamamen uyumlu, son derece verimli bir üfleyici tasarlanmıştır. Ayrıca genel performansı analizlerle doğrulanarak operasyonel standartlara uygunluğu ve güvenilirliği kanıtlanmıştır.",
+            "h3-text-1": "Soğutma Sistemi Geliştirme",
+            "h2-text-1": "Turbofan Motorlarının Bakım Sürelerinin Azaltılması",
+            "p-text-1": "Turbofan motor soğutma sistemi projesi, ticari havacılık filolarının bakım süreçlerini optimize ederek operasyonel mükemmellik ve maliyet düşüşü sağlamayı hedeflemektedir. Bakım programlarının düzenlenmesi sayesinde uçakların hizmete daha hızlı dönebilmesi sağlanır. Bu, filonun toplam uçuş kapasitesini artırırken daha sık ve kapsamlı güvenlik kontrollerinin yapılmasını mümkün kılar. Turbofan motorlarının bakım sürelerinin azaltılmasıyla havayollarına operasyonel maliyetleri düşürme ve müşteri memnuniyetini artırma avantajı sunuyoruz. Tübitak destekli bu girişim, ticari hava filoları için operasyonel verimliliği ve maliyet etkinliğini artıran uzun vadeli faydalar sağlamayı amaçlamaktadır.",
+            "h3-text-2": "Havacılık Sektörü İçin Baypas Valfleri",
+            "p-text-2": "Havacılık endüstrisi için özel olarak tasarlanmış ileri teknoloji baypas valfleri geliştiriyoruz. Yağ baypas valfleri, filtre tıkandığında veya yüksek basınca maruz kaldığında sıvının filtreyi baypas ederek motor hasarını veya sistem arızasını önlemesini sağlar. Geliştirdiğimiz baypas valfleri maksimum güvenilirlik ve performans sağlamak üzere tasarlanmıştır. Bu valfler, aşırı koşullarda bile uçakların optimum işlevselliğini korumasını sağlar.",
+            "h3-text-3": "Yaya Köprüsü Korkuluğu",
+            "h2-text-3": "Tasarım ve Üretim",
+            "p-text-3": "Güvenliği ve estetik görünümü artırmak için dayanıklı ve estetik bir yaya köprüsü korkuluk sistemi tasarladık ve ürettik. Tasarım süreci, yerel yönetmeliklere ve güvenlik standartlarına uygunluğu sağlarken yapısal bütünlüğü garanti altına almak için detaylı analizleri içermektedir. Yüksek kaliteli malzemeler ve hassas mühendislik kullanılarak üretilen korkuluk, çeşitli hava koşullarında uzun ömürlü performans sunar. Yenilikçilik ve ustalığa bağlılığımız, korkuluğun genel köprü yapısına kusursuz bir şekilde entegrasyonunda yansıtılmaktadır.",
+            
+            "about-header": "Hakkımızda",
+            "about-description": "Termavis olarak mühendislik tasarımı, analiz ve prototip üretiminde öncü çözümler sunuyoruz. Termal teknoloji ve geniş uygulama alanlarına yönelik derin bir anlayışla, müşterilerimizin özel ihtiyaçlarına uygun yüksek performanslı çözümler üretiyoruz. Uzmanlığımız farklı sektörleri kapsamakta olup, hassas mühendislik ve ileriye dönük tasarımlarla yenilikleri hayata geçirirken sürdürülebilirlik ve verimlilik odağımızı koruyoruz.",
+            "mission-header": "Misyon",
+            "mission-description": "Termal çözümler ve mühendislik hizmetleri sunarak mühendislik alanında devrim yaratmaya kararlıyız. Üst düzey tasarımlar, ileri analizler ve yüksek kaliteli prototipler sağlayarak müşterilerimizin mümkün olanın sınırlarını zorlamasına olanak tanıyoruz. İş birliği, yenilikçilik ve dürüstlük ilkeleri doğrultusunda modern endüstrilerin gelişen zorluklarını hassasiyet ve mükemmellik ile karşılamayı hedefliyoruz.",
+            "vision-header": "Vizyon",
+            "vision-description": "Termal teknoloji ve mühendislik çözümlerinde küresel bir lider olarak endüstrilerin geleceğini şekillendirmek ve yenilik ile performans için yeni standartlar belirlemek istiyoruz. Sürdürülebilir, verimli ve etkili tasarımlar yaratarak hem teknolojik ilerlemeyi hem de insan deneyimini geliştirmeyi hedefliyoruz. Çözümlerimizin olumlu değişimi teşvik ettiği bir gelecek için çalışıyoruz.",
+            "core-values-header": "Temel Değerler",
+            "innovation-header": "Yenilikçilik",
+            "innovation-description": "Teknolojiyi sürekli yeniliklerle geliştirme taahhüdümüz var.",
+            "integrity-header": "Dürüstlük",
+            "integrity-description": "En yüksek etik standartlara bağlıyız.",
+            "technical-excellence-header": "Teknik Mükemmellik",
+            "technical-excellence-description": "Mühendislik ve yazılım çözümlerinde en üst kaliteyi hedefliyoruz.",
+            "customer-focus-header": "Müşteri Odaklılık",
+            "customer-focus-description": "Müşterilerimizin ihtiyaçları her zaman önceliğimizdir.",
+            "teamwork-header": "Takım Çalışması ve İşbirliği",
+            "teamwork-description": "Çeşitli yetenek ve bakış açılarını bir araya getiren bir çalışma ortamı oluşturuyoruz.",
+            "diversity-header": "Çeşitlilik ve Dahil Etme",
+            "diversity-description": "Farklılıklara değer verir ve kapsayıcı bir kültürü teşvik ederiz.",
+            "our-team-header": "Ekibimiz",
+            "team-member-1-name": "Alican Yağcı",
+            "team-member-1-title": "Kurucu & Yüksek Makine Mühendisi",
+            "team-member-2-name": "Alper Uslu",
+            "team-member-2-title": "Makine Mühendisi",
+            "team-member-3-name": "Bekir Caner Yağcı",
+            "team-member-3-title": "Yüksek Elektrik Mühendisi",
+
+            "recent-works-header": "Son İşlerimiz",
+            "recent-works-description-1": "Uzmanlığımız, mühendislik projelerinin detaylı tasarımı ve analizinden işlevsel prototiplerin geliştirilmesi ve üretimine kadar uzanmaktadır. Çalışmalarımız geniş bir mühendislik yelpazesini kapsasa da her proje, yenilik ve hassasiyet taahhüdüyle birleşerek teknoloji ve verimliliği ileriye taşıyan çözümler sunar.",
+            "recent-works-description-2": "Çeşitli müşterilerimize üst düzey mühendislik çözümleri sunduğumuzu kanıtlayan son danışmanlık projelerimizi gururla paylaşıyoruz.",
+
+            "pressure-valve-title": "Basınç Valfi:",
+            "pressure-valve-item-1": "Açılma basıncı 100 kPa - 500 kPa aralığında,",
+            "pressure-valve-item-2": "Düşük basınç düşümü için optimize edilmiştir,",
+            "pressure-valve-item-3": "Alüminyum gövdeli hafif ve kompakt tasarım,",
+            "pressure-valve-item-4": "Çalışma sıcaklığı aralığı -50°C ile +150°C.",
+            "thermal-valve-title": "Termal Basınç Valfi:",
+            "thermal-valve-item-1": "Açılma/kapanma modu -40°C ile 100°C arasında ayarlanabilir,",
+            "thermal-valve-item-2": "Açılma basıncı 100 kPa - 500 kPa aralığında,",
+            "thermal-valve-item-3": "Düşük basınç düşümü için optimize edilmiştir,",
+            "thermal-valve-item-4": "Alüminyum gövdeli hafif ve kompakt tasarım,",
+            "thermal-valve-item-5": "Çalışma sıcaklığı aralığı -50°C ile +150°C."
+        }
+    };
+
+     // Function to update the page text based on the selected language
+     function updateTexts(lang) {
+        document.querySelectorAll("[data-translate]").forEach(el => {
+            const key = el.getAttribute("data-translate");
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key]; // Use innerHTML for special characters
+            }
+        });
+    }
+
+    // Function to set the selected language
+    function setLanguage(lang) {
+        const langText = lang === 'en' ? 'ENG' : 'TR';
+        const flagSrc = lang === 'en' ? 'images/flags/en.webp' : 'images/flags/tr.webp';
+
+        const languageButton = document.getElementById('selected-language');
+        languageButton.innerHTML = `<img src="${flagSrc}" alt="${langText} Flag" class="flag-icon"> ${langText} <i class="fas fa-caret-down"></i>`;
+
+        // Save the selected language to localStorage
+        localStorage.setItem('selectedLanguage', lang);
+
+        // Update the text on the page
+        updateTexts(lang);
+    }
+
+    // Load the saved language or default to English
+    const savedLang = localStorage.getItem('selectedLanguage') || 'tr';
+    setLanguage(savedLang);
+
+    // Event listener for language options
+    document.querySelectorAll('.language-option').forEach(option => {
+        option.addEventListener('click', function () {
+            const langText = this.textContent.trim(); // Get text content (e.g., "ENG" or "TR")
+            const lang = langText === 'ENG' ? 'en' : 'tr'; // Convert to language code
+            setLanguage(lang);
+        });
+    });
 
     // Replace the current URL without reloading
     if (window.location.hash === "#logo-bar") {
@@ -198,82 +416,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('section').forEach(section => observer.observe(section));
 
 
-    // Toggle visibility for each service section
-    document.querySelectorAll('.service-link-overview').forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            const targetId = link.getAttribute('data-target');
-            const servicesContainer = document.getElementById(targetId);
-
-            // Toggle visibility and ensure static frame is shown initially
-            if (servicesContainer.classList.contains('hidden')) {
-                servicesContainer.classList.remove('hidden');
-                servicesContainer.classList.add('show');
-                console.log(`Showing services container: ${targetId}`);
-
-                // Initialize canvas animations and hover events for each service card within the shown container
-                servicesContainer.querySelectorAll('.service-card').forEach(card => {
-                    const canvas = card.querySelector('.card-canvas');
-                    const title = card.querySelector('h3').innerText;
-
-                    // Define animations by title, each function returns an object with control methods
-                    const animations = {
-                        "Load Flow Analysis": animateSineWave,
-                        "Short Circuit Analysis": animateElectricPulse,
-                        "Power Quality & Reactive Power Analysis": animateReactiveParticles,
-                        "Harmonic Analysis": animateHarmonicWaves,
-                        "Transformer Energisation Study": animateTransformerRings,
-                        "Insulation Coordination Study": animateVoltageSpikes,
-                        "Under-frequency & Load Shedding Study": animateFrequencyWave,
-                        "Static & Dynamic Security Assessment": animateOscillatingGrid,
-                        "Congestion Management": animateFlowingArrows,
-                        "Long Term Investment": animateExpandingCircles,
-                        "Stochastic Energy Optimization": animateStochasticDots,
-                        "Motor Starting Calculations": animateMotorRipples,
-                        "Digital Twin": animateRotatingElements,
-                        "Grid Code Compliance": animatePulseGrid,
-                        "Time Domain Forecasting - Neural ODE Modeling": animateTimeDomainForecasting,
-                        "Anomaly Detection - Classification": animateAnomalyDetection,
-                        "Reinforcement Learning for Energy Systems": animateReinforcementLearning,
-                        "Data Analysis & Feature Engineering": animateDataAnalysis,
-                        "Distributed Energy Resources": animateDistributedEnergy,
-                        "EV Charging Optimization": animateEVCharging,
-                        "Flexibility Management": animateFlexibilityManagement,
-                        "Green Hydrogen Solutions": animateGreenHydrogen,
-                        "Intelligent Battery and Renewable Energy Systems": animateIntelligentBattery,
-                        "Industrial Load Planning, Modeling & Optimization": animateIndustrialLoadPlanning,
-                        "Residential Energy Systems": animateResidentialEnergy,
-                        "Intelligent Residential Heat Pump Solutions": animateResidentialHeatPump
-                    };
-
-                    const animation = animations[title]?.(canvas);
-
-                    // Render the initial static frame if animation exists
-                    if (animation) {
-                        animation.renderStaticFrame();
-                        console.log(`Rendering initial static frame for card: ${title}`);
-
-                        // Start/stop animations on hover
-                        card.addEventListener('mouseenter', () => {
-                            console.log(`Starting animation for card: ${title}`);
-                            animation.start();
-                        });
-                        card.addEventListener('mouseleave', () => {
-                            console.log(`Stopping animation and reverting to static frame for card: ${title}`);
-                            animation.stop(); // Stop animation and revert to static frame
-                        });
-                    }
-                });
-            } else {
-                servicesContainer.classList.remove('show');
-                servicesContainer.classList.add('hidden');
-                console.log(`Hiding services container: ${targetId}`);
-            }
-        });
-    });
-
-
     // Set canvas resolution for high-DPI screens
     function setCanvasResolution(canvas) {
         const ctx = canvas.getContext('2d');
@@ -283,1245 +425,6 @@ document.addEventListener('DOMContentLoaded', function () {
         ctx.scale(scale, scale);
     }
 
-    // Animation Functions
-
-    // Load Flow Analysis - Sine Wave with Static Frame
-    function animateSineWave(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            const gridSize = 20;
-            ctx.strokeStyle = 'rgba(0, 255, 180, 0.8)';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            for (let x = 0; x < canvas.width; x += gridSize) {
-                for (let y = 0; y < canvas.height; y += gridSize) {
-                    const waveOffset = Math.sin((x + offset) * 0.02) * 160;
-                    ctx.moveTo(x, y + waveOffset);
-                    ctx.lineTo(x, y + waveOffset + gridSize);
-                }
-            }
-            ctx.stroke();
-
-            if (animate) {
-                offset += 0.05;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-
-        // Render a single static frame
-        function renderStaticFrame() {
-            draw(false); // Call draw without advancing animation
-        }
-
-        return {
-            start() { draw(); },
-            stop() { 
-                cancelAnimationFrame(animationFrameId); 
-                ctx.clearRect(0, 0, canvas.width, canvas.height); 
-                renderStaticFrame(); // Render static frame after stopping
-            },
-            renderStaticFrame
-        };
-    }
-
-    // Short Circuit Analysis - Electric Pulse with Static Frame
-    function animateElectricPulse(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            const pulseFrequency = 0.1;
-            const pulseMagnitude = 80;
-            ctx.strokeStyle = 'rgba(255, 80, 80, 0.8)';
-            ctx.lineWidth = 2.0;
-
-            for (let i = 0; i < 10; i++) {
-                const x = canvas.width / 2;
-                const y = (canvas.height / 10) * i + offset;
-                const pulseSize = Math.sin((i + offset) * pulseFrequency) * pulseMagnitude;
-
-                ctx.beginPath();
-                ctx.moveTo(x - pulseSize, y);
-                ctx.lineTo(x + pulseSize, y);
-                ctx.stroke();
-            }
-
-            if (animate) {
-                offset += 0.15;
-                if (offset > canvas.height / 10) offset = 0;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-
-        // Render a single static frame
-        function renderStaticFrame() {
-            draw(false); // Call draw without advancing animation
-        }
-
-        return {
-            start() { draw(); },
-            stop() { 
-                cancelAnimationFrame(animationFrameId); 
-                ctx.clearRect(0, 0, canvas.width, canvas.height); 
-                renderStaticFrame(); // Render static frame after stopping
-            },
-            renderStaticFrame
-        };
-    }
-            
-            
-    // Power Quality & Reactive Power Analysis - Particles with Static Frame
-    function animateReactiveParticles(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        const particles = Array.from({ length: 20 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 4 + 1,
-            speedX: (Math.random() - 0.5) * 0.5,
-            speedY: (Math.random() - 0.5) * 0.5
-        }));
-        let animationFrameId;
-
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = 'rgba(0, 180, 255, 0.8)';
-            particles.forEach((particle) => {
-                if (animate) {
-                    particle.x += particle.speedX;
-                    particle.y += particle.speedY;
-
-                    // Wrap particles around edges
-                    if (particle.x < 0) particle.x = canvas.width;
-                    if (particle.x > canvas.width) particle.x = 0;
-                    if (particle.y < 0) particle.y = canvas.height;
-                    if (particle.y > canvas.height) particle.y = 0;
-                }
-
-                ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fill();
-            });
-
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-
-        // Render a single static frame
-        function renderStaticFrame() {
-            draw(false); // Call draw without advancing animation
-        }
-
-        return {
-            start() { draw(); },
-            stop() { 
-                cancelAnimationFrame(animationFrameId); 
-                ctx.clearRect(0, 0, canvas.width, canvas.height); 
-                renderStaticFrame(); // Render static frame after stopping
-            },
-            renderStaticFrame
-        };
-    }
-        
-    // Harmonic Analysis - Oscillating Waves with Static Frame
-    function animateHarmonicWaves(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.strokeStyle = 'rgba(150, 50, 255, 0.8)';
-            ctx.lineWidth = 1.5;
-
-            for (let i = 0; i < 5; i++) {
-                ctx.beginPath();
-                for (let x = 0; x < canvas.width; x += 10) {
-                    const y = canvas.height / 3 + Math.sin((x + offset + i * 15) * 0.05) * (1 + i * 6);
-                    ctx.lineTo(x, y);
-                }
-                ctx.stroke();
-            }
-
-            if (animate) {
-                offset += 0.3;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-
-        // Render a single static frame
-        function renderStaticFrame() {
-            draw(false); // Call draw without advancing animation
-        }
-
-        return {
-            start() { draw(); },
-            stop() { 
-                cancelAnimationFrame(animationFrameId); 
-                ctx.clearRect(0, 0, canvas.width, canvas.height); 
-                renderStaticFrame(); // Render static frame after stopping
-            },
-            renderStaticFrame
-        };
-    }
-
-
-    // Transformer Energisation Study - Expanding Rings with Static Frame
-    function animateTransformerRings(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let rings = [
-            { radius: 20, alpha: 1 },
-            { radius: 50, alpha: 0.6 },
-            { radius: 80, alpha: 0.3 }
-        ];
-        let animationFrameId;
-
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 3;
-
-            rings.forEach(ring => {
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, ring.radius, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(255, 204, 0, ${ring.alpha})`;
-                ctx.lineWidth = 2;
-                ctx.stroke();
-
-                if (animate) {
-                    ring.radius += 0.5;
-                    ring.alpha -= 0.005;
-                }
-            });
-
-            if (animate) {
-                rings = rings.filter(ring => ring.alpha > 0);
-                if (rings.length < 3) rings.push({ radius: 20, alpha: 1 });
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-
-        // Render a single static frame
-        function renderStaticFrame() {
-            draw(false); // Call draw without advancing animation
-        }
-
-        return {
-            start() { draw(); },
-            stop() { 
-                cancelAnimationFrame(animationFrameId); 
-                ctx.clearRect(0, 0, canvas.width, canvas.height); 
-                renderStaticFrame(); // Render static frame after stopping
-            },
-            renderStaticFrame
-        };
-    }
-    // Insulation Coordination Study - Voltage Spikes with Static Frame
-    function animateVoltageSpikes(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a'; // Black background
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            // Set stroke style and shadow for glowing effect
-            ctx.strokeStyle = 'rgba(255, 80, 0, 0.8)'; // Soft orange glow
-            ctx.shadowColor = 'rgba(255, 140, 0, 0.4)'; // Light orange shadow for glow
-            ctx.shadowBlur = 10;
-            ctx.lineWidth = 2; // Sleeker line width for minimalist design
-    
-            const spikeWidth = canvas.width / 20; // Thinner spike width for more defined spikes
-            for (let i = 0; i < canvas.width; i += spikeWidth * 1.5) {
-                const spikeHeight = Math.random() * (canvas.height / 5) + canvas.height / 5; // Randomized height within a controlled range
-                ctx.beginPath();
-                ctx.moveTo(i, canvas.height);
-                ctx.lineTo(i + spikeWidth / 2, canvas.height - spikeHeight);
-                ctx.lineTo(i + spikeWidth, canvas.height);
-                ctx.stroke();
-            }
-    
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-
-    // Under-frequency & Load Shedding Study - Frequency Wave with Static Frame
-    function animateFrequencyWave(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.strokeStyle = 'rgba(0, 200, 255, 0.8)';
-            ctx.lineWidth = 2;
-            const centerY = canvas.height / 4;
-
-            ctx.beginPath();
-            for (let x = 0; x < canvas.width; x += 3) {
-                const y = centerY + Math.sin((x + offset) * 0.03) * 30;
-                ctx.lineTo(x, y);
-            }
-            ctx.stroke();
-
-            if (animate) {
-                offset += 1;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-
-        // Render a single static frame
-        function renderStaticFrame() {
-            draw(false); // Call draw without advancing animation
-        }
-
-        return {
-            start() { draw(); },
-            stop() { 
-                cancelAnimationFrame(animationFrameId); 
-                ctx.clearRect(0, 0, canvas.width, canvas.height); 
-                renderStaticFrame(); // Render static frame after stopping
-            },
-            renderStaticFrame
-        };
-    }
-    //Static & Dynamic Security Assessment
-    function animateOscillatingGrid(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            const gridSize = 25;
-            ctx.strokeStyle = 'rgba(0, 120, 255, 0.8)';
-            ctx.lineWidth = 1;
-    
-            for (let x = 0; x < canvas.width; x += gridSize) {
-                for (let y = 0; y < canvas.height; y += gridSize) {
-                    const offsetY = Math.sin((x + offset) * 0.1) * 10;
-                    ctx.beginPath();
-                    ctx.moveTo(x, y + offsetY);
-                    ctx.lineTo(x + gridSize, y + offsetY);
-                    ctx.stroke();
-                }
-            }
-    
-            if (animate) {
-                offset += 0.2;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() {
-            draw(false);
-        }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Congestion Management
-    function animateFlowingArrows(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a'; // Black background
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Create gradient for arrows
-            const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-            gradient.addColorStop(0, 'rgba(0, 255, 100, 0.1)');
-            gradient.addColorStop(0.5, 'rgba(0, 255, 100, 0.6)');
-            gradient.addColorStop(1, 'rgba(0, 255, 100, 0.1)');
-
-            ctx.strokeStyle = gradient;
-            ctx.shadowColor = 'rgba(0, 255, 100, 0.3)';
-            ctx.shadowBlur = 8;
-            ctx.lineWidth = 1.2;
-
-            // Draw flowing arrows
-            const arrowSize = 10;
-            for (let y = 0; y < canvas.height; y += 25) {
-                for (let x = 0; x < canvas.width; x += 40) {
-                    const xPos = x + (offset % 40);
-
-                    ctx.beginPath();
-                    ctx.moveTo(xPos, y);
-                    ctx.lineTo(xPos + arrowSize, y - arrowSize / 2);
-                    ctx.lineTo(xPos + arrowSize, y + arrowSize / 2);
-                    ctx.closePath();
-                    ctx.stroke();
-                }
-            }
-
-            if (animate) {
-                offset += 1;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-
-        function renderStaticFrame() { draw(false); }
-
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Long Term Investment
-    function animateExpandingCircles(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let circles = [
-            { x: canvas.width / 2, y: canvas.height / 2, radius: 20, alpha: 1 },
-            { x: canvas.width / 3, y: canvas.height / 3, radius: 40, alpha: 0.5 },
-            { x: canvas.width / 1.5, y: canvas.height / 1.5, radius: 60, alpha: 0.2 }
-        ];
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            circles.forEach(circle => {
-                ctx.beginPath();
-                ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(100, 200, 255, ${circle.alpha})`;
-                ctx.lineWidth = 1.5;
-                ctx.stroke();
-    
-                if (animate) {
-                    circle.radius += 0.3;
-                    circle.alpha -= 0.005;
-                }
-            });
-    
-            if (animate) {
-                circles = circles.filter(circle => circle.alpha > 0);
-                if (circles.length < 3) circles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, radius: 20, alpha: 1 });
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() {
-            draw(false);
-        }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Stochastic Energy Optimization
-    function animateStochasticDots(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        const dots = Array.from({ length: 30 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 3 + 1,
-            speedX: (Math.random() - 0.5) * 0.3,
-            speedY: (Math.random() - 0.5) * 0.3
-        }));
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a'; // Black background
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // White dots for contrast
-            dots.forEach(dot => {
-                if (animate) {
-                    dot.x += dot.speedX;
-                    dot.y += dot.speedY;
-    
-                    // Wrap dots around edges
-                    if (dot.x < 0) dot.x = canvas.width;
-                    if (dot.x > canvas.width) dot.x = 0;
-                    if (dot.y < 0) dot.y = canvas.height;
-                    if (dot.y > canvas.height) dot.y = 0;
-                }
-    
-                ctx.beginPath();
-                ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
-                ctx.fill();
-            });
-    
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Motor Starting
-    function animateMotorRipples(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let lines = Array.from({ length: 20 }, () => ({
-            angle: Math.random() * Math.PI * 2,
-            length: 5,
-            alpha: 1
-        }));
-        let animationFrameId;
-
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a'; // Black background
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-
-            lines.forEach(line => {
-                const endX = centerX + Math.cos(line.angle) * line.length;
-                const endY = centerY + Math.sin(line.angle) * line.length;
-
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(endX, endY);
-                ctx.strokeStyle = `rgba(255, 165, 0, ${line.alpha})`; // Subtle orange glow for surge effect
-                ctx.lineWidth = 1.5;
-                ctx.stroke();
-
-                if (animate) {
-                    line.length += 2; // Increase length to simulate outward surge
-                    line.alpha -= 0.02; // Fade out quickly to capture surge
-                }
-            });
-
-            if (animate) {
-                lines = lines.filter(line => line.alpha > 0);
-                if (lines.length < 20) {
-                    lines.push({
-                        angle: Math.random() * Math.PI * 2,
-                        length: 5,
-                        alpha: 1
-                    });
-                }
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-
-        function renderStaticFrame() { draw(false); }
-
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Digital Twin
-    function animateRotatingElements(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let rotationAngle = 0;
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-    
-            ctx.save();
-            ctx.translate(centerX, centerY);
-            ctx.rotate(rotationAngle);
-    
-            // Draw rotating squares
-            for (let i = 0; i < 4; i++) {
-                ctx.strokeStyle = `rgba(255, 255, 100, 0.6)`;
-                ctx.lineWidth = 2;
-                ctx.strokeRect(-20 * (i + 1), -20 * (i + 1), 40 * (i + 1), 40 * (i + 1));
-            }
-            ctx.restore();
-    
-            if (animate) {
-                rotationAngle += 0.01;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() {
-            draw(false);
-        }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Grid Code Compliance
-    function animatePulseGrid(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a'; // Black background
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            const gridSize = 20;
-            ctx.strokeStyle = 'rgba(0, 200, 100, 0.6)'; // Subtle green lines
-            ctx.lineWidth = 1;
-    
-            for (let x = 0; x < canvas.width; x += gridSize) {
-                for (let y = 0; y < canvas.height; y += gridSize) {
-                    const pulseOffset = Math.sin((x + y + offset) * 0.05) * 5;
-                    ctx.beginPath();
-                    ctx.moveTo(x + pulseOffset, y);
-                    ctx.lineTo(x + pulseOffset, y + gridSize);
-                    ctx.stroke();
-                }
-            }
-    
-            if (animate) {
-                offset += 0.5;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Time Domain Forecasting
-    function animateTimeDomainForecasting(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let timeOffset = 0;
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            ctx.strokeStyle = 'rgba(100, 200, 255, 0.8)'; // Light blue for data visualization
-            ctx.lineWidth = 2;
-    
-            ctx.beginPath();
-            for (let x = 0; x < canvas.width; x += 10) {
-                // Use a combination of sine waves to mimic forecasting curves with varying patterns
-                const y = canvas.height / 2 + Math.sin((x + timeOffset) * 0.05) * 10 + Math.sin((x + timeOffset) * 0.02) * 5;
-                ctx.lineTo(x, y);
-            }
-            ctx.stroke();
-    
-            if (animate) {
-                timeOffset += 0.5; // Slow incremental shift to create gradual, evolving curve
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Anomaly Detection
-    function animateAnomalyDetection(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        const particles = Array.from({ length: 20 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            isAnomaly: Math.random() > 0.85, // Some particles flagged as anomalies
-            size: Math.random() * 3 + 1
-        }));
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            particles.forEach(particle => {
-                // Different color for anomalies
-                ctx.fillStyle = particle.isAnomaly ? 'rgba(255, 0, 0, 0.8)' : 'rgba(0, 200, 200, 0.6)';
-                ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fill();
-    
-                if (animate) {
-                    particle.x += (Math.random() - 0.5) * 2;
-                    particle.y += (Math.random() - 0.5) * 2;
-                    // Wrap particles around edges
-                    if (particle.x < 0) particle.x = canvas.width;
-                    if (particle.x > canvas.width) particle.x = 0;
-                    if (particle.y < 0) particle.y = canvas.height;
-                    if (particle.y > canvas.height) particle.y = 0;
-                }
-            });
-    
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Reinforcement Learning
-    function animateReinforcementLearning(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let nodes = Array.from({ length: 10 }, (_, i) => ({
-            x: (canvas.width / 10) * i + 20,
-            y: canvas.height / 2,
-            size: 4
-        }));
-        let animationFrameId;
-        let step = 0;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            ctx.strokeStyle = 'rgba(0, 255, 100, 0.8)'; // Green to represent decision pathways
-            ctx.lineWidth = 1.5;
-    
-            // Draw lines connecting nodes
-            ctx.beginPath();
-            for (let i = 0; i < nodes.length - 1; i++) {
-                ctx.moveTo(nodes[i].x, nodes[i].y);
-                ctx.lineTo(nodes[i + 1].x, nodes[i + 1].y);
-            }
-            ctx.stroke();
-    
-            // Draw nodes
-            nodes.forEach((node, index) => {
-                ctx.fillStyle = index === step % nodes.length ? 'rgba(255, 200, 0, 0.8)' : 'rgba(0, 200, 200, 0.8)';
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-                ctx.fill();
-            });
-    
-            if (animate) {
-                step += 1; // Gradual stepping effect along nodes
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Data Analysis
-    function animateDataAnalysis(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let animationFrameId;
-        let bars = Array.from({ length: 10 }, () => ({
-            height: Math.random() * (canvas.height / 2),
-            alpha: 0.2 // Start with a low opacity
-        }));
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            const barWidth = canvas.width / bars.length;
-            bars.forEach((bar, index) => {
-                ctx.fillStyle = `rgba(100, 200, 255, ${bar.alpha})`; // Soft blue for a data-driven look
-                ctx.fillRect(index * barWidth, canvas.height - bar.height, barWidth - 5, bar.height);
-    
-                if (animate) {
-                    bar.alpha = Math.min(bar.alpha + 0.01, 0.8); // Gradually increase opacity
-                }
-            });
-    
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //DER
-    function animateDistributedEnergy(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        const nodes = Array.from({ length: 15 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: Math.random() * 4 + 2,
-            pulseRadius: 0
-        }));
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            nodes.forEach(node => {
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, node.pulseRadius, 0, Math.PI * 2);
-                ctx.strokeStyle = 'rgba(0, 255, 150, 0.3)';
-                ctx.lineWidth = 1;
-                ctx.stroke();
-    
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 255, 150, 0.8)';
-                ctx.fill();
-    
-                if (animate) {
-                    node.pulseRadius = (node.pulseRadius + 0.5) % 20; // Reset pulse radius for continuous pulse effect
-                }
-            });
-    
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-
-    function animateEVCharging(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            ctx.strokeStyle = 'rgba(50, 150, 255, 0.8)'; // Blue for electricity flow
-            ctx.lineWidth = 2;
-    
-            for (let y = 0; y < canvas.height; y += 20) {
-                ctx.beginPath();
-                ctx.moveTo(0, y + offset % 20);
-                ctx.lineTo(canvas.width, y + offset % 20);
-                ctx.stroke();
-            }
-    
-            if (animate) {
-                offset += 1;
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-
-    function animateFlexibilityManagement(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let waveOffset = 0;
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            ctx.strokeStyle = 'rgba(255, 200, 50, 0.7)'; // Soft yellow for flexibility
-            ctx.lineWidth = 1.5;
-    
-            for (let i = 0; i < 3; i++) {
-                ctx.beginPath();
-                for (let x = 0; x < canvas.width; x += 5) {
-                    const y = canvas.height / 2 + Math.sin((x + waveOffset) * 0.05) * (5 + i * 4);
-                    ctx.lineTo(x, y);
-                }
-                ctx.stroke();
-            }
-    
-            if (animate) {
-                waveOffset += 0.1; // Smooth oscillation for flexibility
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-
-    function animateGreenHydrogen(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let circles = [{ radius: 10, alpha: 1 }];
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            circles.forEach(circle => {
-                ctx.beginPath();
-                ctx.arc(canvas.width / 2, canvas.height / 2, circle.radius, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(0, 255, 100, ${circle.alpha})`;
-                ctx.lineWidth = 2;
-                ctx.stroke();
-    
-                if (animate) {
-                    circle.radius += 1;
-                    circle.alpha -= 0.01;
-                }
-            });
-    
-            if (animate) {
-                circles = circles.filter(circle => circle.alpha > 0); // Remove faded circles
-                if (circles.length < 5) circles.push({ radius: 10, alpha: 1 }); // Add new circle
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-
-    function animateIntelligentBattery(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let animationFrameId;
-        let bars = Array.from({ length: 10 }, () => ({
-            height: Math.random() * canvas.height * 0.5
-        }));
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            const barWidth = canvas.width / bars.length;
-    
-            bars.forEach((bar, index) => {
-                ctx.fillStyle = 'rgba(0, 200, 255, 0.7)';
-                ctx.fillRect(index * barWidth, canvas.height - bar.height, barWidth - 5, bar.height);
-    
-                if (animate) {
-                    bar.height += (Math.random() - 0.5) * 2;
-                    bar.height = Math.min(Math.max(bar.height, 10), canvas.height * 0.5);
-                }
-            });
-    
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-
-    function animateIndustrialLoadPlanning(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let offset = 0;
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            ctx.strokeStyle = 'rgba(255, 255, 0, 0.5)';
-            ctx.lineWidth = 1;
-    
-            const gridSize = 20;
-    
-            for (let x = offset % gridSize; x < canvas.width; x += gridSize) {
-                ctx.beginPath();
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, canvas.height);
-                ctx.stroke();
-            }
-    
-            for (let y = offset % gridSize; y < canvas.height; y += gridSize) {
-                ctx.beginPath();
-                ctx.moveTo(0, y);
-                ctx.lineTo(canvas.width, y);
-                ctx.stroke();
-            }
-    
-            if (animate) {
-                offset += 0.5; // Slow movement for a structured look
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Residential Energy Systems (Solar PV, EV Charging, Energy Storage)
-    function animateResidentialEnergy(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let dots = Array.from({ length: 20 }, (_, i) => ({
-            x: (canvas.width / 20) * i,
-            y: canvas.height / 2 + (Math.random() - 0.5) * 20,
-            speed: Math.random() * 1 + 0.5
-        }));
-        let animationFrameId;
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            dots.forEach(dot => {
-                ctx.beginPath();
-                ctx.arc(dot.x, dot.y, 3, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 215, 0, 0.8)'; // Gold color for solar energy
-                ctx.fill();
-    
-                if (animate) {
-                    dot.x += dot.speed;
-                    if (dot.x > canvas.width) dot.x = 0; // Loop dots to represent continuous energy flow
-                }
-            });
-    
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
-    //Intelligent Residential Heat Pump Solutions
-    function animateResidentialHeatPump(canvas) {
-        setCanvasResolution(canvas);
-        const ctx = canvas.getContext('2d');
-        let animationFrameId;
-        let bars = Array.from({ length: 10 }, (_, i) => ({
-            height: Math.random() * (canvas.height / 2),
-            speed: (Math.random() - 0.5) * 0.5
-        }));
-    
-        function draw(animate = true) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1a1a1a';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-            const barWidth = canvas.width / bars.length;
-            bars.forEach((bar, index) => {
-                ctx.fillStyle = 'rgba(0, 150, 255, 0.8)'; // Blue for cooling effect
-                ctx.fillRect(index * barWidth, canvas.height - bar.height, barWidth - 5, bar.height);
-    
-                if (animate) {
-                    // Adjust height for slight "pulsing" effect, simulating heat pump adjustments
-                    bar.height += bar.speed;
-                    if (bar.height > canvas.height / 1.5 || bar.height < canvas.height / 4) {
-                        bar.speed *= -1; // Reverse direction for smooth oscillation
-                    }
-                }
-            });
-    
-            if (animate) {
-                animationFrameId = requestAnimationFrame(() => draw(true));
-            }
-        }
-    
-        function renderStaticFrame() { draw(false); }
-    
-        return {
-            start() { draw(); },
-            stop() {
-                cancelAnimationFrame(animationFrameId);
-                renderStaticFrame();
-            },
-            renderStaticFrame
-        };
-    }
 
     // Canvas animation for circular waveform if canvas element is present
     const canvas = document.getElementById("hero-canvas");

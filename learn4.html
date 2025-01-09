@@ -31,24 +31,40 @@
 <body>
 
      <!-- Logo Bar -->
-     <div class="logo-bar" id="logo-bar">
+    <!-- Logo Bar -->
+    <div class="logo-bar" id="logo-bar">
         <a href="index.html#logo-bar" aria-label="Navigate to home" class="logo-container">
             <img src="images/bar_logo2.webp" alt="termavis Logo" class="logo" loading="lazy">
-            <span class="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
+            <span class="logo-text" data-translate="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
         </a>
         <div class="cta-buttons" id="logo-buttons">
-            <a href="contact.html#contact" class="cta-btn">Get in Touch</a>
+            <a href="contact.html#contact" class="cta-btn" data-translate="cta-btn">Get in Touch</a>
             <a href="https://www.linkedin.com/company/termavis/" target="_blank" class="linkedin-btn">
                 <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon">
-                Follow us on LinkedIn
+                <span data-translate="linkedin-text">Follow us on LinkedIn</span>
             </a>
+            <div class="language-dropdown">
+                <button id="selected-language" class="language-button" aria-haspopup="true" aria-expanded="false">
+                    <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon" id="current-flag"> ENG
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="language-options" aria-hidden="true">
+                    <div class="language-option">
+                        <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon"> ENG
+                    </div>
+                    <div class="language-option">
+                        <img src="images/flags/tr.webp" alt="TR Flag" class="flag-icon"> TR
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <header>
 
-        <!-- Title Text -->
-        <div class="header-title">
+        
+    </div>
+
+    <header>
+        <!-- Home Button (Visible for Desktop Only) -->
+        <div class="header-title desktop-home-button">
             <a href="index.html#logo-bar" aria-label="Home">
                 <span class="material-icons">home</span>
             </a>
@@ -62,7 +78,7 @@
                 <li class="dropdown services-title">
                     <!-- Example dropdown toggle with SVG arrow -->
                     <a href="index.html#services" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        <span>Services</span>
+                        <span data-translate="services-title">Services</span>
                         <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -71,36 +87,36 @@
                         
                         <!-- Nested Dropdown for Power System Studies -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';">Design</button>
+                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';" data-translate="dropdown-design">Design</button>
                         </li>
 
                         <!-- Nested Dropdown for Artificial Intelligence Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';">Analyse</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';" data-translate="dropdown-analyse">Analyse</button>
                         </li>
 
                         <!-- Nested Dropdown for Energy Hub Solution Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';">Build</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';" data-translate="dropdown-build">Build</button>
                         </li>
 
                         <!-- Nested Dropdown for Residential Applications-->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';">Test</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';" data-translate="dropdown-test">Test</button>
                         </li>
                         
                     </ul>
                 </li>
 
                 <!-- Other Main Navigation Links -->
-                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem">Recent Works</a></li>
+                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem" data-translate="recent-works">Recent Works</a></li>
             </ul>
 
             <!-- Right-Aligned Links for About Us and Contact Us -->
             <div class="header-right">
                 <ul role="menu">
-                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem">About Us</a></li>
-                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem">Contact Us</a></li>
+                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem" data-translate="about-us">About Us</a></li>
+                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem" data-translate="contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -111,9 +127,9 @@
     <!-- Updated Solutions section with IDs for smooth scrolling -->
     <section id="text-services">
         <div class="solution-subsection">
-            <h3 id="bridge-rail-h3">Pedestrian Bridge Railing</h3>
-            <h2 id="aero-h2">Design and Production</h2>
-            <p>We designed and produced a durable and aesthetically pleasing pedestrian bridge railing system, tailored to enhance both safety and visual appeal. The design process involved detailed analysis to ensure structural integrity, while meeting local regulations and safety standards. Using high-quality materials and precise engineering, the railing provides long-lasting performance in various weather conditions. Our commitment to innovation and craftsmanship is reflected in the seamless integration of the railing into the overall bridge structure, ensuring both functionality and a modern appearance.</p>
+            <h3 id="bridge-rail-h3" data-translate="h3-text-3">Pedestrian Bridge Railing</h3>
+            <h2 id="aero-h2" data-translate="h2-text-3">Design and Production</h2>
+            <p data-translate="p-text-3">We designed and produced a durable and aesthetically pleasing pedestrian bridge railing system, tailored to enhance both safety and visual appeal. The design process involved detailed analysis to ensure structural integrity, while meeting local regulations and safety standards. Using high-quality materials and precise engineering, the railing provides long-lasting performance in various weather conditions. Our commitment to innovation and craftsmanship is reflected in the seamless integration of the railing into the overall bridge structure, ensuring both functionality and a modern appearance.</p>
          <!-- Container for side-by-side figures -->
             <div class="figure-container">
                 
@@ -149,7 +165,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
+            <p data-translate="footer-text">&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
             <p><i class="fas fa-envelope"></i> info@termavis.com | <i class="fas fa-phone-alt"></i> +90 (537) 791 7878</p>
         </div>
     </footer>

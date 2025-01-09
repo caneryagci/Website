@@ -31,23 +31,40 @@
     </head>
 <body>
     <!-- Logo Bar -->
+    <!-- Logo Bar -->
     <div class="logo-bar" id="logo-bar">
         <a href="index.html#logo-bar" aria-label="Navigate to home" class="logo-container">
             <img src="images/bar_logo2.webp" alt="termavis Logo" class="logo" loading="lazy">
-            <span class="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
+            <span class="logo-text" data-translate="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
         </a>
         <div class="cta-buttons" id="logo-buttons">
-            <a href="contact.html#contact" class="cta-btn">Get in Touch</a>
+            <a href="contact.html#contact" class="cta-btn" data-translate="cta-btn">Get in Touch</a>
             <a href="https://www.linkedin.com/company/termavis/" target="_blank" class="linkedin-btn">
                 <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon">
-                Follow us on LinkedIn
+                <span data-translate="linkedin-text">Follow us on LinkedIn</span>
             </a>
+            <div class="language-dropdown">
+                <button id="selected-language" class="language-button" aria-haspopup="true" aria-expanded="false">
+                    <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon" id="current-flag"> ENG
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="language-options" aria-hidden="true">
+                    <div class="language-option">
+                        <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon"> ENG
+                    </div>
+                    <div class="language-option">
+                        <img src="images/flags/tr.webp" alt="TR Flag" class="flag-icon"> TR
+                    </div>
+                </div>
+            </div>
         </div>
+
+        
     </div>
 
     <header>
-        <!-- Title Text -->
-        <div class="header-title">
+        <!-- Home Button (Visible for Desktop Only) -->
+        <div class="header-title desktop-home-button">
             <a href="index.html#logo-bar" aria-label="Home">
                 <span class="material-icons">home</span>
             </a>
@@ -61,7 +78,7 @@
                 <li class="dropdown services-title">
                     <!-- Example dropdown toggle with SVG arrow -->
                     <a href="index.html#services" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        <span>Services</span>
+                        <span data-translate="services-title">Services</span>
                         <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -70,36 +87,36 @@
                         
                         <!-- Nested Dropdown for Power System Studies -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';">Design</button>
+                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';" data-translate="dropdown-design">Design</button>
                         </li>
 
                         <!-- Nested Dropdown for Artificial Intelligence Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';">Analyse</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';" data-translate="dropdown-analyse">Analyse</button>
                         </li>
 
                         <!-- Nested Dropdown for Energy Hub Solution Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';">Build</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';" data-translate="dropdown-build">Build</button>
                         </li>
 
                         <!-- Nested Dropdown for Residential Applications-->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';">Test</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';" data-translate="dropdown-test">Test</button>
                         </li>
                         
                     </ul>
                 </li>
 
                 <!-- Other Main Navigation Links -->
-                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem">Recent Projects</a></li>
+                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem" data-translate="recent-works">Recent Works</a></li>
             </ul>
 
             <!-- Right-Aligned Links for About Us and Contact Us -->
             <div class="header-right">
                 <ul role="menu">
-                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem">About Us</a></li>
-                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem">Contact Us</a></li>
+                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem" data-translate="about-us">About Us</a></li>
+                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem" data-translate="contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -109,10 +126,10 @@
      <section id="ai-hero" class="hero-ai">
         <div class="overlay"></div>
         <div class="hero-content-ai">
-            <h1>Analyse it.</h1>
-            <p>Engineering excellence is built on analysis. Using advanced simulation tools and data-driven techniques, we analyze every aspect of your project, from structural integrity to performance optimization. Our expertise ensures that your designs meet the highest standards of safety, functionality, and efficiency before moving to production.</p>
+            <h1 data-translate="analyse-header">Analyse it.</h1>
+            <p data-translate="analyse-description">Engineering excellence is built on analysis. Using advanced simulation tools and data-driven techniques, we analyze every aspect of your project, from structural integrity to performance optimization. Our expertise ensures that your designs meet the highest standards of safety, functionality, and efficiency before moving to production.</p>
             <a href="recent-projects.html#recent-projects" class="cta-button">
-                Explore our solutions
+                <span data-translate="explore-solutions">Explore our solutions</span>
                 <span class="button_arrow">
                     <i class="fas fa-chevron-right" aria-hidden="true"></i>
                 </span>
@@ -124,7 +141,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
+            <p data-translate="footer-text">&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
             <p><i class="fas fa-envelope"></i> info@termavis.com | <i class="fas fa-phone-alt"></i> +90 (537) 791 7878</p>
         </div>
     </footer>

@@ -32,24 +32,40 @@
 <body>
 
      <!-- Logo Bar -->
-     <div class="logo-bar" id="logo-bar">
+    <!-- Logo Bar -->
+    <div class="logo-bar" id="logo-bar">
         <a href="index.html#logo-bar" aria-label="Navigate to home" class="logo-container">
             <img src="images/bar_logo2.webp" alt="termavis Logo" class="logo" loading="lazy">
-            <span class="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
+            <span class="logo-text" data-translate="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
         </a>
         <div class="cta-buttons" id="logo-buttons">
-            <a href="contact.html#contact" class="cta-btn">Get in Touch</a>
+            <a href="contact.html#contact" class="cta-btn" data-translate="cta-btn">Get in Touch</a>
             <a href="https://www.linkedin.com/company/termavis/" target="_blank" class="linkedin-btn">
                 <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon">
-                Follow us on LinkedIn
+                <span data-translate="linkedin-text">Follow us on LinkedIn</span>
             </a>
+            <div class="language-dropdown">
+                <button id="selected-language" class="language-button" aria-haspopup="true" aria-expanded="false">
+                    <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon" id="current-flag"> ENG
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="language-options" aria-hidden="true">
+                    <div class="language-option">
+                        <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon"> ENG
+                    </div>
+                    <div class="language-option">
+                        <img src="images/flags/tr.webp" alt="TR Flag" class="flag-icon"> TR
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <header>
 
-        <!-- Title Text -->
-        <div class="header-title">
+        
+    </div>
+
+    <header>
+        <!-- Home Button (Visible for Desktop Only) -->
+        <div class="header-title desktop-home-button">
             <a href="index.html#logo-bar" aria-label="Home">
                 <span class="material-icons">home</span>
             </a>
@@ -63,7 +79,7 @@
                 <li class="dropdown services-title">
                     <!-- Example dropdown toggle with SVG arrow -->
                     <a href="index.html#services" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        <span>Services</span>
+                        <span data-translate="services-title">Services</span>
                         <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -72,36 +88,36 @@
                         
                         <!-- Nested Dropdown for Power System Studies -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';">Design</button>
+                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';" data-translate="dropdown-design">Design</button>
                         </li>
 
                         <!-- Nested Dropdown for Artificial Intelligence Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';">Analyse</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';" data-translate="dropdown-analyse">Analyse</button>
                         </li>
 
                         <!-- Nested Dropdown for Energy Hub Solution Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';">Build</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';" data-translate="dropdown-build">Build</button>
                         </li>
 
                         <!-- Nested Dropdown for Residential Applications-->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';">Test</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';" data-translate="dropdown-test">Test</button>
                         </li>
                         
                     </ul>
                 </li>
 
                 <!-- Other Main Navigation Links -->
-                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem">Recent Works</a></li>
+                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem" data-translate="recent-works">Recent Works</a></li>
             </ul>
 
             <!-- Right-Aligned Links for About Us and Contact Us -->
             <div class="header-right">
                 <ul role="menu">
-                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem">About Us</a></li>
-                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem">Contact Us</a></li>
+                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem" data-translate="about-us">About Us</a></li>
+                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem" data-translate="contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -112,9 +128,9 @@
     <!-- Updated Solutions section with IDs for smooth scrolling -->
     <section id="text-services">
         <div class="solution-subsection">
-            <h3 id="cooling-system-h3">Cooling System Development</h3>
-            <h2 id="aero-h2">Reducing the Maintenance Time of Turbofan Engines</h2>
-            <p>Turbofan engine cooling system project focuses on optimizing the maintenance processes of commercial aviation fleets to achieve operational excellence and cost reduction. By streamlining maintenance schedules, we aim to significantly reduce downtime, allowing aircraft to return to service faster. This not only increases the fleet’s overall flight capacity but also ensures that aircraft undergo more frequent and thorough safety checks, improving flight safety. By minimizing the maintenance times of turbofan engines, we offer a competitive advantage to airlines, enabling them to lower operational costs and enhance customer satisfaction. This Tübitak-supported initiative is designed to provide long-term benefits, improving operational efficiency and cost-effectiveness for commercial air fleets.</p>
+            <h3 id="cooling-system-h3" data-translate="h3-text-1">Cooling System Development</h3>
+            <h2 id="aero-h2" data-translate="h2-text-1">Reducing the Maintenance Time of Turbofan Engines</h2>
+            <p data-translate="p-text-1">Turbofan engine cooling system project focuses on optimizing the maintenance processes of commercial aviation fleets to achieve operational excellence and cost reduction. By streamlining maintenance schedules, we aim to significantly reduce downtime, allowing aircraft to return to service faster. This not only increases the fleet’s overall flight capacity but also ensures that aircraft undergo more frequent and thorough safety checks, improving flight safety. By minimizing the maintenance times of turbofan engines, we offer a competitive advantage to airlines, enabling them to lower operational costs and enhance customer satisfaction. This Tübitak-supported initiative is designed to provide long-term benefits, improving operational efficiency and cost-effectiveness for commercial air fleets.</p>
          <!-- Container for side-by-side figures -->
             <div class="figure-container">
                 <figure class="content-figure">
@@ -134,7 +150,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
+            <p data-translate="footer-text">&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
             <p><i class="fas fa-envelope"></i> info@termavis.com | <i class="fas fa-phone-alt"></i> +90 (537) 791 7878</p>
         </div>
     </footer>

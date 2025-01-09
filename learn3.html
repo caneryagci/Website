@@ -32,24 +32,40 @@
 <body>
 
      <!-- Logo Bar -->
-     <div class="logo-bar" id="logo-bar">
+    <!-- Logo Bar -->
+    <div class="logo-bar" id="logo-bar">
         <a href="index.html#logo-bar" aria-label="Navigate to home" class="logo-container">
             <img src="images/bar_logo2.webp" alt="termavis Logo" class="logo" loading="lazy">
-            <span class="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
+            <span class="logo-text" data-translate="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
         </a>
         <div class="cta-buttons" id="logo-buttons">
-            <a href="contact.html#contact" class="cta-btn">Get in Touch</a>
+            <a href="contact.html#contact" class="cta-btn" data-translate="cta-btn">Get in Touch</a>
             <a href="https://www.linkedin.com/company/termavis/" target="_blank" class="linkedin-btn">
                 <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon">
-                Follow us on LinkedIn
+                <span data-translate="linkedin-text">Follow us on LinkedIn</span>
             </a>
+            <div class="language-dropdown">
+                <button id="selected-language" class="language-button" aria-haspopup="true" aria-expanded="false">
+                    <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon" id="current-flag"> ENG
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="language-options" aria-hidden="true">
+                    <div class="language-option">
+                        <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon"> ENG
+                    </div>
+                    <div class="language-option">
+                        <img src="images/flags/tr.webp" alt="TR Flag" class="flag-icon"> TR
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <header>
 
-        <!-- Title Text -->
-        <div class="header-title">
+        
+    </div>
+
+    <header>
+        <!-- Home Button (Visible for Desktop Only) -->
+        <div class="header-title desktop-home-button">
             <a href="index.html#logo-bar" aria-label="Home">
                 <span class="material-icons">home</span>
             </a>
@@ -63,7 +79,7 @@
                 <li class="dropdown services-title">
                     <!-- Example dropdown toggle with SVG arrow -->
                     <a href="index.html#services" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        <span>Services</span>
+                        <span data-translate="services-title">Services</span>
                         <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -72,36 +88,36 @@
                         
                         <!-- Nested Dropdown for Power System Studies -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';">Design</button>
+                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';" data-translate="dropdown-design">Design</button>
                         </li>
 
                         <!-- Nested Dropdown for Artificial Intelligence Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';">Analyse</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';" data-translate="dropdown-analyse">Analyse</button>
                         </li>
 
                         <!-- Nested Dropdown for Energy Hub Solution Solutions -->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';">Build</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';" data-translate="dropdown-build">Build</button>
                         </li>
 
                         <!-- Nested Dropdown for Residential Applications-->
                         <li class="dropdown">
-                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';">Test</button>
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';" data-translate="dropdown-test">Test</button>
                         </li>
                         
                     </ul>
                 </li>
 
                 <!-- Other Main Navigation Links -->
-                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem">Recent Works</a></li>
+                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem" data-translate="recent-works">Recent Works</a></li>
             </ul>
 
             <!-- Right-Aligned Links for About Us and Contact Us -->
             <div class="header-right">
                 <ul role="menu">
-                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem">About Us</a></li>
-                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem">Contact Us</a></li>
+                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem" data-translate="about-us">About Us</a></li>
+                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem" data-translate="contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -112,29 +128,29 @@
     <!-- Updated Solutions section with IDs for smooth scrolling -->
     <section id="text-services">
         <div class="solution-subsection">
-            <h3 id="valve-h3">Filter By-pass Valves for Aerospace Industry</h3>
-            <p>We are developing advanced filter by-pass valves specifically designed for the aviation industry. Oil bypass valves play a critical role in ensuring the uninterrupted operation of aircraft systems by allowing fluid to bypass the filter when it becomes clogged or experiences high pressure, preventing engine damage or system failure. Our filter by-pass valves are engineered for maximum reliability and performance, ensuring that even in extreme conditions, aircraft maintain optimal functionality. The specifics can be optimized based on their intended applications.</p>
+            <h3 id="valve-h3" data-translate="h3-text-2">Filter By-pass Valves for Aerospace Industry</h3>
+            <p data-translate="p-text-2">We are developing advanced filter by-pass valves specifically designed for the aviation industry. Oil bypass valves play a critical role in ensuring the uninterrupted operation of aircraft systems by allowing fluid to bypass the filter when it becomes clogged or experiences high pressure, preventing engine damage or system failure. Our filter by-pass valves are engineered for maximum reliability and performance, ensuring that even in extreme conditions, aircraft maintain optimal functionality. The specifics can be optimized based on their intended applications.</p>
             <!-- Two-column itemized lists -->
             <div class="itemized-lists-container">
                 <!-- List 1 -->
                 <div class="itemized-list">
-                    <h4>Pressure Valve:</h4>
+                    <h4 data-translate="pressure-valve-title">Pressure Valve:</h4>
                     <ul>
-                        <li>Cracking pressure in the range of 100 kPa - 500 kPa,</li>
-                        <li>Optimized for low pressure drop,</li>
-                        <li>Lightweight and compact design with aluminum body,</li>
-                        <li>Operating temperature range of -50°C to +150°C.</li>
+                        <li data-translate="pressure-valve-item-1">Cracking pressure in the range of 100 kPa - 500 kPa,</li>
+                        <li data-translate="pressure-valve-item-2">Optimized for low pressure drop,</li>
+                        <li data-translate="pressure-valve-item-3">Lightweight and compact design with aluminum body,</li>
+                        <li data-translate="pressure-valve-item-4">Operating temperature range of -50°C to +150°C.</li>
                     </ul>
                 </div>
                 <!-- List 2 -->
                 <div class="itemized-list">
-                    <h4>Thermal Pressure Valve:</h4>
+                    <h4 data-translate="thermal-valve-title">Thermal Pressure Valve:</h4>
                     <ul>
-                        <li>Adjustable opening/closing mode in the range of -40°C to 100°C,</li>
-                        <li>Cracking pressure in the range of 100 kPa - 500 kPa,</li>
-                        <li>Optimized for low pressure drop,</li>
-                        <li>Lightweight and compact design with aluminum body,</li>
-                        <li>Operating temperature range of -50°C to +150°C.</li>
+                        <li data-translate="thermal-valve-item-1">Adjustable opening/closing mode in the range of -40°C to 100°C,</li>
+                        <li data-translate="thermal-valve-item-2">Cracking pressure in the range of 100 kPa - 500 kPa,</li>
+                        <li data-translate="thermal-valve-item-3">Optimized for low pressure drop,</li>
+                        <li data-translate="thermal-valve-item-4">Lightweight and compact design with aluminum body,</li>
+                        <li data-translate="thermal-valve-item-5">Operating temperature range of -50°C to +150°C.</li>
                     </ul>
                 </div>
             </div>
@@ -162,7 +178,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
+            <p data-translate="footer-text">&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
             <p><i class="fas fa-envelope"></i> info@termavis.com | <i class="fas fa-phone-alt"></i> +90 (537) 791 7878</p>
         </div>
     </footer>

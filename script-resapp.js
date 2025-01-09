@@ -1,4 +1,91 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Language texts
+    const translations = {
+        en: {
+            "logo-text": "TERMAVIS ENGINEERING | CONSULTING SERVICES",
+            "cta-btn": "Get in Touch",
+            "linkedin-text": "Follow us on LinkedIn",
+            "connect-link": "Connect on LinkedIn",
+            "services-title": "Services",
+            "dropdown-design": "Design",
+            "dropdown-analyse": "Analyse",
+            "dropdown-build": "Build",
+            "dropdown-test": "Test",
+            "recent-works": "Recent Works",
+            "recent-description": "Explore our recent services and solutions.",
+            "about-us": "About Us",
+            "contact-us": "Contact Us",
+            "explore-link": "Explore more",
+            "learn-link": "Learn more",
+            "footer-text": "&copy; 2024 Termavis Engineering. All rights reserved.",
+
+            "test-header": "Test it.",
+            "test-description": "Before your project reaches full-scale production, rigorous testing is essential. At Termavis, we thoroughly test and evaluate prototypes to ensure they meet both industry standards and your performance requirements. By validating every aspect of the design and function, we help you identify potential improvements and guarantee optimal results in real-world applications.",
+            "explore-solutions": "Explore our solutions"
+        },
+
+        tr: {
+            "logo-text": "TERMAVIS MÜHENDİSLİK | DANIŞMANLIK HİZMETLERİ",
+            "cta-btn": "İletişime Geç",
+            "linkedin-text": "LinkedIn'de Takip Edin",
+            "connect-link": "LinkedIn'de Takip Edin",
+            "services-title": "Hizmetler",
+            "dropdown-design": "Tasarim",
+            "dropdown-analyse": "Analiz",
+            "dropdown-build": "Üretim",
+            "dropdown-test": "Test",
+            "recent-works": "Son İşler",
+            "recent-description": "Son hizmet ve çözümlerimizi keşfedin.",
+            "about-us": "Hakkımızda",
+            "contact-us": "Bize Ulaşın",
+            "explore-link": "Daha fazla keşfedin",
+            "learn-link": "Daha fazla bilgi",
+            "footer-text": "&copy; 2024 Termavis Mühendislik. Tüm hakları saklıdır.",
+
+            "test-header": "Test Edin.",
+            "test-description": "Projeniz tam ölçekli üretime ulaşmadan önce titiz testler hayati öneme sahiptir. Termavis olarak prototipleri detaylı bir şekilde test eder ve değerlendiririz, böylece hem sektör standartlarını hem de performans gereksinimlerinizi karşıladığından emin oluruz. Tasarımın ve işlevin her yönünü doğrulayarak potansiyel iyileştirmeleri belirlemenize yardımcı olur ve gerçek dünya uygulamalarında en iyi sonuçları garanti ederiz.",
+            "explore-solutions": "Çözümlerimizi Keşfedin"
+        }
+    };
+
+     // Function to update the page text based on the selected language
+     function updateTexts(lang) {
+        document.querySelectorAll("[data-translate]").forEach(el => {
+            const key = el.getAttribute("data-translate");
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key]; // Use innerHTML for special characters
+            }
+        });
+    }
+
+    // Function to set the selected language
+    function setLanguage(lang) {
+        const langText = lang === 'en' ? 'ENG' : 'TR';
+        const flagSrc = lang === 'en' ? 'images/flags/en.webp' : 'images/flags/tr.webp';
+
+        const languageButton = document.getElementById('selected-language');
+        languageButton.innerHTML = `<img src="${flagSrc}" alt="${langText} Flag" class="flag-icon"> ${langText} <i class="fas fa-caret-down"></i>`;
+
+        // Save the selected language to localStorage
+        localStorage.setItem('selectedLanguage', lang);
+
+        // Update the text on the page
+        updateTexts(lang);
+    }
+
+    // Load the saved language or default to English
+    const savedLang = localStorage.getItem('selectedLanguage') || 'tr';
+    setLanguage(savedLang);
+
+    // Event listener for language options
+    document.querySelectorAll('.language-option').forEach(option => {
+        option.addEventListener('click', function () {
+            const langText = this.textContent.trim(); // Get text content (e.g., "ENG" or "TR")
+            const lang = langText === 'ENG' ? 'en' : 'tr'; // Convert to language code
+            setLanguage(lang);
+        });
+    });
+    
        // Replace the current URL without reloading
        if (window.location.hash === "#resapp-hero") {
         history.replaceState({}, "", "/test");
