@@ -142,8 +142,11 @@ a, button {
 header nav {
     display: flex;
     align-items: center;
-    flex: 1;
-    justify-content: flex-start;
+    justify-content: space-between; /* Ensure items are spaced evenly */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    width: 100%;
+    padding: 0 10px; /* Add padding without causing overflow */
+    box-sizing: border-box;
 }
 
 /* General styling for the dropdown container */
@@ -421,6 +424,7 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     gap: 20px; /* Spacing between h1 and p */
     width: 100%;
     margin-bottom: 1rem; /* Space between header and buttons */
+    flex-wrap: wrap; /* Allow content to wrap when necessary */
 }
 
 
@@ -435,6 +439,8 @@ header nav ul li.dropdown:hover > .dropdown-toggle .dropdown-arrow {
     min-width: 500px;
     max-width: 550px;
     margin-left: 2rem;
+    word-wrap: break-word; /* Prevent long words from overflowing */
+    white-space: normal; /* Allow text to break into multiple lines */
 }
 
 .keyword-color1 {
@@ -1701,8 +1707,10 @@ section.appear {
     position: relative;
     z-index: 2;
     text-align: left; /* Align text to the left */
-    max-width: 1200px; /* Limit width for better layout on larger screens */
-    margin-left: 80px;
+    max-width: clamp(320px, 80%, 1200px); /* Responsive max-width */
+    margin-left: auto; /* Center content horizontally */
+    margin-right: auto;
+    padding: 0 20px; /* Add some padding for better spacing */
 }
 
 #design h1 {
@@ -1745,8 +1753,10 @@ section.appear {
     position: relative;
     z-index: 2;
     text-align: left; /* Align text to the left */
-    max-width: 1200px; /* Limit width for better layout on larger screens */
-    margin-left: 80px;
+    max-width: clamp(320px, 80%, 1200px); /* Responsive max-width */
+    margin-left: auto; /* Center content horizontally */
+    margin-right: auto;
+    padding: 0 20px; /* Add some padding for better spacing */
 }
 
 #ai-hero h1 {
@@ -1789,8 +1799,10 @@ section.appear {
     position: relative;
     z-index: 2;
     text-align: left; /* Align text to the left */
-    max-width: 1200px; /* Limit width for better layout on larger screens */
-    margin-left: 80px;
+    max-width: clamp(320px, 80%, 1200px); /* Responsive max-width */
+    margin-left: auto; /* Center content horizontally */
+    margin-right: auto;
+    padding: 0 20px; /* Add some padding for better spacing */
 }
 
 #energyhub-hero h1 {
@@ -1833,8 +1845,10 @@ section.appear {
     position: relative;
     z-index: 2;
     text-align: left; /* Align text to the left */
-    max-width: 1200px; /* Limit width for better layout on larger screens */
-    margin-left: 80px;
+    max-width: clamp(320px, 80%, 1200px); /* Responsive max-width */
+    margin-left: auto; /* Center content horizontally */
+    margin-right: auto;
+    padding: 0 20px; /* Add some padding for better spacing */
 }
 
 #resapp-hero h1 {
@@ -1948,16 +1962,15 @@ section.appear {
 
 
 /* General Mobile Styles (for screens max 768px) */
-@media (max-width: 790px) {
+@media (max-width: 820px) {
     .hero-header {
-        flex-direction: column;
-        text-align: center;
+        align-items: center; /* Align content to the left */
+        padding: 0 1rem; /* Add some horizontal padding */
     }
 
     .hero-header h1, .hero-header p {
         text-align: center;
         margin-bottom: 10px;
-        
     }
 
 
@@ -1968,15 +1981,26 @@ section.appear {
     .vertical-line {
         width: 1px; /* Line thickness */
         background-color: #fff; /* Line color */
-        height: 10px; /* Line height, adjust as needed */
+        height: 80px; /* Line height, adjust as needed */
         margin: 0 0px; /* Horizontal spacing around the line */
         align-self: center; /* Align the line vertically to the center of its parent */
         display: inline-block; /* Ensure it behaves like a standalone element */
     }
 
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        margin-left: 0; /* Remove left margin to fit smaller width */
+        min-width: unset; /* Remove minimum width constraint */
     }
+
+    section#services p {
+        text-align: justify;
+        margin-bottom: 1rem; /* Add space below each paragraph */
+    }
+     section p {
+        font-size: 16px;
+     }
 
     .cta-btn, .linkedin-btn {
         font-size: 0.6rem;
@@ -2053,8 +2077,9 @@ section.appear {
     .header-right {
         display: flex;
         align-items: center;
-        gap: 2px;
-        margin-left: 25px;
+        gap: 5px; /* Reduce gap between icons/links */
+        margin-left: auto;
+        white-space: nowrap; /* Prevent text from breaking */
     }
 
     header nav ul li {
@@ -2072,12 +2097,20 @@ section.appear {
     }
 
 
-    nav {
+    header nav {
         display: flex;
-        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px; /* Reduce padding to save space */
+        gap: 10px; /* Add space between items */
     }
 
-    nav ul {
+    header nav a {
+        font-size: 0.9rem; /* Slightly reduce font size for smaller screens */
+        padding: 0 5px; /* Reduce padding on links */
+    }
+
+    header nav ul {
         display: flex;
         flex-wrap: wrap; /* Allows links to wrap for smaller screens */
         justify-content: center;
@@ -2224,18 +2257,232 @@ section.appear {
         align-self: flex-start;
     }
 
+    .contact-address img {
+        width: 100%; /* Full width */
+        max-width: 350px; /* Optional: maximum width on mobile */
+        height: auto; /* Maintain the same frame */
+        aspect-ratio: 400 / 110; /* Maintain original aspect ratio (400px width to 110px height) */
+        margin-left: auto; /* Center-align the image */
+        margin-right: auto; /* Center-align the image */
+    }
+
+    #design .hero-content-pss {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Slightly smaller padding for mobile */
+        text-align: center; /* Center text for mobile readability */
+    }
+
+    #design h1 {
+        font-size: 32x;
+        margin-top: 0.5em;
+        text-align: left;
+    }
+
+    #design p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.6; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
+    }
+
+    #ai-hero .hero-content-ai {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Slightly smaller padding for mobile */
+        text-align: center; /* Center text for mobile readability */
+    }
+
+    #ai-hero h1 {
+        font-size: 32x;
+        margin-top: 0.5em;
+        text-align: left;
+    }
+
+    #ai-hero p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.6; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
+    }
+
+    #energyhub-hero .hero-content-energyhub {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Slightly smaller padding for mobile */
+        text-align: center; /* Center text for mobile readability */
+    }
+
+    #energyhub-hero h1 {
+        font-size: 32x;
+        margin-top: 0.5em;
+        text-align: left;
+    }
+
+    #energyhub-hero p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.6; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
+    }
+
+    #resapp-hero .hero-content-resapp {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Slightly smaller padding for mobile */
+        text-align: justify; /* Center text for mobile readability */
+    }
+
+    #resapp-hero-hero h1 {
+        font-size: 32x;
+        margin-top: 0.5em;
+        text-align: left;
+    }
+
+    #resapp-hero-hero p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.6; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
+    }
+
 }
 
 /* Small Screen (max 576px) */
 @media (max-width: 576px) {
+
     .hero-header h1 {
-        font-size: 1.6rem;
-        line-height: 1.4;
+        font-size: 1.6rem; /* Smaller font size for readability */
+        line-height: 1.6;
+        max-width: 100%; /* Ensures it stays within the screen */
+        width: 100%; /* Fallback to full width */
+        margin-left: auto;
+        margin-right: auto; /* Center the heading */
+        text-align: center; /* Ensure the text is centered */
     }
 
     .hero-header p {
         font-size: 1rem;
         padding: 0 1rem;
+    }
+
+    .vertical-line {
+        width: 100%; /* Full width to force it onto a new row */
+        background-color: #fff;
+        height: 1px; /* Horizontal line instead of vertical on small screens */
+        margin: 10px 0; /* Add vertical margin for spacing */
+        display: block; /* Ensure it behaves like a block element */
+    }
+
+    #design .hero-content-pss {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Slightly smaller padding for mobile */
+        text-align: center; /* Center text for mobile readability */
+    }
+
+    #design h1 {
+        font-size: 32x;
+        margin-top: 0.5em;
+        text-align: left;
+    }
+
+    #design p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.6; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
+    }
+    #ai-hero .hero-content-ai {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Slightly smaller padding for mobile */
+        text-align: center; /* Center text for mobile readability */
+    }
+
+    #ai-hero h1 {
+        font-size: 32x;
+        margin-top: 0.5em;
+        text-align: left;
+    }
+
+    #ai-hero p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.6; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
+    }
+
+    #energyhub-hero .hero-content-energyhub {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Slightly smaller padding for mobile */
+        text-align: center; /* Center text for mobile readability */
+    }
+
+    #energyhub-hero h1 {
+        font-size: 32x;
+        margin-top: 0.5em;
+        text-align: left;
+    }
+
+    #energyhub-hero p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.6; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
+    }
+
+    #resapp-hero .hero-content-resapp {
+        max-width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Slightly smaller padding for mobile */
+        text-align: center; /* Center text for mobile readability */
+    }
+
+    #resapp-hero h1 {
+        font-size: 32x;
+        margin-top: 0.5em;
+        text-align: left;
+    }
+
+    #resapp-hero p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.6; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
     }
 
 
@@ -2301,23 +2548,43 @@ section.appear {
         padding-left: 0px; /* Adds margin on the left side of the border */
     }
 
-    nav {
-        margin-left: 5px;
+    header nav a {
+        font-size: 0.6rem; /* Further reduce font size for narrow screens */
+        padding: 0 3px; /* Minimize padding */
+    }
+
+    .header-right {
+        gap: 2px; /* Minimize gap further */
+    }
+
+    .header-right .icon {
+        width: 24px; /* Reduce icon size */
+        height: 24px;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2px; /* Reduce padding to save space */
+        gap: 2px; /* Add space between items */
     }
 
     header nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        list-style-type: none;
         display: flex;
-        align-items: center;
-        gap: 1px;
+        flex-wrap: wrap; /* Allows links to wrap for smaller screens */
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
     }
+
 
     header nav ul li a, header nav ul li button, .header-right ul li button {
         font-size: 10px;
         font-weight: 400;
+        margin: 0; /* Ensure no margin on list items */
+        padding: 0; /* Ensure no padding on list items */
     }
 
     .hero-canvas{

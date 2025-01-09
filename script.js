@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "dropdown-analyse": "Analiz",
             "dropdown-build": "Üretim",
             "dropdown-test": "Test",
-            "recent-works": "Son İşler",
+            "recent-works": "Son İşlerimiz",
             "recent-description": "Son hizmet ve çözümlerimizi keşfedin.",
             "about-us": "Hakkımızda",
             "contact-us": "Bize Ulaşın",
