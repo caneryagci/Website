@@ -38,6 +38,9 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     padding: 0px;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;  /* Optional: vertical flow */
 }
 
 /* Logo styling */
@@ -863,6 +866,8 @@ footer {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
 }
 
 /* Accessibility focus styling */
