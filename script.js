@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "dropdown-analyse": "Analiz",
             "dropdown-build": "Üretim",
             "dropdown-test": "Test",
-            "recent-works": "Son İşlerimiz",
+            "recent-works": "Güncel Çalışmalarımız",
             "recent-description": "Son hizmet ve çözümlerimizi keşfedin.",
             "about-us": "Hakkımızda",
             "contact-us": "Bize Ulaşın",
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "team-member-3-name": "Bekir Caner Yağcı",
             "team-member-3-title": "Yüksek Elektrik Mühendisi",
 
-            "recent-works-header": "Son İşlerimiz",
+            "recent-works-header": "Güncel Çalışmalarımız",
             "recent-works-description-1": "Uzmanlığımız, mühendislik projelerinin detaylı tasarımı ve analizinden işlevsel prototiplerin geliştirilmesi ve üretimine kadar uzanmaktadır. Çalışmalarımız geniş bir mühendislik yelpazesini kapsasa da her proje, yenilik ve hassasiyet taahhüdüyle birleşerek teknoloji ve verimliliği ileriye taşıyan çözümler sunar.",
             "recent-works-description-2": "Çeşitli müşterilerimize üst düzey mühendislik çözümleri sunduğumuzu kanıtlayan son danışmanlık projelerimizi gururla paylaşıyoruz.",
 

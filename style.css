@@ -2362,10 +2362,153 @@ section.appear {
         padding: 0 10px; /* Add padding to prevent text from touching the edges */
     }
 
+    #recent-projects h2 {
+        font-size: 1.85rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    #recent-projects p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.4; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.01em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 14px; /* Add padding to prevent text from touching the edges */
+    }
+
+    .figure-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .figure-overlay {
+        max-width: 100%; /* Ensure the element takes full width of its container */
+        width: 100%; /* Force width to be 100% of the viewport/container */
+        height: auto; /* Maintain aspect ratio */
+        padding: 0; /* Remove any unnecessary padding that may cause overflow */
+        margin: 0 auto; /* Center the element horizontally */
+    }
+
+    .content-image {
+        max-width: 100%; /* Ensure it doesn’t exceed the container width */
+        width: 100%; /* Full width of the screen or container */
+        max-height: 300px; /* Reduce the height for smaller screens */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Keep the border radius for aesthetics */
+        object-fit: cover; /* Ensure the image covers the area without distortion */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    .solution-subsection h3 {
+        font-size: 1.55rem;
+        margin-top: 40px;
+        margin-bottom: 0px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    #aero-h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+    }
+
+    .solution-subsection p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.4; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.01em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 20px; /* Add padding to prevent text from touching the edges */
+    }
+
+    .cta-buttons, .logo-bar {
+        flex-direction: row;
+        gap: 1px;
+        align-items: center; /* Align items vertically in the center */
+    }
+
 }
 
 /* Small Screen (max 576px) */
 @media (max-width: 576px) {
+    #recent-projects h2 {
+        font-size: 1.85rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    #recent-projects p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.4; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.01em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 14px; /* Add padding to prevent text from touching the edges */
+    }
+
+    .figure-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .figure-overlay {
+        max-width: 100%; /* Ensure the element takes full width of its container */
+        width: 100%; /* Force width to be 100% of the viewport/container */
+        height: auto; /* Maintain aspect ratio */
+        padding: 0; /* Remove any unnecessary padding that may cause overflow */
+        margin: 0 auto; /* Center the element horizontally */
+    }
+
+    .content-image {
+        max-width: 100%; /* Ensure it doesn’t exceed the container width */
+        width: 100%; /* Full width of the screen or container */
+        max-height: 300px; /* Reduce the height for smaller screens */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Keep the border radius for aesthetics */
+        object-fit: cover; /* Ensure the image covers the area without distortion */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    .solution-subsection h3 {
+        font-size: 1.55rem;
+        margin-top: 40px;
+        margin-bottom: 0px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    #aero-h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+    }
+
+    .solution-subsection p {
+        font-size: 16px;
+        margin-top: 0.5em;
+        text-align: justify;
+        line-height: 1.4; /* Improve readability and reduce awkward gaps */
+        letter-spacing: 0.01em; /* Slightly adjust spacing to avoid large gaps */
+        hyphens: auto; /* Allow words to break with hyphens if necessary */
+        word-break: break-word; /* Ensure long words or links wrap without overflow */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        padding: 0 20px; /* Add padding to prevent text from touching the edges */
+    }
 
     .hero-header h1 {
         font-size: 1.6rem; /* Smaller font size for readability */
@@ -2407,7 +2550,7 @@ section.appear {
         margin-top: 0.5em;
         text-align: justify;
         line-height: 1.6; /* Improve readability and reduce awkward gaps */
-        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        letter-spacing: 0.01em; /* Slightly adjust spacing to avoid large gaps */
         hyphens: auto; /* Allow words to break with hyphens if necessary */
         word-break: break-word; /* Ensure long words or links wrap without overflow */
         max-width: 100%; /* Ensure it doesn't exceed the container width */
@@ -2430,7 +2573,7 @@ section.appear {
         margin-top: 0.5em;
         text-align: justify;
         line-height: 1.6; /* Improve readability and reduce awkward gaps */
-        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        letter-spacing: 0.01em; /* Slightly adjust spacing to avoid large gaps */
         hyphens: auto; /* Allow words to break with hyphens if necessary */
         word-break: break-word; /* Ensure long words or links wrap without overflow */
         max-width: 100%; /* Ensure it doesn't exceed the container width */
@@ -2454,7 +2597,7 @@ section.appear {
         margin-top: 0.5em;
         text-align: justify;
         line-height: 1.6; /* Improve readability and reduce awkward gaps */
-        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        letter-spacing: 0.01em; /* Slightly adjust spacing to avoid large gaps */
         hyphens: auto; /* Allow words to break with hyphens if necessary */
         word-break: break-word; /* Ensure long words or links wrap without overflow */
         max-width: 100%; /* Ensure it doesn't exceed the container width */
@@ -2478,17 +2621,18 @@ section.appear {
         margin-top: 0.5em;
         text-align: justify;
         line-height: 1.6; /* Improve readability and reduce awkward gaps */
-        letter-spacing: 0.03em; /* Slightly adjust spacing to avoid large gaps */
+        letter-spacing: 0.01em; /* Slightly adjust spacing to avoid large gaps */
         hyphens: auto; /* Allow words to break with hyphens if necessary */
         word-break: break-word; /* Ensure long words or links wrap without overflow */
         max-width: 100%; /* Ensure it doesn't exceed the container width */
-        padding: 0 10px; /* Add padding to prevent text from touching the edges */
+        padding: 0 8px; /* Add padding to prevent text from touching the edges */
     }
 
 
     .cta-buttons, .logo-bar {
         flex-direction: row;
         gap: 1px;
+        align-items: center; /* Align items vertically in the center */
     }
 
     .logo {
@@ -2501,7 +2645,7 @@ section.appear {
 
     .cta-btn {
         font-size: 0.6rem;
-        padding: 0.5rem 1rem;
+        padding: 0.2rem 0.4rem;
     }
 
     .team-container {
@@ -2574,14 +2718,14 @@ section.appear {
         display: flex;
         flex-wrap: wrap; /* Allows links to wrap for smaller screens */
         justify-content: center;
-        gap: 10px;
+        gap: 1px;
         padding: 0;
         margin: 0;
     }
 
 
     header nav ul li a, header nav ul li button, .header-right ul li button {
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 400;
         margin: 0; /* Ensure no margin on list items */
         padding: 0; /* Ensure no padding on list items */

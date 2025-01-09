@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "dropdown-analyse": "Analiz",
             "dropdown-build": "Üretim",
             "dropdown-test": "Test",
-            "recent-works": "Son İşlerimiz",
+            "recent-works": "Güncel Çalışmalarımız",
             "recent-description": "Son hizmet ve çözümlerimizi keşfedin.",
             "about-us": "Hakkımızda",
             "contact-us": "Bize Ulaşın",
