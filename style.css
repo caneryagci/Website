@@ -2510,7 +2510,7 @@ section.appear {
         hyphens: auto; /* Allow words to break with hyphens if necessary */
         word-break: break-word; /* Ensure long words or links wrap without overflow */
         max-width: 100%; /* Ensure it doesn't exceed the container width */
-        padding: 0 20px; /* Add padding to prevent text from touching the edges */
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
     }
 
     .hero-header h1 {
