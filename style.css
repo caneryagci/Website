@@ -1962,7 +1962,7 @@ section.appear {
 
 
 /* General Mobile Styles (for screens max 768px) */
-@media (max-width: 820px) {
+@media (max-width: 870px) {
     .hero-header {
         align-items: center; /* Align content to the left */
         padding: 0 1rem; /* Add some horizontal padding */
