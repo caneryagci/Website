@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "contact-form-description": "We are currently enhancing our contact form to serve you better.<br><br>In the meantime, please feel free to send your inquiries directly to <a href='mailto:info@termavis.com'>info@termavis.com</a>.<br>We appreciate your understanding and look forward to assisting you.",
             "our-address-header": "Our Address",
             "design-office-header": "Design Office and Test & Assembly Workshop:",
-            "office-header": "Office",
+            "office-header": "Office:",
             "form-feedback-message": "Thank you for reaching out! We will get back to you shortly."
         },
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "contact-form-description": "İletişim formumuzu sizlere daha iyi hizmet verebilmek adına güncelliyoruz.<br><br>Bu süre zarfında sorularınızı <a href='mailto:info@termavis.com'>info@termavis.com</a> adresine iletebilirsiniz.<br> Anlayışınız için teşekkür eder, en kısa sürede size yardımcı olmayı sabırsızlıkla bekliyoruz.",
             "our-address-header": "Adresimiz",
             "design-office-header": "Tasarım Ofisi ve Test & Montaj Atölyesi:",
-            "office-header": "Ofis",
+            "office-header": "Ofis:",
             "form-feedback-message": "Bizimle iletişime geçtiğiniz için teşekkür ederiz! En kısa sürede size geri dönüş yapacağız."
         }
     };
