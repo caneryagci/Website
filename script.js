@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Load the saved language or default to English
-    const savedLang = localStorage.getItem('selectedLanguage') || 'tr';
+    const savedLang = localStorage.getItem('selectedLanguage') || 'en';
     setLanguage(savedLang);
 
     // Event listener for language options
