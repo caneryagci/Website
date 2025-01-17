@@ -1,4 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Lazy load images
+    const images = document.querySelectorAll('.office-image');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
     // document.querySelector("form").addEventListener("submit", function (e) {
     //     e.preventDefault(); // Prevent actual form submission
     //     document.getElementById("form-feedback").style.display = "block";
@@ -33,7 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
             "our-address-header": "Our Address",
             "design-office-header": "Design Office and Test & Assembly Workshop:",
             "office-header": "Office:",
-            "form-feedback-message": "Thank you for reaching out! We will get back to you shortly."
+            "form-feedback-message": "Thank you for reaching out! We will get back to you shortly.",
+            "our-location": "Our Location",
+            "address-title": "Visit Us",
+            "address-details": "Çankaya/Ankara, Turkey"
         },
 
         tr: {
@@ -62,7 +93,10 @@ document.addEventListener('DOMContentLoaded', function () {
             "our-address-header": "Adresimiz",
             "design-office-header": "Tasarım Ofisi ve Test & Montaj Atölyesi:",
             "office-header": "Ofis:",
-            "form-feedback-message": "Bizimle iletişime geçtiğiniz için teşekkür ederiz! En kısa sürede size geri dönüş yapacağız."
+            "form-feedback-message": "Bizimle iletişime geçtiğiniz için teşekkür ederiz! En kısa sürede size geri dönüş yapacağız.",
+            "our-location": "Konumumuz",
+            "address-title": "Bizi Ziyaret Edin",
+            "address-details": "Çankaya/Ankara, Türkiye"
         }
     };
 

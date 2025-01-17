@@ -2739,3 +2739,118 @@ section.appear {
         width: 100%;
     }
 }
+
+/* Map Section Styles */
+.map-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: transparent;
+}
+
+.map-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.map-section .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    margin-left: 0px;
+}
+
+/* Map Container Styles */
+.map-container {
+    width: 100%;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 16/9;
+    max-height: 600px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: opacity var(--transition-normal);
+}
+
+.location h3 {
+    margin-left: 0px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .map-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .info-card {
+        padding: var(--spacing-md);
+    }
+
+    .office-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-section {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .info-card {
+        padding: var(--spacing-sm);
+    }
+
+    .office-image {
+        height: 150px;
+    }
+
+    .map-container {
+        aspect-ratio: 4/3;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.info-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.info-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
