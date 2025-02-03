@@ -205,9 +205,13 @@ document.addEventListener('DOMContentLoaded', function () {
         updateTexts(lang);
     }
 
-    // Load the saved language or default to English
-    const savedLang = localStorage.getItem('selectedLanguage') || 'en';
-    setLanguage(savedLang);
+    // Load saved language if it's Turkish, otherwise default to English
+    const savedLang = localStorage.getItem('selectedLanguage');
+    if (savedLang === 'tr') {
+        setLanguage(savedLang);
+    } else {
+        setLanguage('en');
+    }
 
     // Event listener for language options
     document.querySelectorAll('.language-option').forEach(option => {
