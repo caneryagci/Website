@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "case-study-2-title": "Cooling System Development Project Aimed at Reducing the Maintenance Time of Turbofan Engines",
             "case-study-3-title": "Filter By-pass Valves for Aerospace Industry",
             "case-study-4-title": "Pedestrian Bridge Railing Design and Production",
+            "case-study-5-title": "DC and AC Axial Fans",
             "learn-link": "Learn more",
             "footer-text": "&copy; 2024 Termavis Engineering. All rights reserved.",
             
@@ -128,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "case-study-2-title": "Turbofan Motorlarının Bakım Sürelerini Azaltmaya Yönelik Soğutma Sistemi Geliştirme Projesi",
             "case-study-3-title": "Havacılık Sektörü için Baypas Valfleri",
             "case-study-4-title": "Yaya Köprüsü Korkuluğu Tasarım ve Üretimi",
+            "case-study-5-title": "DC ve AC Eksenel Fan Çözümleri",
             "learn-link": "Daha fazla bilgi edin",
             "footer-text": "&copy; 2024 Termavis Mühendislik. Tüm hakları saklıdır.",
             
