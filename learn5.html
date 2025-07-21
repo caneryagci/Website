@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Works - termavis Engineering</title>
+        <meta name="description" content="Learn more about E-Power Genius, our mission, vision, core values, and expert team dedicated to delivering excellence in power systems engineering.">
+        <meta name="keywords" content="power systems, engineering consultancy, about us, mission, vision, E-Power Genius">
+        
+        <!-- Open Graph Meta Tags for SEO and Social Media Sharing -->
+        <meta property="og:title" content="About Us - E-Power Genius">
+        <meta property="og:description" content="Discover E-Power Genius, our mission, vision, and core values. Meet our team of engineering consultants specializing in power systems.">
+        <meta property="og:image" content="images/logo.png">
+        <meta property="og:url" content="https://www.epowergenius.com/about.html">
+        <meta property="og:type" content="website">
+        
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="About Us - E-Power Genius">
+        <meta name="twitter:description" content="Discover E-Power Genius, our mission, vision, and core values. Meet our team of engineering consultants specializing in power systems.">
+        <meta name="twitter:image" content="images/logo.png">
+        
+        <!-- Fonts and Stylesheets -->
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+<body>
+
+     <!-- Logo Bar -->
+    <!-- Logo Bar -->
+    <div class="logo-bar" id="logo-bar">
+        <a href="index.html#logo-bar" aria-label="Navigate to home" class="logo-container">
+            <img src="images/bar_logo2.webp" alt="termavis Logo" class="logo" loading="lazy">
+            <span class="logo-text" data-translate="logo-text">TERMAVIS ENGINEERING&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;CONSULTING SERVICES</span>
+        </a>
+        <div class="cta-buttons" id="logo-buttons">
+            <a href="contact.html#contact" class="cta-btn" data-translate="cta-btn">Get in Touch</a>
+            <a href="https://www.linkedin.com/company/termavis/" target="_blank" class="linkedin-btn">
+                <img src="images/LI-In-Bug.png" alt="LinkedIn" class="linkedin-icon">
+                <span data-translate="linkedin-text">Follow us on LinkedIn</span>
+            </a>
+            <div class="language-dropdown">
+                <button id="selected-language" class="language-button" aria-haspopup="true" aria-expanded="false">
+                    <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon" id="current-flag"> ENG
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="language-options" aria-hidden="true">
+                    <div class="language-option">
+                        <img src="images/flags/en.webp" alt="ENG Flag" class="flag-icon"> ENG
+                    </div>
+                    <div class="language-option">
+                        <img src="images/flags/tr.webp" alt="TR Flag" class="flag-icon"> TR
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <header>
+        <!-- Home Button (Visible for Desktop Only) -->
+        <div class="header-title desktop-home-button">
+            <a href="index.html#logo-bar" aria-label="Home">
+                <span class="material-icons">home</span>
+            </a>
+        </div>
+
+        <nav aria-label="Main Navigation">
+            <!-- Main Navigation Links -->
+            <ul role="menu">
+                
+                <!-- Dropdown for Services -->
+                <li class="dropdown services-title">
+                    <!-- Example dropdown toggle with SVG arrow -->
+                    <a href="index.html#services" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        <span data-translate="services-title">Services</span>
+                        <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-content main-title" role="menu" aria-label="Services Dropdown">
+                        
+                        <!-- Nested Dropdown for Power System Studies -->
+                        <li class="dropdown">
+                            <button aria-haspopup="true" aria-expanded="false"  onclick="window.location.href='services.html#design';" data-translate="dropdown-design">Design</button>
+                        </li>
+
+                        <!-- Nested Dropdown for Artificial Intelligence Solutions -->
+                        <li class="dropdown">
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='ai-services.html#ai-hero';" data-translate="dropdown-analyse">Analyse</button>
+                        </li>
+
+                        <!-- Nested Dropdown for Energy Hub Solution Solutions -->
+                        <li class="dropdown">
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='energyhub-services.html#energyhub-hero';" data-translate="dropdown-build">Build</button>
+                        </li>
+
+                        <!-- Nested Dropdown for Residential Applications-->
+                        <li class="dropdown">
+                            <button aria-haspopup="true" aria-expanded="false" onclick="window.location.href='resapp-services.html#resapp-hero';" data-translate="dropdown-test">Test</button>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <!-- Other Main Navigation Links -->
+                <li><a href="recent-projects.html#recent-projects" aria-label="Navigate to recent projects section" role="menuitem" data-translate="recent-works">Recent Works</a></li>
+            </ul>
+
+            <!-- Right-Aligned Links for About Us and Contact Us -->
+            <div class="header-right">
+                <ul role="menu">
+                    <li><a href="about.html#about" aria-label="Navigate to contact section" role="menuitem" data-translate="about-us">About Us</a></li>
+                    <li><a href="contact.html#contact" aria-label="Navigate to contact section" role="menuitem" data-translate="contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+
+    <!-- Updated Solutions section with IDs for smooth scrolling -->
+    <section id="text-services">
+        <div class="solution-subsection">
+            <h3 id="axial-fan-h3" data-translate="h3-text-4">DC/AC Axial Fan Solutions</h3>
+            <h2 id="fan-h2" data-translate="h2-text-4">Fully Customizable to Your Needs​</h2>
+            <p data-translate="p-text-4">At Termavis, we offer a comprehensive range of DC and AC axial fans designed for high performance and reliability across a wide variety of applications. Every fan in our catalog is not only built to meet rigorous industrial standards but can also be fully customized based on your unique operational requirements.​ Leveraging advanced tools like CFD (Computational Fluid Dynamics) and rotating machinery design software, our engineering team collaborates closely with clients to develop tailor-made thermal management solutions. From material selection to blade geometry, airflow optimization, and electrical integration—every aspect can be adapted to meet specific system needs.​ Whether you're looking for a standard-size fan or a specialized configuration, Termavis ensures precision, flexibility, and innovation in every solution we deliver.​</p>
+         <!-- Container for side-by-side figures -->
+            <div class="figure-container">
+
+
+                <figure class="content-figure">
+                    <a href="images/F1.jpg" target="_blank" class="figure-overlay">
+                        <img src="images/F1.jpg" alt="Analysis1" class="content-image small-image3">
+                    </a>
+                </figure>
+                <figure class="content-figure">
+                    <a href="images/F2.jpg" target="_blank" class="figure-overlay">
+                        <img src="images/F2.jpg" alt="Analysis2" class="content-image small-image3">
+                    </a>
+                </figure>
+                <figure class="content-figure">
+                    <a href="images/F3.jpg" target="_blank" class="figure-overlay">
+                        <img src="images/F3.jpg" alt="Analysis3" class="content-image small-image3">
+                    </a>
+                </figure>
+                <figure class="content-figure">
+                    <a href="images/F4.jpg" target="_blank" class="figure-overlay">
+                        <img src="images/F4.jpg" alt="Analysis4" class="content-image small-image3">
+                    </a>
+                </figure>
+                <figure class="content-figure">
+                    <a href="images/F5.jpg" target="_blank" class="figure-overlay">
+                        <img src="images/F5.jpg" alt="Analysis5" class="content-image small-image3">
+                    </a>
+                </figure>
+
+                <figure class="pdf-card2" style="grid-column: 2 / 3; text-align: center;">
+                    <!-- <img src="images/pdf-icon.png" alt="PDF Preview">
+                    <h3>TFSS</h3> -->
+                    <p class="pdf-description" data-translate="pdf-description-text">Download the product catalogue in PDF format.</p>
+                    <a href="pdfs/axial fan catalogue_v2.pdf" class="pdf-download-btn2" download data-translate="pdf-download-text">Download PDF</a>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-content">
+            <p data-translate="footer-text">&copy; 2024 Termavis Mühendislik İmalat Sanayi Ticaret Ltd. Şti. Çankaya/Ankara. All rights reserved.</p>
+            <p><i class="fas fa-envelope"></i> info@termavis.com | <i class="fas fa-phone-alt"></i> +90 (537) 791 7878</p>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

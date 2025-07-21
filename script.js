@@ -45,7 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
             "h3-text-3": "Pedestrian Bridge Railing",
             "h2-text-3": "Design and Production",
             "p-text-3": "We designed and produced a durable and aesthetically pleasing pedestrian bridge railing system, tailored to enhance both safety and visual appeal. The design process involved detailed analysis to ensure structural integrity, while meeting local regulations and safety standards. Using high-quality materials and precise engineering, the railing provides long-lasting performance in various weather conditions. Our commitment to innovation and craftsmanship is reflected in the seamless integration of the railing into the overall bridge structure, ensuring both functionality and a modern appearance.",
-            
+            "h3-text-4": "DC and AC Axial Fan Solutions ",
+            "h2-text-4": "Fully Customizable to Your Needs",
+            "p-text-4": "At Termavis, we offer a comprehensive range of DC and AC axial fans designed for high performance and reliability across a wide variety of applications. Every fan in our catalog is not only built to meet rigorous industrial standards but can also be fully customized based on your unique operational requirements.​ Leveraging advanced tools like CFD (Computational Fluid Dynamics) and rotating machinery design software, our engineering team collaborates closely with clients to develop tailor-made thermal management solutions. From material selection to blade geometry, airflow optimization, and electrical integration—every aspect can be adapted to meet specific system needs. ​Whether you're looking for a standard-size fan or a specialized configuration, Termavis ensures precision, flexibility, and innovation in every solution we deliver.​",
+
+
             "about-header": "About Us",
             "about-description": "At termavis, we specialize in cutting-edge engineering design, analysis, and prototype production. With a deep understanding of thermal technology and its vast applications, we deliver high-performance solutions tailored to meet the unique demands of our clients. Our expertise spans multiple industries, driving innovation through precision engineering and forward-thinking design, all while maintaining a focus on sustainability and efficiency.",
             "mission-header": "Mission",
@@ -72,6 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
             "team-member-2-title": "Mechanical Engineer",
             "team-member-3-name": "Bekir Caner Yagci",
             "team-member-3-title": "M.Sc. Electrical Engineer",
+
+            "pdf-description-text": "Download the product catalogue in PDF format.",
+            "pdf-description-text2": "Download the detailed report in PDF format.",
+            "pdf-download-text": "Download PDF",
 
             "recent-works-header": "Recent Works",
             "recent-works-description-1": "Our expertise extends from the detailed design and analysis of engineering projects to the development and production of functional prototypes. While our work encompasses a wide range of engineering disciplines, every project we undertake is united by a commitment to innovation and precision, delivering solutions that advance both technology and efficiency.",
@@ -134,7 +142,11 @@ document.addEventListener('DOMContentLoaded', function () {
             "h3-text-3": "Yaya Köprüsü Korkuluğu",
             "h2-text-3": "Tasarım ve Üretim",
             "p-text-3": "Güvenliği ve estetik görünümü artırmak için dayanıklı ve estetik bir yaya köprüsü korkuluk sistemi tasarladık ve ürettik. Tasarım süreci, yerel yönetmeliklere ve güvenlik standartlarına uygunluğu sağlarken yapısal bütünlüğü garanti altına almak için detaylı analizleri içermektedir. Yüksek kaliteli malzemeler ve hassas mühendislik kullanılarak üretilen korkuluk, çeşitli hava koşullarında uzun ömürlü performans sunar. Yenilikçilik ve ustalığa bağlılığımız, korkuluğun genel köprü yapısına kusursuz bir şekilde entegrasyonunda yansıtılmaktadır.",
-            
+            "h3-text-4": "DC ve AC Eksenel Fan Çözümleri",
+            "h2-text-4": "İhtiyacınıza Göre Özelleştirilebilir",
+            "p-text-4": "Termavis olarak, yüksek performans ve güvenilirlik sunan geniş bir DC ve AC eksenel fan yelpazesi sunuyoruz. Kataloğumuzdaki her bir fan, yalnızca katı endüstri standartlarını karşılamakla kalmaz, aynı zamanda özgün operasyonel ihtiyaçlarınıza göre tamamen özelleştirilebilir. Hesaplamalı Akışkanlar Dinamiği (CFD) ve döner makine tasarımı yazılımları gibi ileri mühendislik araçlarını kullanarak, mühendislik ekibimiz müşterilerimizle yakın iş birliği içinde çalışarak özel ısı yönetimi çözümleri geliştirir. Malzeme seçimi, kanat geometrisi, hava akışı optimizasyonu ve elektriksel entegrasyon gibi tüm unsurlar, sisteminize özel olarak uyarlanabilir. İster standart boyutlu bir fan, ister özel bir konfigürasyon arıyor olun, Termavis olarak sunduğumuz her çözümde hassasiyet, esneklik ve yenilik sunmayı taahhüt ediyoruz." ,
+
+
             "about-header": "Hakkımızda",
             "about-description": "Termavis olarak mühendislik tasarımı, analiz ve prototip üretiminde öncü çözümler sunuyoruz. Termal teknoloji ve geniş uygulama alanlarına yönelik derin bir anlayışla, müşterilerimizin özel ihtiyaçlarına uygun yüksek performanslı çözümler üretiyoruz. Uzmanlığımız farklı sektörleri kapsamakta olup, hassas mühendislik ve ileriye dönük tasarımlarla yenilikleri hayata geçirirken sürdürülebilirlik ve verimlilik odağımızı koruyoruz.",
             "mission-header": "Misyon",
@@ -161,6 +173,10 @@ document.addEventListener('DOMContentLoaded', function () {
             "team-member-2-title": "Makine Mühendisi",
             "team-member-3-name": "Bekir Caner Yağcı",
             "team-member-3-title": "Yüksek Elektrik Mühendisi",
+
+            "pdf-description-text": "Ürün kataloğunu PDF formatında indirin.",
+            "pdf-description-text2": "Ayrıntılı raporu PDF formatında indirin.",
+            "pdf-download-text": "PDF'yi İndir",
 
             "recent-works-header": "Güncel Çalışmalarımız",
             "recent-works-description-1": "Uzmanlığımız, mühendislik projelerinin detaylı tasarımı ve analizinden işlevsel prototiplerin geliştirilmesi ve üretimine kadar uzanmaktadır. Çalışmalarımız geniş bir mühendislik yelpazesini kapsasa da her proje, yenilik ve hassasiyet taahhüdüyle birleşerek teknoloji ve verimliliği ileriye taşıyan çözümler sunar.",
@@ -260,6 +276,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Replace the current URL without reloading
     if (window.location.hash === "#bridge-rail-h3") {
         history.replaceState({}, "", "/pedestrian-bridge-railing");
+    }
+
+    // Replace the current URL without reloading
+    if (window.location.hash === "#axial-fan-h3") {
+        history.replaceState({}, "", "/dc-ac-fans");
     }
 
 
