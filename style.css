@@ -1082,7 +1082,7 @@ button:hover {
 .pdf-card2 {
     background-color: white;
     padding: 1rem;
-    width: 630px; /* Maintain card width */
+    max-width: 630px; /* Maintain card width */
     height: 160px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 19px;
