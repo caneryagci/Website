@@ -632,6 +632,7 @@ section#services p{
 
 #mission p, #vision p {
     text-align: justify;
+    hyphens: auto;
 }
 
 #recent-projects p{
