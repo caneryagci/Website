@@ -585,7 +585,7 @@ section p {
 
 /* About Us Section */
 section#about {
-    text-align: justify;
+    text-align: left;
     background-color: #fff;
 }
 
@@ -2043,7 +2043,7 @@ section.appear {
         margin-bottom: 1rem; /* Add space below each paragraph */
     }
      section p {
-        font-size: 16px;
+        font-size: 1.15rem;
      }
 
     .cta-btn, .linkedin-btn {
